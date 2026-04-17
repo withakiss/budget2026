@@ -1340,8 +1340,8 @@ async function runClustering() {
 
   // Charts
   const top10 = clusters.slice(0, 10);
-  mkChart('c-cluster-budget', { type: 'bar', data: { labels: top10.map((_, i) => `클러스터 ${i + 1}`), datasets: [{ data: top10.map(c => c.totalBudget), backgroundColor: PALETTE, borderRadius: 4 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#1a2d47' }, ticks: { callback: v => fmt(v * 1e6) } }, x: { grid: { display: false } } } });
-  mkChart('c-cluster-min', { type: 'bar', data: { labels: top10.map((_, i) => `클러스터 ${i + 1}`), datasets: [{ data: top10.map(c => c.ministries.length), backgroundColor: '#8b5cf6', borderRadius: 4 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#1a2d47' } }, x: { grid: { display: false } } } });
+  mkChart('c-cluster-budget', { type: 'bar', data: { labels: top10.map((_, i) => `클러스터 ${i + 1}`), datasets: [{ data: top10.map(c => c.totalBudget), backgroundColor: PALETTE, borderRadius: 4 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#1a2d47' }, ticks: { callback: v => fmt(v * 1e6) } }, x: { grid: { display: false } } } } });
+  mkChart('c-cluster-min', { type: 'bar', data: { labels: top10.map((_, i) => `클러스터 ${i + 1}`), datasets: [{ data: top10.map(c => c.ministries.length), backgroundColor: '#8b5cf6', borderRadius: 4 }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { color: '#1a2d47' } }, x: { grid: { display: false } } } } });
 
   document.getElementById('cluster-cards').innerHTML = clusters.map((c, i) => `
     <div class="cluster-card">
