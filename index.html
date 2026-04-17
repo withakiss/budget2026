@@ -658,14 +658,24 @@ const mkChart = (id, cfg) => { const c = document.getElementById(id); if (!c) re
 //  BOOT
 // ═══════════════════════════════════════════
 async function boot() {
+  const loadingEl = document.getElementById('loading');
   try {
+    // similarity.js 로드 대기 (최대 5초)
+    let waited = 0;
+    while (!window.SimilarityEngine && waited < 50) {
+      await new Promise(r => setTimeout(r, 100));
+      waited++;
+    }
+    if (!window.SimilarityEngine) throw new Error('similarity.js 로드 실패 — js/similarity.js 파일이 저장소에 있는지 확인하세요.');
+
     const res = await fetch('data/projects.json');
+    if (!res.ok) throw new Error(`data/projects.json 로드 실패 (HTTP ${res.status})`);
     const json = await res.json();
+    if (!json.projects || !Array.isArray(json.projects)) throw new Error('projects.json 형식 오류: projects 배열이 없습니다.');
     ALL = json.projects;
     ENGINE = new window.SimilarityEngine.AnalysisEngine(ALL);
-    document.getElementById('loading').style.display = 'none';
+    loadingEl.style.display = 'none';
 
-    // Header badges
     const t26 = ALL.reduce((s, p) => s + p.budget_2026, 0);
     document.getElementById('hb-total').textContent = ALL.length + '개';
     document.getElementById('hb-min').textContent = [...new Set(ALL.map(p => p.ministry))].length + '개';
@@ -682,7 +692,18 @@ async function boot() {
     renderAlgoGuide();
     setupInteractiveListeners();
   } catch (e) {
-    document.getElementById('loading').innerHTML = `<div style="color:#ef4444;text-align:center;"><h2>데이터 로드 실패</h2><p style="margin-top:10px;color:#94a3b8;">${e}</p></div>`;
+    loadingEl.innerHTML = `
+      <div style="text-align:center;padding:40px;max-width:500px;">
+        <div style="font-size:32px;margin-bottom:16px;">⚠️</div>
+        <h2 style="color:#ef4444;margin-bottom:12px;">로드 실패</h2>
+        <p style="color:#94a3b8;margin-bottom:20px;line-height:1.6;">${e.message}</p>
+        <div style="background:#0d1526;border:1px solid #1a2d47;border-radius:10px;padding:16px;text-align:left;font-size:12px;color:#64748b;line-height:1.8;">
+          <b style="color:#94a3b8;">확인 사항:</b><br>
+          1. 저장소에 <code style="color:#06b6d4">js/similarity.js</code> 파일이 있는지<br>
+          2. 저장소에 <code style="color:#06b6d4">data/projects.json</code> 파일이 있는지<br>
+          3. GitHub Pages가 활성화되어 있는지 (Settings → Pages)
+        </div>
+      </div>`;
   }
 }
 
@@ -1138,7 +1159,8 @@ document.addEventListener('DOMContentLoaded', () => {
 //  BUDGET COMPARE
 // ═══════════════════════════════════════════
 function renderBudgetCompare() {
-  const filter = document.getElementById('bc-filter')?.value || 'all';
+  const filterEl = document.getElementById('bc-filter');
+  const filter = filterEl ? filterEl.value : 'all';
   const withReq = ALL.filter(p => p.budget_requested > 0);
   const cut = withReq.filter(p => p.budget_2026 < p.budget_requested);
   const inc = withReq.filter(p => p.budget_2026 >= p.budget_requested);
