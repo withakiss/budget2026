@@ -2,7 +2,7 @@
 
 대한민국 전체 재정사업을 분석하는 비공식 오픈소스 대시보드입니다.
 
-🔗 **라이브 데모**: `https://[YOUR_USERNAME].github.io/budget2026`
+🔗 **라이브 데모**: `https://withakiss.github.io/budget2026`
 
 > ⚠️ 본 플랫폼은 개인이 분석 목적으로 제작한 비공식 페이지입니다. 공식 예산 자료로 활용할 수 없습니다.
 
@@ -21,34 +21,23 @@
 
 ---
 
-## 🚀 GitHub Pages 배포 방법
-
-```
-1. 이 저장소를 Fork 또는 직접 생성
-2. Settings → Pages → Source: Deploy from branch → main → / (root)
-3. 저장 후 1~2분 대기
-4. https://[사용자명].github.io/budget2026 으로 접속
-```
-
----
-
 ## 📁 저장소 구조
 
 ```
 budget2026/
 ├── index.html          ← 메인 대시보드 (단일 파일)
 ├── data/
-│   └── projects.json   ← ★ 여기에 실제 데이터를 넣으세요
+│   └── projects.json   ← ★ 실제 데이터
 └── README.md
 ```
 
 ---
 
-## 🔄 실제 데이터로 교체하는 방법
+## 🔄 실제 데이터로 교체
 
-`data/projects.json` 파일의 구조를 유지하면서 내용만 교체하세요.
+`data/projects.json` 파일의 구조를 유지하면서 내용만 교체 가능
 
-### 데이터 소스 (추천 순서)
+### 데이터 소스
 
 1. **열린재정** (openfiscaldata.go.kr) → 세출예산현황 Excel
 2. **공공데이터포털** (data.go.kr) → "세부사업별 예산" 검색
