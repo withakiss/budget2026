@@ -268,10 +268,15 @@ tbody td{padding:11px 14px;font-size:13px;vertical-align:middle;}
     <button class="tab-btn" data-tab="ministry">🏛️ 부처별</button>
     <button class="tab-btn" data-tab="function">📂 기능별</button>
     <button class="tab-btn" data-tab="projects">📋 사업목록</button>
-    <button class="tab-btn" data-tab="similarity">🔍 유사성 분석</button>
-    <button class="tab-btn" data-tab="cluster">🕸️ 클러스터</button>
+    <button class="tab-btn" data-tab="budget-compare">💰 예산비교</button>
+    <button class="tab-btn" data-tab="search">🔎 키워드검색</button>
+    <button class="tab-btn" data-tab="scan">🔬 전수스캔</button>
+    <button class="tab-btn" data-tab="valuechain">⛓ Value Chain</button>
+    <button class="tab-btn" data-tab="network">🕸️ 네트워크</button>
+    <button class="tab-btn" data-tab="cluster">🗂️ 클러스터</button>
     <button class="tab-btn" data-tab="risk">⚠️ 리스크</button>
     <button class="tab-btn" data-tab="concentration">📐 집중도</button>
+    <button class="tab-btn" data-tab="algoguide">🧮 알고리즘</button>
   </div>
 </nav>
 
@@ -351,128 +356,171 @@ tbody td{padding:11px 14px;font-size:13px;vertical-align:middle;}
   </div>
 </div>
 
-<!-- ══ 유사성 분석 ══ -->
-<div class="tab-panel" id="tab-similarity">
-  <div class="sub-tabs">
-    <button class="sub-tab active" data-stab="sim-search">🔎 키워드 검색</button>
-    <button class="sub-tab" data-stab="sim-scan">🔬 전수 스캔</button>
-    <button class="sub-tab" data-stab="sim-network">🕸️ 네트워크</button>
-    <button class="sub-tab" data-stab="sim-guide">❓ 도움말</button>
+<!-- ══ 예산비교 ══ -->
+<div class="tab-panel" id="tab-budget-compare">
+  <div class="stitle">💰 요구액 vs 편성액 분석 <small>예산 삭감·증액 현황</small></div>
+  <div class="kpi-grid">
+    <div class="kpi-card blue"><div class="kpi-label">요구액 제출 사업</div><div class="kpi-value" id="bc-count">—</div><div class="kpi-sub">요구액 데이터 보유</div></div>
+    <div class="kpi-card red"><div class="kpi-label">삭감 사업</div><div class="kpi-value" id="bc-cut">—</div><div class="kpi-sub">요구액 대비 편성액 감소</div></div>
+    <div class="kpi-card green"><div class="kpi-label">증액 사업</div><div class="kpi-value" id="bc-inc">—</div><div class="kpi-sub">요구액 대비 편성액 증가</div></div>
+    <div class="kpi-card yellow"><div class="kpi-label">최대 삭감률</div><div class="kpi-value" id="bc-maxcut">—</div><div class="kpi-sub">단일 사업 최대 삭감</div></div>
   </div>
-
-  <!-- 키워드 검색 -->
-  <div class="sub-panel active" id="sim-search">
-    <div class="sim-controls">
-      <div>
-        <label>검색어</label>
-        <input class="search-box" id="sim-query" style="width:280px;margin-left:8px;" type="text" placeholder="예: 디지털 전환 인프라"/>
-      </div>
-      <div>
-        <label>알고리즘</label>
-        <select class="fsel" id="sim-algo" style="margin-left:8px;">
-          <option value="tfidf">TF-IDF (의미적)</option>
-          <option value="bm25">BM25 (정보검색)</option>
-          <option value="hybrid">Hybrid (Jaccard+Cosine)</option>
-        </select>
-      </div>
-      <button id="sim-search-btn" style="background:var(--accent);border:none;color:#fff;border-radius:8px;padding:8px 18px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">검색</button>
-      <span style="font-size:11px;color:var(--text3);">TF-IDF: 희귀 단어 가중치 · BM25: 문서 길이 보정 · Hybrid: 집합+벡터 혼합</span>
+  <div class="chart-grid">
+    <div class="chart-card"><h3>💰 요구액 vs 편성액 비교 (Top 20)</h3><div class="chart-wrap tall"><canvas id="c-bc-compare"></canvas></div></div>
+    <div class="chart-card"><h3>📉 삭감률 Top 15 (요구액 대비)</h3><div class="chart-wrap tall"><canvas id="c-bc-cutrate"></canvas></div></div>
+  </div>
+  <div class="table-card">
+    <div class="table-toolbar"><span style="font-weight:600;font-size:14px;">요구액 vs 편성액 상세</span>
+      <select class="fsel" id="bc-filter" style="margin-left:auto;">
+        <option value="all">전체</option><option value="cut">삭감만</option><option value="inc">증액만</option>
+      </select>
     </div>
-    <div id="sim-search-results"></div>
+    <div class="table-wrap"><table><thead><tr><th>부처</th><th>사업명</th><th>유형</th><th>요구액(백만원)</th><th>편성액(백만원)</th><th>차액</th><th>삭감률</th></tr></thead><tbody id="bc-tbody"></tbody></table></div>
   </div>
+</div>
 
-  <!-- 전수 스캔 -->
-  <div class="sub-panel" id="sim-scan" style="display:none;">
-    <div class="sim-controls">
-      <div>
-        <label>유사도 임계값</label>
-        <input type="range" id="scan-threshold" min="20" max="95" value="50" style="margin:0 8px;width:120px;"/>
-        <span id="scan-threshold-val" style="font-family:var(--mono);color:var(--accent);">50%</span>
-      </div>
-      <div>
-        <label>분석 프로필</label>
-        <select class="fsel" id="scan-profile" style="margin-left:8px;">
-          <option value="default">기본</option>
-          <option value="rnd">R&D 특화</option>
-          <option value="welfare">복지 특화</option>
-          <option value="infra">인프라 특화</option>
-          <option value="digital">디지털 특화</option>
-          <option value="training">인력양성 특화</option>
-        </select>
-      </div>
-      <div>
-        <label>필터</label>
-        <select class="fsel" id="scan-cross" style="margin-left:8px;">
-          <option value="all">전체</option>
-          <option value="cross">부처 간 교차만</option>
-          <option value="same">동일 부처만</option>
-        </select>
-      </div>
-      <div>
-        <label>등급</label>
-        <select class="fsel" id="scan-grade" style="margin-left:8px;">
-          <option value="0">전체 등급</option>
-          <option value="1">1등급: 완전중복(85%+)</option>
-          <option value="2">2등급: 고유사(70-85%)</option>
-          <option value="3">3등급: 부분중복(50-70%)</option>
-          <option value="4">4등급: 약유사(30-50%)</option>
-        </select>
-      </div>
-      <button id="scan-btn" style="background:var(--accent);border:none;color:#fff;border-radius:8px;padding:8px 18px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">🔬 분석 시작</button>
+<!-- ══ 키워드 검색 ══ -->
+<div class="tab-panel" id="tab-search">
+  <div class="stitle">🔎 키워드 유사성 검색 <small>TF-IDF · BM25 · Hybrid 알고리즘 선택</small></div>
+  <div class="sim-controls">
+    <div>
+      <label>검색어</label>
+      <input class="search-box" id="sim-query" style="width:300px;margin-left:8px;" type="text" placeholder="예: 디지털 전환 인프라 AI"/>
     </div>
-    <div class="progress-bar" id="scan-progress-wrap" style="display:none;"><div class="progress-fill" id="scan-progress" style="width:0%"></div></div>
-    <div id="scan-kpi" style="margin-bottom:18px;"></div>
-    <div id="scan-results"></div>
+    <div>
+      <label>알고리즘</label>
+      <select class="fsel" id="sim-algo" style="margin-left:8px;">
+        <option value="tfidf">TF-IDF (희귀 단어 가중치)</option>
+        <option value="bm25">BM25 (문서 길이 정규화)</option>
+        <option value="hybrid">Hybrid (Jaccard + Cosine)</option>
+      </select>
+    </div>
+    <div>
+      <label>결과 수</label>
+      <select class="fsel" id="sim-topn" style="margin-left:8px;">
+        <option value="10">10개</option><option value="20" selected>20개</option><option value="50">50개</option>
+      </select>
+    </div>
+    <button id="sim-search-btn" style="background:var(--accent);border:none;color:#fff;border-radius:8px;padding:8px 20px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">검색</button>
   </div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px 18px;margin-bottom:18px;font-size:12px;color:var(--text2);line-height:1.8;">
+    <b style="color:var(--text)">알고리즘 선택 가이드</b><br>
+    🔵 <b>TF-IDF</b>: 전체 사업에서 희귀하게 등장하는 핵심 단어에 높은 가중치. 특수 분야 탐색에 적합.<br>
+    🟢 <b>BM25</b>: 문서 길이를 보정하여 긴 설명·짧은 사업명을 공정하게 비교. 정밀 매칭에 적합.<br>
+    🟣 <b>Hybrid</b>: Jaccard(단어 집합 일치)와 Cosine(벡터 유사도)의 혼합. 빠른 일반 탐색에 적합.
+  </div>
+  <div id="sim-search-results"></div>
+</div>
 
-  <!-- 네트워크 -->
-  <div class="sub-panel" id="sim-network" style="display:none;">
-    <div class="sim-controls">
-      <label>임계값</label>
-      <input type="range" id="net-threshold" min="30" max="90" value="55" style="margin:0 8px;width:120px;"/>
-      <span id="net-threshold-val" style="font-family:var(--mono);color:var(--accent);">55%</span>
-      <label style="margin-left:16px;">최대 노드</label>
-      <input type="range" id="net-maxnodes" min="10" max="60" value="30" style="margin:0 8px;width:100px;"/>
-      <span id="net-maxnodes-val" style="font-family:var(--mono);color:var(--accent);">30</span>
-      <button id="net-draw-btn" style="background:var(--accent);border:none;color:#fff;border-radius:8px;padding:8px 18px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">그리기</button>
+<!-- ══ 전수 스캔 ══ -->
+<div class="tab-panel" id="tab-scan">
+  <div class="stitle">🔬 전수 N×N 스캔 <small>다차원 가중합 · 5등급 자동 분류 · 6개 분석 프로필</small></div>
+  <div class="sim-controls">
+    <div>
+      <label>유사도 임계값</label>
+      <input type="range" id="scan-threshold" min="20" max="95" value="50" style="margin:0 8px;width:120px;"/>
+      <span id="scan-threshold-val" style="font-family:var(--mono);color:var(--accent);">50%</span>
     </div>
-    <canvas id="network-canvas" style="width:100%;height:600px;background:var(--surface);border:1px solid var(--border);border-radius:14px;"></canvas>
-    <div id="net-legend" style="margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;"></div>
+    <div>
+      <label>분석 프로필</label>
+      <select class="fsel" id="scan-profile" style="margin-left:8px;">
+        <option value="default">기본 (균형)</option>
+        <option value="rnd">R&D 특화</option>
+        <option value="welfare">복지 특화</option>
+        <option value="infra">인프라 특화</option>
+        <option value="digital">디지털 특화</option>
+        <option value="training">인력양성 특화</option>
+      </select>
+    </div>
+    <div>
+      <label>부처 범위</label>
+      <select class="fsel" id="scan-cross" style="margin-left:8px;">
+        <option value="all">전체</option>
+        <option value="cross">부처 간 교차만</option>
+        <option value="same">동일 부처만</option>
+      </select>
+    </div>
+    <div>
+      <label>등급 필터</label>
+      <select class="fsel" id="scan-grade" style="margin-left:8px;">
+        <option value="0">전체 등급</option>
+        <option value="1">1등급: 완전중복 (85%+)</option>
+        <option value="2">2등급: 고유사 (70~85%)</option>
+        <option value="3">3등급: 부분중복 (50~70%)</option>
+        <option value="4">4등급: 약유사 (30~50%)</option>
+      </select>
+    </div>
+    <button id="scan-btn" style="background:var(--accent);border:none;color:#fff;border-radius:8px;padding:8px 20px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">🔬 분석 시작</button>
   </div>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px 18px;margin-bottom:14px;font-size:12px;color:var(--text2);line-height:1.8;">
+    <b style="color:var(--text)">다차원 분석 차원:</b>
+    TF-IDF(텍스트) · BM25(구조) · Jaccard(단어) · 기능분야 · 예산규모 · 부처교차 · 법적근거 — 7차원 동시 분석
+  </div>
+  <div class="progress-bar" id="scan-progress-wrap" style="display:none;"><div class="progress-fill" id="scan-progress" style="width:0%"></div></div>
+  <div id="scan-kpi" style="margin-bottom:18px;"></div>
+  <div id="scan-results"></div>
+</div>
 
-  <!-- 도움말 -->
-  <div class="sub-panel" id="sim-guide" style="display:none;">
-    <div class="table-card" style="padding:24px;">
-      <h3 style="margin-bottom:16px;font-size:16px;">🧮 알고리즘 비교</h3>
-      <table>
-        <thead><tr><th>알고리즘</th><th>수식</th><th>특징</th><th>최적 용도</th></tr></thead>
-        <tbody>
-          <tr><td><b>Jaccard</b></td><td class="num">|A∩B| / |A∪B|</td><td>집합 기반, 단어 유무만 판단</td><td>짧은 사업명 비교</td></tr>
-          <tr><td><b>Cosine</b></td><td class="num">A·B / (‖A‖×‖B‖)</td><td>벡터 각도, 빈도 반영</td><td>설명문 비교</td></tr>
-          <tr><td><b>Dice</b></td><td class="num">2|A∩B| / (|A|+|B|)</td><td>작은 집합에 유리</td><td>짧은 텍스트</td></tr>
-          <tr><td><b>Overlap</b></td><td class="num">|A∩B| / min(|A|,|B|)</td><td>부분집합 탐지</td><td>포함 관계 탐지</td></tr>
-          <tr><td><b>TF-IDF</b></td><td class="num">tf × log(N/df)</td><td>희귀 단어 가중치</td><td>의미적 검색</td></tr>
-          <tr><td><b style="color:var(--green);">BM25 ★신규</b></td><td class="num">IDF × tf(k1+1)/(tf+k1(...))</td><td>문서 길이 정규화, 포화 처리</td><td>정보검색, 정밀 매칭</td></tr>
-          <tr><td><b>Hybrid</b></td><td class="num">0.5×Jaccard + 0.5×Cosine</td><td>균형 잡힌 기본값</td><td>일반 비교</td></tr>
-          <tr><td><b style="color:var(--accent3);">다차원 가중합 ★신규</b></td><td class="num">Σ(차원×가중치)</td><td>7차원 동시 분석, 프로필별 조정</td><td>정밀 중복 탐지</td></tr>
-        </tbody>
-      </table>
-      <div style="margin-top:20px;">
-        <h4 style="margin-bottom:10px;font-size:14px;">📋 분석 프로필 설명</h4>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;">
-          <div style="background:var(--bg);border-radius:8px;padding:12px;font-size:12px;"><b style="color:var(--accent)">R&D 특화</b><br>BM25·예산 가중치 높임. 연구 목적·방법론 유사성 중시.</div>
-          <div style="background:var(--bg);border-radius:8px;padding:12px;font-size:12px;"><b style="color:var(--accent)">복지 특화</b><br>기능분류 가중치 높임. 수혜 대상·서비스 유형 중시.</div>
-          <div style="background:var(--bg);border-radius:8px;padding:12px;font-size:12px;"><b style="color:var(--accent)">디지털 특화</b><br>텍스트·구조 가중치 높임. 기술 키워드 중시.</div>
-          <div style="background:var(--bg);border-radius:8px;padding:12px;font-size:12px;"><b style="color:var(--accent)">인력양성 특화</b><br>Jaccard·기능 가중치 높임. 교육 대상·방식 중시.</div>
-        </div>
-      </div>
+<!-- ══ Value Chain ══ -->
+<div class="tab-panel" id="tab-valuechain">
+  <div class="stitle">⛓ Value Chain 협업 패턴 탐지 <small>공급→수요 연계 · 6가지 패턴 자동 탐지</small></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin-bottom:24px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="color:var(--accent);font-weight:700;margin-bottom:6px;">① R&D → 실증 → 사업화</div>
+      <div style="font-size:12px;color:var(--text2);">기초·원천 연구 성과를 실증 사업 및 산업화로 연결</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="color:var(--accent2);font-weight:700;margin-bottom:6px;">② 인프라 구축 → 서비스 운영</div>
+      <div style="font-size:12px;color:var(--text2);">시스템·플랫폼 구축 사업이 서비스 운영 사업으로 이어지는 연계</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="color:var(--accent3);font-weight:700;margin-bottom:6px;">③ 인력양성 → 산업체 활용</div>
+      <div style="font-size:12px;color:var(--text2);">교육·훈련 사업이 산업현장 수요와 연결되는 공급-수요 구조</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="color:var(--green);font-weight:700;margin-bottom:6px;">④ 데이터 구축 → AI·분석 활용</div>
+      <div style="font-size:12px;color:var(--text2);">데이터 수집·정제 사업이 AI 모델·분석 사업의 기반이 되는 연계</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="color:var(--yellow);font-weight:700;margin-bottom:6px;">⑤ 기반기술 → 도메인 적용</div>
+      <div style="font-size:12px;color:var(--text2);">일반 기반기술이 특정 산업·분야 도메인 사업에 적용되는 흐름</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="color:var(--orange);font-weight:700;margin-bottom:6px;">⑥ 정책·제도 → 사업화 지원</div>
+      <div style="font-size:12px;color:var(--text2);">규제 개선·제도 정비 사업이 기업·산업 육성 사업과 연계</div>
     </div>
   </div>
+  <div class="sim-controls">
+    <label>탐지 기준 점수</label>
+    <input type="range" id="vc-threshold" min="10" max="80" value="30" style="margin:0 8px;width:120px;"/>
+    <span id="vc-threshold-val" style="font-family:var(--mono);color:var(--accent3);">30%</span>
+    <button id="vc-btn" style="background:var(--accent3);border:none;color:#fff;border-radius:8px;padding:8px 20px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">⛓ 탐지 시작</button>
+    <span id="vc-stat" style="font-size:12px;color:var(--text2);"></span>
+  </div>
+  <div class="progress-bar" id="vc-progress-wrap" style="display:none;"><div class="progress-fill" id="vc-progress" style="width:0%"></div></div>
+  <div id="vc-results"></div>
+</div>
+
+<!-- ══ 네트워크 ══ -->
+<div class="tab-panel" id="tab-network">
+  <div class="stitle">🕸️ 사업 네트워크 시각화 <small>Force-directed layout · 유사 사업 간 관계 구조</small></div>
+  <div class="sim-controls">
+    <label>유사도 임계값</label>
+    <input type="range" id="net-threshold" min="30" max="90" value="55" style="margin:0 8px;width:120px;"/>
+    <span id="net-threshold-val" style="font-family:var(--mono);color:var(--accent);">55%</span>
+    <label style="margin-left:16px;">최대 노드</label>
+    <input type="range" id="net-maxnodes" min="10" max="60" value="30" style="margin:0 8px;width:100px;"/>
+    <span id="net-maxnodes-val" style="font-family:var(--mono);color:var(--accent);">30</span>
+    <button id="net-draw-btn" style="background:var(--accent);border:none;color:#fff;border-radius:8px;padding:8px 20px;cursor:pointer;font-family:var(--font);font-size:13px;font-weight:600;">그리기</button>
+    <span style="font-size:11px;color:var(--text3);">노드 크기 = 예산 규모 · 색상 = 부처 · 선 굵기 = 유사도</span>
+  </div>
+  <canvas id="network-canvas" style="width:100%;height:620px;background:var(--surface);border:1px solid var(--border);border-radius:14px;display:block;"></canvas>
+  <div id="net-legend" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;"></div>
 </div>
 
 <!-- ══ 클러스터 ══ -->
 <div class="tab-panel" id="tab-cluster">
-  <div class="sim-controls">
+  <div class="stitle">🗂️ DBSCAN형 클러스터링 <small>유사 사업 자동 군집화 · 부처 간 중복 클러스터 탐지</small></div>
     <label>클러스터 임계값</label>
     <input type="range" id="cluster-threshold" min="20" max="80" value="45" style="margin:0 8px;width:120px;"/>
     <span id="cluster-threshold-val" style="font-family:var(--mono);color:var(--accent);">45%</span>
@@ -517,6 +565,66 @@ tbody td{padding:11px 14px;font-size:13px;vertical-align:middle;}
   </div>
   <div class="stitle">📐 부처별 예산 점유율</div>
   <div id="hhi-detail"></div>
+</div>
+<!-- ══ 알고리즘 가이드 ══ -->
+<div class="tab-panel" id="tab-algoguide">
+  <div class="stitle">🧮 알고리즘 가이드 <small>유사도 계산 방법 및 분석 프로필 설명</small></div>
+  <div class="table-card" style="padding:24px;margin-bottom:18px;">
+    <h3 style="margin-bottom:16px;font-size:15px;">유사도 알고리즘 비교</h3>
+    <div class="table-wrap"><table>
+      <thead><tr><th>알고리즘</th><th>수식</th><th>특징</th><th>최적 용도</th></tr></thead>
+      <tbody>
+        <tr><td><b>Jaccard</b></td><td class="num">|A∩B| / |A∪B|</td><td>집합 기반, 단어 유무만 판단, 빠름</td><td>짧은 사업명 비교</td></tr>
+        <tr><td><b>Cosine</b></td><td class="num">A·B / (‖A‖×‖B‖)</td><td>벡터 각도, 단어 빈도 반영</td><td>설명문 비교</td></tr>
+        <tr><td><b>Dice</b></td><td class="num">2|A∩B| / (|A|+|B|)</td><td>작은 집합에 유리, Jaccard 변형</td><td>짧은 텍스트</td></tr>
+        <tr><td><b>Overlap</b></td><td class="num">|A∩B| / min(|A|,|B|)</td><td>부분집합 관계 탐지에 강함</td><td>포함 관계 탐지</td></tr>
+        <tr><td><b>TF-IDF Cosine</b></td><td class="num">tf × log(N/df) → cosine</td><td>희귀 단어에 높은 가중치 부여</td><td>의미적 키워드 검색</td></tr>
+        <tr><td><b style="color:var(--green);">BM25 ★</b></td><td class="num">IDF × tf(k₁+1) / (tf + k₁(1−b+b·dl/avgdl))</td><td>문서 길이 정규화 + 포화 처리. TF-IDF보다 정밀</td><td>정보검색, 긴 설명문 매칭</td></tr>
+        <tr><td><b>Hybrid</b></td><td class="num">0.5 × Jaccard + 0.5 × Cosine</td><td>집합·벡터 방식의 균형 조합</td><td>빠른 일반 탐색</td></tr>
+        <tr><td><b style="color:var(--accent3);">다차원 가중합 ★</b></td><td class="num">Σ(차원 × 프로필 가중치)</td><td>7차원 동시 분석, 프로필별 맞춤 조정 가능</td><td>정밀 중복 탐지</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+  <div class="chart-grid cols3">
+    <div class="chart-card">
+      <h3>다차원 가중합 — 기본 프로필 가중치</h3>
+      <div class="chart-wrap"><canvas id="c-algo-default"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>다차원 가중합 — R&D 특화 프로필</h3>
+      <div class="chart-wrap"><canvas id="c-algo-rnd"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <h3>다차원 가중합 — 복지 특화 프로필</h3>
+      <div class="chart-wrap"><canvas id="c-algo-welfare"></canvas></div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:4px;">
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="font-weight:700;color:var(--accent);margin-bottom:8px;">📘 기본 (Default)</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8;">텍스트 30% · BM25 15% · Jaccard 15% · 기능분야 20% · 예산 10% · 부처 5% · 법적근거 5%<br>모든 사업 유형에 균형 있게 적용 가능한 범용 프로필</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="font-weight:700;color:var(--green);margin-bottom:8px;">🔬 R&D 특화</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8;">BM25 20% · 예산규모 15% 강화<br>연구 목적·방법론·분야 유사성을 중시. 연구개발 사업 간 중복 탐지에 최적</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="font-weight:700;color:var(--accent2);margin-bottom:8px;">🏥 복지 특화</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8;">기능분류 25% 강화<br>수혜 대상·서비스 유형 유사성 중시. 사회복지·보건·고용 사업 분석에 적합</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="font-weight:700;color:var(--yellow);margin-bottom:8px;">🏗️ 인프라 특화</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8;">예산규모 20% 강화<br>사업 규모·유형 유사성 중시. SOC·교통·시설 사업 중복 분석에 적합</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="font-weight:700;color:var(--accent3);margin-bottom:8px;">💻 디지털 특화</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8;">텍스트 30% · BM25 20% · Jaccard 20% 강화<br>기술 키워드·시스템 명칭 유사성 중시. 정보화·AI·데이터 사업 분석에 최적</div>
+    </div>
+    <div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;">
+      <div style="font-weight:700;color:var(--orange);margin-bottom:8px;">🎓 인력양성 특화</div>
+      <div style="font-size:12px;color:var(--text2);line-height:1.8;">Jaccard 20% · 기능분야 20% 강화<br>교육 대상·방식·목표 유사성 중시. 훈련·교육·양성 사업 중복 탐지에 적합</div>
+    </div>
+  </div>
 </div>
 
 </main>
@@ -564,13 +672,15 @@ async function boot() {
     document.getElementById('hb-budget').textContent = fmt(t26 * 1e6) + '원';
 
     setupTabs();
-    setupSubTabs();
     renderOverview();
     renderMinistry();
     renderFunction();
     renderProjectList();
+    renderBudgetCompare();
     renderRisk();
     renderConcentration();
+    renderAlgoGuide();
+    setupInteractiveListeners();
   } catch (e) {
     document.getElementById('loading').innerHTML = `<div style="color:#ef4444;text-align:center;"><h2>데이터 로드 실패</h2><p style="margin-top:10px;color:#94a3b8;">${e}</p></div>`;
   }
@@ -590,17 +700,142 @@ function setupTabs() {
   });
 }
 
-function setupSubTabs() {
-  document.querySelectorAll('.sub-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const parent = btn.closest('.tab-panel');
-      parent.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
-      parent.querySelectorAll('.sub-panel').forEach(p => { p.style.display = 'none'; });
-      btn.classList.add('active');
-      const panel = document.getElementById(btn.dataset.stab);
-      if (panel) panel.style.display = 'block';
-    });
+// ═══════════════════════════════════════════
+//  INTERACTIVE LISTENERS (formerly sub-tabs + event bindings)
+// ═══════════════════════════════════════════
+function setupInteractiveListeners() {
+  // ── 키워드 검색 ──
+  document.getElementById('sim-search-btn').addEventListener('click', () => {
+    const q = document.getElementById('sim-query').value.trim();
+    const algo = document.getElementById('sim-algo').value;
+    const topN = parseInt(document.getElementById('sim-topn').value);
+    if (!q || !ENGINE) return;
+    const results = ENGINE.search(q, algo, topN);
+    const container = document.getElementById('sim-search-results');
+    if (results.length === 0) { container.innerHTML = '<p style="color:var(--text2);padding:20px;">결과 없음</p>'; return; }
+    container.innerHTML = results.map((r, rank) => {
+      const sc = (r.score * 100).toFixed(1);
+      const tt = { 'R&D': 'tag-rnd', '정보화': 'tag-it', '일반': 'tag-gen' };
+      return `<div class="pair-card" style="margin-bottom:10px;">
+        <div class="pair-score" style="background:rgba(59,130,246,.15);color:var(--accent);border:1px solid rgba(59,130,246,.3);">${sc}%</div>
+        <div style="font-size:11px;color:var(--text3);margin-bottom:4px;">#${rank + 1}</div>
+        <div class="pair-title">${r.project.project_name}</div>
+        <div class="pair-min">🏛️ ${r.project.ministry} · <span class="tag ${tt[r.project.project_type]||'tag-gen'}">${r.project.project_type}</span></div>
+        <div class="pair-detail">${r.project.description || '설명 없음'}</div>
+        <div style="margin-top:8px;font-size:11px;font-family:var(--mono);color:var(--text2);">2026 예산: ${fmtM(r.project.budget_2026)} 백만원</div>
+      </div>`;
+    }).join('');
   });
+  document.getElementById('sim-query').addEventListener('keydown', e => {
+    if (e.key === 'Enter') document.getElementById('sim-search-btn').click();
+  });
+
+  // ── 전수 스캔 ──
+  document.getElementById('scan-threshold').addEventListener('input', e => {
+    document.getElementById('scan-threshold-val').textContent = e.target.value + '%';
+  });
+  document.getElementById('scan-btn').addEventListener('click', async () => {
+    if (!ENGINE) return;
+    const btn = document.getElementById('scan-btn');
+    btn.disabled = true; btn.textContent = '분석 중...';
+    document.getElementById('scan-progress-wrap').style.display = 'block';
+    const profile = document.getElementById('scan-profile').value;
+    const pairs = await ENGINE.computeAllPairs(profile, p => {
+      document.getElementById('scan-progress').style.width = p + '%';
+    });
+    const threshold = parseInt(document.getElementById('scan-threshold').value) / 100;
+    const cross = document.getElementById('scan-cross').value;
+    const gradeFilter = parseInt(document.getElementById('scan-grade').value);
+    let filtered = pairs.filter(p => p.score >= threshold);
+    if (cross === 'cross') filtered = filtered.filter(p => p.crossMinistry);
+    if (cross === 'same') filtered = filtered.filter(p => !p.crossMinistry);
+    if (gradeFilter > 0) filtered = filtered.filter(p => p.grade === gradeFilter);
+    const crossPairs = pairs.filter(p => p.crossMinistry && p.score >= threshold);
+    const saving = crossPairs.reduce((s, p) => s + Math.min(p.a.budget_2026, p.b.budget_2026) * 0.15, 0);
+    document.getElementById('scan-kpi').innerHTML = `
+      <div class="kpi-grid" style="grid-template-columns:repeat(4,1fr);">
+        <div class="kpi-card yellow"><div class="kpi-label">전체 유사 쌍</div><div class="kpi-value">${pairs.filter(p=>p.score>=threshold).length}</div><div class="kpi-sub">임계값 ${(threshold*100).toFixed(0)}% 이상</div></div>
+        <div class="kpi-card red"><div class="kpi-label">부처 간 중복</div><div class="kpi-value">${crossPairs.length}</div><div class="kpi-sub">교차 부처 유사 쌍</div></div>
+        <div class="kpi-card blue"><div class="kpi-label">잠재 절감 예산</div><div class="kpi-value">${fmt(saving*1e6)}</div><div class="kpi-sub">추정 15% 통합 절감</div></div>
+        <div class="kpi-card purple"><div class="kpi-label">협업 가능 쌍</div><div class="kpi-value">${pairs.filter(p=>p.valueChain.score>0.3).length}</div><div class="kpi-sub">Value Chain 탐지</div></div>
+      </div>`;
+    document.getElementById('scan-results').innerHTML = filtered.slice(0, 30).map(p => {
+      const g = window.SimilarityEngine.gradeScore(p.score);
+      const tagClass = `tag-g${g.grade}`;
+      return `<div class="pair-card">
+        <div class="pair-score" style="background:rgba(59,130,246,.1);color:${g.color};border:1px solid ${g.color}40;">${(p.score*100).toFixed(0)}%</div>
+        <span class="tag ${tagClass}">${g.label}</span>
+        <div class="pair-title" style="margin-top:6px">${p.a.project_name}</div>
+        <div class="pair-min">🏛️ ${p.a.ministry}</div>
+        <div style="text-align:center;color:var(--text3);margin:4px 0">⬇</div>
+        <div class="pair-title">${p.b.project_name}</div>
+        <div class="pair-min">🏛️ ${p.b.ministry}</div>
+        <div class="pair-detail" style="margin-top:10px;">
+          <div class="score-bar"><label>TF-IDF</label><div class="score-bar-bg"><div class="score-bar-fill" style="width:${p.textScore*100}%"></div></div><span>${(p.textScore*100).toFixed(0)}%</span></div>
+          <div class="score-bar"><label>BM25</label><div class="score-bar-bg"><div class="score-bar-fill" style="width:${p.bm25Score*100}%;background:var(--green)"></div></div><span>${(p.bm25Score*100).toFixed(0)}%</span></div>
+          <div class="score-bar"><label>Jaccard</label><div class="score-bar-bg"><div class="score-bar-fill" style="width:${p.jaccScore*100}%;background:var(--accent2)"></div></div><span>${(p.jaccScore*100).toFixed(0)}%</span></div>
+          <div class="score-bar"><label>기능분야</label><div class="score-bar-bg"><div class="score-bar-fill" style="width:${p.funcScore*100}%;background:var(--accent3)"></div></div><span>${(p.funcScore*100).toFixed(0)}%</span></div>
+        </div>
+        ${p.valueChain.score > 0.3 ? `<div class="pair-vc">⛓ Value Chain: ${p.valueChain.pattern}</div>` : ''}
+        ${p.crossMinistry ? '<div style="margin-top:6px;font-size:11px;color:var(--yellow);">⚡ 부처 간 교차 사업</div>' : ''}
+      </div>`;
+    }).join('');
+    document.getElementById('scan-progress-wrap').style.display = 'none';
+    btn.disabled = false; btn.textContent = '🔬 분석 시작';
+  });
+
+  // ── Value Chain ──
+  document.getElementById('vc-threshold').addEventListener('input', e => {
+    document.getElementById('vc-threshold-val').textContent = e.target.value + '%';
+  });
+  document.getElementById('vc-btn').addEventListener('click', async () => {
+    if (!ENGINE) return;
+    const btn = document.getElementById('vc-btn');
+    btn.disabled = true; btn.textContent = '탐지 중...';
+    document.getElementById('vc-progress-wrap').style.display = 'block';
+    if (!ENGINE._pairs) {
+      await ENGINE.computeAllPairs('default', p => {
+        document.getElementById('vc-progress').style.width = p + '%';
+      });
+    }
+    const threshold = parseInt(document.getElementById('vc-threshold').value) / 100;
+    const vcPairs = ENGINE._pairs.filter(p => p.valueChain && p.valueChain.score >= threshold)
+      .sort((a, b) => b.valueChain.score - a.valueChain.score);
+    document.getElementById('vc-stat').textContent = `${vcPairs.length}개 협업 연계 탐지`;
+    document.getElementById('vc-results').innerHTML = vcPairs.slice(0, 24).map(p => {
+      const score = (p.valueChain.score * 100).toFixed(0);
+      return `<div class="pair-card" style="margin-bottom:10px;">
+        <div class="pair-score" style="background:rgba(139,92,246,.15);color:var(--accent3);border:1px solid rgba(139,92,246,.3);">${score}%</div>
+        <div class="pair-vc" style="margin-bottom:8px;">⛓ ${p.valueChain.pattern}</div>
+        <div class="pair-title">${p.a.project_name}</div>
+        <div class="pair-min">🏛️ ${p.a.ministry} · <span style="color:var(--accent)">${p.a.project_type}</span></div>
+        <div style="text-align:center;color:var(--text3);margin:4px 0;font-size:18px;">↓</div>
+        <div class="pair-title">${p.b.project_name}</div>
+        <div class="pair-min">🏛️ ${p.b.ministry} · <span style="color:var(--accent2)">${p.b.project_type}</span></div>
+        ${p.crossMinistry ? '<div style="margin-top:6px;font-size:11px;color:var(--yellow);">⚡ 부처 간 협업 기회</div>' : ''}
+      </div>`;
+    }).join('');
+    document.getElementById('vc-progress-wrap').style.display = 'none';
+    btn.disabled = false; btn.textContent = '⛓ 탐지 시작';
+  });
+
+  // ── 네트워크 ──
+  document.getElementById('net-threshold').addEventListener('input', e => {
+    document.getElementById('net-threshold-val').textContent = e.target.value + '%';
+  });
+  document.getElementById('net-maxnodes').addEventListener('input', e => {
+    document.getElementById('net-maxnodes-val').textContent = e.target.value;
+  });
+  document.getElementById('net-draw-btn').addEventListener('click', drawNetwork);
+
+  // ── 클러스터 ──
+  document.getElementById('cluster-threshold').addEventListener('input', e => {
+    document.getElementById('cluster-threshold-val').textContent = e.target.value + '%';
+  });
+  document.getElementById('cluster-btn').addEventListener('click', runClustering);
+
+  // ── 예산비교 필터 ──
+  document.getElementById('bc-filter').addEventListener('change', renderBudgetCompare);
 }
 
 // ═══════════════════════════════════════════
@@ -898,6 +1133,62 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.getElementById('cluster-btn').addEventListener('click', runClustering);
 });
+
+// ═══════════════════════════════════════════
+//  BUDGET COMPARE
+// ═══════════════════════════════════════════
+function renderBudgetCompare() {
+  const filter = document.getElementById('bc-filter')?.value || 'all';
+  const withReq = ALL.filter(p => p.budget_requested > 0);
+  const cut = withReq.filter(p => p.budget_2026 < p.budget_requested);
+  const inc = withReq.filter(p => p.budget_2026 >= p.budget_requested);
+  const maxCut = cut.length > 0 ? Math.max(...cut.map(p => (p.budget_requested - p.budget_2026) / p.budget_requested * 100)) : 0;
+  document.getElementById('bc-count').textContent = withReq.length;
+  document.getElementById('bc-cut').textContent = cut.length;
+  document.getElementById('bc-inc').textContent = inc.length;
+  document.getElementById('bc-maxcut').textContent = maxCut.toFixed(1) + '%';
+
+  const top20 = [...withReq].sort((a, b) => b.budget_2026 - a.budget_2026).slice(0, 20);
+  mkChart('c-bc-compare', { type: 'bar', data: { labels: top20.map(p => p.project_name.slice(0, 12)), datasets: [{ label: '요구액', data: top20.map(p => p.budget_requested), backgroundColor: 'rgba(139,92,246,.5)', borderRadius: 2 }, { label: '편성액', data: top20.map(p => p.budget_2026), backgroundColor: '#3b82f6', borderRadius: 2 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { font: { size: 11 } } } }, scales: { x: { grid: { color: '#1a2d47' }, ticks: { callback: v => fmt(v * 1e6) } }, y: { grid: { display: false }, ticks: { font: { size: 10 } } } } } });
+
+  const cutRates = [...cut].map(p => ({ p, rate: (p.budget_requested - p.budget_2026) / p.budget_requested * 100 })).sort((a, b) => b.rate - a.rate).slice(0, 15);
+  mkChart('c-bc-cutrate', { type: 'bar', data: { labels: cutRates.map(x => x.p.project_name.slice(0, 13)), datasets: [{ data: cutRates.map(x => x.rate.toFixed(1)), backgroundColor: 'rgba(239,68,68,.7)', borderRadius: 4 }] }, options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { color: '#1a2d47' }, ticks: { callback: v => v + '%' } }, y: { grid: { display: false }, ticks: { font: { size: 10 } } } } } });
+
+  let list = withReq;
+  if (filter === 'cut') list = cut;
+  if (filter === 'inc') list = inc;
+  list = list.sort((a, b) => Math.abs(b.budget_requested - b.budget_2026) - Math.abs(a.budget_requested - a.budget_2026));
+  document.getElementById('bc-tbody').innerHTML = list.map(p => {
+    const diff = p.budget_2026 - p.budget_requested;
+    const cr = ((diff / p.budget_requested) * 100).toFixed(1);
+    return `<tr>
+      <td style="white-space:nowrap">${p.ministry}</td>
+      <td>${p.project_name}</td>
+      <td><span class="tag ${{ 'R&D': 'tag-rnd', '정보화': 'tag-it', '일반': 'tag-gen' }[p.project_type]}">${p.project_type}</span></td>
+      <td class="num">${fmtM(p.budget_requested)}</td>
+      <td class="num"><b>${fmtM(p.budget_2026)}</b></td>
+      <td class="num ${diff >= 0 ? 'up' : 'down'}">${sign(diff)}</td>
+      <td class="${diff >= 0 ? 'up' : 'down'}">${cr}%</td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════════
+//  ALGO GUIDE
+// ═══════════════════════════════════════════
+function renderAlgoGuide() {
+  const dims = ['TF-IDF', 'BM25', 'Jaccard', '기능분야', '예산규모', '부처', '법적근거'];
+  const profiles = {
+    'default':  [0.30, 0.15, 0.15, 0.20, 0.10, 0.05, 0.05],
+    'rnd':      [0.25, 0.20, 0.15, 0.15, 0.15, 0.05, 0.05],
+    'welfare':  [0.25, 0.10, 0.15, 0.25, 0.15, 0.05, 0.05],
+  };
+  const colors = ['#3b82f6','#10b981','#06b6d4','#8b5cf6','#f59e0b','#ec4899','#f97316'];
+  Object.entries(profiles).forEach(([key, weights]) => {
+    const idMap = { default: 'c-algo-default', rnd: 'c-algo-rnd', welfare: 'c-algo-welfare' };
+    mkChart(idMap[key], { type: 'radar', data: { labels: dims, datasets: [{ data: weights.map(w => w * 100), backgroundColor: 'rgba(59,130,246,.15)', borderColor: '#3b82f6', borderWidth: 2, pointBackgroundColor: colors }] }, options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { r: { min: 0, max: 35, grid: { color: '#1a2d47' }, ticks: { callback: v => v + '%', font: { size: 9 } }, pointLabels: { font: { size: 11 } } } } } });
+  });
+}
 
 // ═══════════════════════════════════════════
 //  NETWORK VISUALIZATION
