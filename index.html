@@ -239,13 +239,35 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
 .ins-panel.active{display:block;}
 .ins-note{font-size:12px;color:var(--text2);line-height:1.7;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px;}
 /* ── Responsive ── */
+@media(max-width:1024px){
+  .header-inner{gap:12px;}
+  .header-badges{margin-left:0;order:3;width:100%;}
+  .header-actions{order:2;width:100%;flex-wrap:wrap;}
+  .header-actions .btn{flex:1 1 180px;justify-content:center;}
+}
 @media(max-width:768px){
-  main{padding:12px 14px;}header{padding:12px 14px;}nav{top:66px;}
-  .chart-grid{grid-template-columns:1fr;}
+  main{padding:12px 14px;}header{padding:12px 14px;}nav{top:66px;padding:0 14px;}
+  .logo{align-items:flex-start;}
+  .logo-text h1{font-size:14px;}
+  .logo-text p{font-size:10px;line-height:1.4;}
+  .disclaimer{width:100%;}
+  .chart-grid,.chart-grid.cols3{grid-template-columns:1fr;}
   .kpi-grid{grid-template-columns:repeat(2,1fr);}
   .nav-inner{gap:4px;padding:6px 0;}
   .tab-btn{font-size:11px;padding:8px 10px;}
   .nav-group-label,.nav-divider{display:none;}
+  .stitle small{display:block;margin-top:4px;line-height:1.5;}
+  .ctrl-bar{gap:8px;align-items:stretch;}
+  .ctrl-bar label{min-width:72px;}
+  .search-box{width:100%!important;}
+  .ins-subtabs{gap:6px;padding-bottom:8px;}
+  .ins-sub-btn{font-size:11px;padding:7px 11px;}
+  .table-wrap table{min-width:680px;}
+}
+@media(max-width:520px){
+  .kpi-grid{grid-template-columns:1fr;}
+  .header-actions .btn{flex:1 1 100%;}
+  .tab-btn{font-size:10.5px;padding:8px 9px;}
 }
 
 </style>
@@ -615,9 +637,10 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
 
   <div class="ins-panel active" id="ins-panel-flow">
     <div class="ins-note" style="margin-bottom:14px;">예산 흐름 분석은 단순 증감이 아니라 <b>부처 간 예산 이동, 사업유형별 무게중심 변화, 협업·연계 가능성</b>을 함께 보는 용도입니다. 특히 전년도 대비 예산이 커졌지만 유사사업이 함께 늘어난 경우는 <b>분산 투자</b> 또는 <b>중복 편성</b> 가능성을 동시에 점검할 필요가 있습니다.</div>
-    <div class="chart-grid">
+    <div class="chart-grid cols3">
       <div class="chart-card"><h3>2025 vs 2026 부처별 예산 흐름 Top 12</h3><div class="chart-wrap tall"><canvas id="c-ins-flow-ministry"></canvas></div></div>
       <div class="chart-card"><h3>사업 유형별 예산 흐름</h3><div class="chart-wrap"><canvas id="c-ins-flow-type"></canvas></div></div>
+      <div class="chart-card"><h3>부처별 순증감 규모</h3><div class="chart-wrap"><canvas id="c-ins-flow-delta"></canvas></div></div>
     </div>
     <div class="table-card">
       <div class="table-toolbar"><span style="font-weight:600;font-size:13px;">부처 간 협업/연계 후보</span></div>
@@ -628,9 +651,10 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   <div class="ins-panel" id="ins-panel-anomaly">
     <div class="ins-note" style="margin-bottom:14px;">이상치 탐지는 <b>신규 편성, 급증, 급감</b> 사업을 선별해 정책적 설명 필요성이 높은 사업을 먼저 보는 화면입니다. 여기서 잡히는 사업은 곧바로 문제라는 뜻은 아니지만, <b>타당성 설명·집행계획·성과근거</b>가 필요한 후보로 해석하는 것이 좋습니다.</div>
     <div class="kpi-grid" id="ins-anomaly-kpis"></div>
-    <div class="chart-grid">
+    <div class="chart-grid cols3">
       <div class="chart-card"><h3>이상치 사업 증감률 Top 20</h3><div class="chart-wrap tall"><canvas id="c-ins-anomaly-rate"></canvas></div></div>
       <div class="chart-card"><h3>이상치 사업 예산 규모</h3><div class="chart-wrap tall"><canvas id="c-ins-anomaly-budget"></canvas></div></div>
+      <div class="chart-card"><h3>이상치 부처 분포</h3><div class="chart-wrap"><canvas id="c-ins-anomaly-ministry"></canvas></div></div>
     </div>
     <div class="table-card"><div class="table-toolbar"><span style="font-weight:600;font-size:13px;">이상치 사업 목록</span></div><div class="table-wrap"><table><thead><tr><th>부처</th><th>사업명</th><th>2025</th><th>2026</th><th>증감률</th><th>분류</th></tr></thead><tbody id="ins-anomaly-tbody"></tbody></table></div></div>
   </div>
@@ -638,9 +662,10 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   <div class="ins-panel" id="ins-panel-concentration">
     <div class="ins-note" style="margin-bottom:14px;">집중도 분석은 특정 부처나 기능으로 예산이 과도하게 몰리는지 살펴보는 용도입니다. HHI는 독과점 분석에 쓰는 개념을 응용한 것으로, 값이 높을수록 <b>예산 포트폴리오가 소수 영역에 편중</b>돼 있다는 신호로 볼 수 있습니다.</div>
     <div class="kpi-grid" id="ins-conc-kpis"></div>
-    <div class="chart-grid">
+    <div class="chart-grid cols3">
       <div class="chart-card"><h3>부처별 점유율 Top 10</h3><div class="chart-wrap"><canvas id="c-ins-conc-min"></canvas></div></div>
       <div class="chart-card"><h3>기능별 점유율 Top 10</h3><div class="chart-wrap"><canvas id="c-ins-conc-func"></canvas></div></div>
+      <div class="chart-card"><h3>누적 점유율 곡선</h3><div class="chart-wrap"><canvas id="c-ins-conc-cum"></canvas></div></div>
     </div>
     <div class="ins-note" id="ins-conc-note"></div>
   </div>
@@ -648,9 +673,10 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   <div class="ins-panel" id="ins-panel-waste">
     <div class="ins-note" style="margin-bottom:14px;">낭비 리스크는 단일 지표가 아니라 <b>급격한 예산 변동, 요구액 대비 삭감, 내역사업 편중, 유사사업 다수 존재</b> 같은 신호를 합산한 참고용 점수입니다. 따라서 이 탭은 감사 판단이 아니라 <b>우선 점검 순서</b>를 잡는 데 적합합니다.</div>
     <div class="kpi-grid" id="ins-waste-kpis"></div>
-    <div class="chart-grid">
+    <div class="chart-grid cols3">
       <div class="chart-card"><h3>낭비 리스크 상위 사업</h3><div class="chart-wrap tall"><canvas id="c-ins-waste-score"></canvas></div></div>
       <div class="chart-card"><h3>요구액 대비 삭감률 상위 사업</h3><div class="chart-wrap tall"><canvas id="c-ins-waste-cut"></canvas></div></div>
+      <div class="chart-card"><h3>리스크 사유 구성</h3><div class="chart-wrap"><canvas id="c-ins-waste-reasons"></canvas></div></div>
     </div>
     <div class="table-card"><div class="table-toolbar"><span style="font-weight:600;font-size:13px;">리스크 사업 근거</span></div><div class="table-wrap"><table><thead><tr><th>사업명</th><th>점수</th><th>주요 사유</th></tr></thead><tbody id="ins-waste-tbody"></tbody></table></div></div>
   </div>
@@ -1898,13 +1924,20 @@ async function renderInsight() {
 }
 
 function renderInsightFlow() {
-  const byMin = Object.entries(groupBy(ALL,'ministry')).map(([m,ps]) => ({ m, b25: ps.reduce((s,p)=>s+p.budget_2025,0), b26: ps.reduce((s,p)=>s+p.budget_2026,0) })).sort((a,b)=>b.b26-a.b26).slice(0,12);
+  const byMin = Object.entries(groupBy(ALL,'ministry')).map(([m,ps]) => ({
+    m,
+    b25: ps.reduce((s,p)=>s+p.budget_2025,0),
+    b26: ps.reduce((s,p)=>s+p.budget_2026,0),
+  })).map(x=>({ ...x, delta: x.b26 - x.b25, rate: x.b25 ? ((x.b26-x.b25)/x.b25*100) : 100 }))
+    .sort((a,b)=>b.b26-a.b26).slice(0,12);
   mkChart('c-ins-flow-ministry', { type:'bar', data:{ labels: byMin.map(x=>x.m), datasets:[
     { label:'2025', data: byMin.map(x=>x.b25), backgroundColor:'rgba(71,85,105,.6)' },
     { label:'2026', data: byMin.map(x=>x.b26), backgroundColor:'#3b82f6' },
   ]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ y:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, x:{ grid:{ display:false }, ticks:{ font:{ size:10 }, maxRotation:45 } } } } });
   const types = ['R&D','정보화','일반'];
-  mkChart('c-ins-flow-type', { type:'line', data:{ labels:['2025','2026'], datasets: types.map((t,i)=>({ label:t, data:[ALL.filter(p=>p.project_type===t).reduce((s,p)=>s+p.budget_2025,0), ALL.filter(p=>p.project_type===t).reduce((s,p)=>s+p.budget_2026,0)], borderColor:['#3b82f6','#06b6d4','#8b5cf6'][i], backgroundColor:['#3b82f6','#06b6d4','#8b5cf6'][i]+'22', tension:.25 })) }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ y:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, x:{ grid:{ display:false } } } } });
+  mkChart('c-ins-flow-type', { type:'line', data:{ labels:['2025','2026'], datasets: types.map((t,i)=>({ label:t, data:[ALL.filter(p=>p.project_type===t).reduce((s,p)=>s+p.budget_2025,0), ALL.filter(p=>p.project_type===t).reduce((s,p)=>s+p.budget_2026,0)], borderColor:['#3b82f6','#06b6d4','#8b5cf6'][i], backgroundColor:['#3b82f6','#06b6d4','#8b5cf6'][i]+'22', tension:.25, fill:false })) }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ y:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, x:{ grid:{ display:false } } } } });
+  const deltaTop = [...byMin].sort((a,b)=>Math.abs(b.delta)-Math.abs(a.delta)).slice(0,10).reverse();
+  mkChart('c-ins-flow-delta', { type:'bar', data:{ labels: deltaTop.map(x=>x.m), datasets:[{ label:'순증감', data: deltaTop.map(x=>x.delta), backgroundColor: deltaTop.map(x=>x.delta>=0?'rgba(16,185,129,.85)':'rgba(239,68,68,.85)'), borderRadius:4 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false }, tooltip:{ callbacks:{ label:(ctx)=> `${ctx.raw>=0?'+':''}${fmt(ctx.raw)}` } } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
   const flowPairs = ENGINE._pairs.filter(p=>p.crossMinistry && (p.score >= 0.65 || p.valueChain?.score >= 0.45)).sort((a,b)=>(b.valueChain?.score||b.score)-(a.valueChain?.score||a.score)).slice(0,20);
   document.getElementById('ins-flow-tbody').innerHTML = flowPairs.map(p=>`<tr><td class="num">${(p.score*100).toFixed(1)}%</td><td>${p.a.project_name}</td><td>${p.b.project_name}</td><td>${p.crossMinistry?'Y':'N'}</td><td>${p.valueChain?.pattern || '—'}</td></tr>`).join('') || '<tr><td colspan="5" style="padding:18px;color:var(--text2);">해당 조건의 협업/연계 후보가 없습니다.</td></tr>';
 }
@@ -1919,6 +1952,8 @@ function renderInsightAnomaly() {
   ].map(k=>`<div class="kpi-card yellow"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-sub">${k.sub}</div></div>`).join('');
   mkChart('c-ins-anomaly-rate', { type:'bar', data:{ labels: anomalies.slice(0,20).map(p=>p.project_name.slice(0,12)), datasets:[{ data: anomalies.slice(0,20).map(p=>p.is_new ? 100 : p.change_rate), backgroundColor: anomalies.slice(0,20).map(p=>p.is_new?'rgba(59,130,246,.8)':p.change_rate>=0?'rgba(16,185,129,.8)':'rgba(239,68,68,.8)'), borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
   mkChart('c-ins-anomaly-budget', { type:'bar', data:{ labels: anomalies.slice(0,20).map(p=>p.project_name.slice(0,12)), datasets:[{ data: anomalies.slice(0,20).map(p=>p.budget_2026), backgroundColor:'#f59e0b', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  const anomalyByMin = Object.entries(groupBy(anomalies, 'ministry')).map(([k,v])=>({ k, n:v.length })).sort((a,b)=>b.n-a.n).slice(0,8);
+  mkChart('c-ins-anomaly-ministry', { type:'doughnut', data:{ labels: anomalyByMin.map(x=>x.k), datasets:[{ data: anomalyByMin.map(x=>x.n), backgroundColor:['#3b82f6','#06b6d4','#8b5cf6','#10b981','#f59e0b','#ef4444','#f97316','#14b8a6'] }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, font:{ size:10 } } } } } });
   document.getElementById('ins-anomaly-tbody').innerHTML = anomalies.slice(0,30).map(p=>`<tr><td>${p.ministry}</td><td>${p.project_name}</td><td class="num">${fmtM(p.budget_2025)}</td><td class="num"><b>${fmtM(p.budget_2026)}</b></td><td class="${p.is_new || p.change_rate>=0?'up':'down'}">${p.is_new?'신규':pct(p.change_rate)}</td><td>${p.is_new?'신규':Math.abs(p.change_rate)>=80?'극단 변동':'고변동'}</td></tr>`).join('');
 }
 
@@ -1934,8 +1969,10 @@ function renderInsightConcentration() {
     { label:'상위 3개 부처 점유율', value:top3.toFixed(1)+'%', sub:'예산 기준' },
     { label:'주요 기능 수', value:topFunc.length+'개', sub:'상위 10 기능 기준' },
   ].map(k=>`<div class="kpi-card blue"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-sub">${k.sub}</div></div>`).join('');
-  mkChart('c-ins-conc-min', { type:'bar', data:{ labels:topMin.map(x=>x[0]), datasets:[{ data:topMin.map(x=>(x[1]/hhiMin.total*100).toFixed(1)), backgroundColor:'#3b82f6', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
-  mkChart('c-ins-conc-func', { type:'bar', data:{ labels:topFunc.map(x=>x[0]), datasets:[{ data:topFunc.map(x=>(x[1]/hhiFunc.total*100).toFixed(1)), backgroundColor:'#06b6d4', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  mkChart('c-ins-conc-min', { type:'bar', data:{ labels:topMin.map(x=>x[0]), datasets:[{ data:topMin.map(x=>+(x[1]/hhiMin.total*100).toFixed(1)), backgroundColor:'#3b82f6', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  mkChart('c-ins-conc-func', { type:'bar', data:{ labels:topFunc.map(x=>x[0]), datasets:[{ data:topFunc.map(x=>+(x[1]/hhiFunc.total*100).toFixed(1)), backgroundColor:'#06b6d4', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  const cum = topMin.reduce((acc,[k,v],i)=>{ const prev = i ? acc[i-1].y : 0; acc.push({ x:k, y:+((prev + v/hhiMin.total*100).toFixed(1)) }); return acc; }, []);
+  mkChart('c-ins-conc-cum', { type:'line', data:{ labels:cum.map(x=>x.x), datasets:[{ label:'누적 점유율', data:cum.map(x=>x.y), borderColor:'#8b5cf6', backgroundColor:'rgba(139,92,246,.18)', tension:.25, fill:true, pointRadius:3 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ min:0, max:100, grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, x:{ grid:{ display:false }, ticks:{ font:{ size:10 }, maxRotation:45 } } } } });
   document.getElementById('ins-conc-note').textContent = `현재 예산은 부처 기준 HHI ${hhiMin.hhi}, 기능 기준 HHI ${hhiFunc.hhi} 수준입니다. 상위 3개 부처가 전체 예산의 ${top3.toFixed(1)}%를 차지하고 있어, 특정 부처 편중 여부를 정책적으로 점검할 수 있습니다.`;
 }
 
@@ -1949,12 +1986,15 @@ function renderInsightWaste() {
     { label:'고유사 고위험 중복', value: ENGINE._pairs.filter(p=>p.score>=0.7).length+'쌍', sub:'유사·중복 후보' },
   ].map(k=>`<div class="kpi-card red"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-sub">${k.sub}</div></div>`).join('');
   mkChart('c-ins-waste-score', { type:'bar', data:{ labels: risks.slice(0,20).map(r=>r.project.project_name.slice(0,12)), datasets:[{ data: risks.slice(0,20).map(r=>r.score), backgroundColor:'#ef4444', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
-  mkChart('c-ins-waste-cut', { type:'bar', data:{ labels: withReq.map(x=>x.p.project_name.slice(0,12)), datasets:[{ data: withReq.map(x=>x.cut.toFixed(1)), backgroundColor:'#f59e0b', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  mkChart('c-ins-waste-cut', { type:'bar', data:{ labels: withReq.map(x=>x.p.project_name.slice(0,12)), datasets:[{ data: withReq.map(x=>+x.cut.toFixed(1)), backgroundColor:'#f59e0b', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>v+'%' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  const reasonCounts = {};
+  risks.slice(0,25).forEach(r => r.reasons.forEach(reason => { reasonCounts[reason] = (reasonCounts[reason] || 0) + 1; }));
+  const reasonTop = Object.entries(reasonCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  mkChart('c-ins-waste-reasons', { type:'doughnut', data:{ labels:reasonTop.map(x=>x[0]), datasets:[{ data:reasonTop.map(x=>x[1]), backgroundColor:['#ef4444','#f59e0b','#f97316','#fb7185','#8b5cf6','#06b6d4'] }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ boxWidth:10, font:{ size:10 } } } } } });
   document.getElementById('ins-waste-tbody').innerHTML = risks.slice(0,25).map(r=>`<tr><td>${r.project.project_name}</td><td class="num">${r.score}</td><td>${r.reasons.join(' · ')}</td></tr>`).join('');
 }
 
 function renderInsightInquiry() {
-  const risks = ENGINE.getWasteRisks();
   const dups = ENGINE._pairs.filter(p=>p.score>=0.7).slice(0,6);
   const anomalies = ALL.filter(p=>p.is_new || Math.abs(p.change_rate)>=50).slice(0,6);
   const lines = [
@@ -1970,9 +2010,9 @@ function renderInsightInquiry() {
     '예상 질의 4) 요구액 대비 큰 폭 삭감된 사업은 집행 가능성이 낮은 것 아닌가?',
     '- 근거: 요구액 대비 큰 폭 삭감 사업은 사업 범위 조정 또는 집행 가능성 점검 필요',
   ];
-  __KEEP__
+  document.getElementById('ins-inquiry-brief').textContent = lines.join('\n');
   const rows = [];
-  dups.forEach(p=>rows.push({ q:'유사·중복 사업 정비 필요성', project:`${p.a.project_name} ↔ ${p.b.project_name}`, note:`유사도 ${(p.score*100).toFixed(1)}%, ${p.crossMinistry?'부처 간':''} 중복/협업 후보` }));
+  dups.forEach(p=>rows.push({ q:'유사·중복 사업 정비 필요성', project:`${p.a.project_name} ↔ ${p.b.project_name}`, note:`유사도 ${(p.score*100).toFixed(1)}%, ${p.crossMinistry?'부처 간 ':''}중복/협업 후보` }));
   anomalies.forEach(p=>rows.push({ q:'급격한 증감·신규 편성 타당성', project:p.project_name, note:p.is_new?'신규 편성 사업':'증감률 ' + pct(p.change_rate) }));
   rows.push({ q:'예산 집중도 점검', project:'부처·기능별 예산 구성', note:`부처 HHI ${ENGINE.getHHI('ministry').hhi}, 기능 HHI ${ENGINE.getHHI('function').hhi}` });
   document.getElementById('ins-inquiry-tbody').innerHTML = rows.map(r=>`<tr><td>${r.q}</td><td>${r.project}</td><td>${r.note}</td></tr>`).join('');
