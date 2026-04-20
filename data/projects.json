@@ -1155,7 +1155,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 1단계",
-      "project_name": "AI 데이터 플랫폼 실증 1단계",
+      "project_name": "행정데이터 AI 활용 기반 조성",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -1166,7 +1166,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 AI 분석",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 플랫폼 AI 분석",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1189,7 +1189,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 2단계",
-      "project_name": "AI 데이터 플랫폼 확산 시범",
+      "project_name": "산업데이터 통합·활용 플랫폼 고도화 지자체 협업",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 65148,
@@ -1200,7 +1200,7 @@
       "change_rate": 2.9,
       "account_type": "일반회계",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 공공데이터 분석 정제",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 공공데이터 분석 정제",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1223,7 +1223,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 고도화",
-      "project_name": "AI 데이터 플랫폼 확산 전환",
+      "project_name": "산업데이터 통합·활용 플랫폼 고도화 지자체 협업",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 43299,
@@ -1234,7 +1234,7 @@
       "change_rate": 24.62,
       "account_type": "특별회계",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 정제 분석 플랫폼",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 정제 분석 플랫폼",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1257,7 +1257,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 1단계",
-      "project_name": "AI 데이터 플랫폼 연계 통합",
+      "project_name": "공공데이터 기반 AI 분석 플랫폼 구축",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 26397,
@@ -1268,7 +1268,7 @@
       "change_rate": -1.94,
       "account_type": "특별회계",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 공공데이터 분석 정제",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 공공데이터 분석 정제",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1291,7 +1291,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 시범",
-      "project_name": "AI 데이터 플랫폼 구축 전환",
+      "project_name": "행정데이터 AI 활용 기반 조성",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 76599,
@@ -1302,7 +1302,7 @@
       "change_rate": 4.24,
       "account_type": "기금",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 정제 공공데이터",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 플랫폼 정제 공공데이터",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1325,7 +1325,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 1단계",
-      "project_name": "AI 데이터 플랫폼 운영 2단계",
+      "project_name": "행정데이터 AI 활용 기반 조성 전국 확산",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 67276,
@@ -1336,7 +1336,7 @@
       "change_rate": 8.89,
       "account_type": "일반회계",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 AI 분석 정제",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 AI 분석 정제",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1359,7 +1359,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 통합",
-      "project_name": "AI 데이터 플랫폼 운영 1단계",
+      "project_name": "행정데이터 AI 활용 기반 조성",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 31564,
@@ -1370,7 +1370,7 @@
       "change_rate": 25.45,
       "account_type": "일반회계",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 공공데이터 분석",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 플랫폼 공공데이터 분석",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1393,7 +1393,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 전환",
-      "project_name": "AI 데이터 플랫폼 운영 2단계",
+      "project_name": "산업데이터 통합·활용 플랫폼 고도화 중앙부처 연계",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -1404,7 +1404,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 정제 AI 분석",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 정제 AI 분석",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1427,7 +1427,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 전환",
-      "project_name": "AI 데이터 플랫폼 구축 통합",
+      "project_name": "행정데이터 AI 활용 기반 조성 서비스 연계",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 18160,
@@ -1438,7 +1438,7 @@
       "change_rate": 2.56,
       "account_type": "일반회계",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 분석 정제",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 플랫폼 분석 정제",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1461,7 +1461,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI·데이터 통합",
-      "project_name": "AI 데이터 플랫폼 지원 1단계",
+      "project_name": "행정데이터 AI 활용 기반 조성 지자체 협업",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 56142,
@@ -1472,7 +1472,7 @@
       "change_rate": 25.47,
       "account_type": "기금",
       "legal_basis": "인공지능기본법",
-      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 분석 공공데이터",
+      "description": "공공·산업 데이터의 수집·정제·연계를 통해 AI 분석 및 서비스 활용 기반을 조성하는 사업 플랫폼 분석 공공데이터",
       "sub_projects": [
         {
           "name": "데이터 수집 정제",
@@ -1495,7 +1495,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 2단계",
-      "project_name": "디지털 행정 서비스 고도화 개선 시범",
+      "project_name": "지능형 민원서비스 개선 중앙부처 연계",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -1506,7 +1506,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 서비스 민원 행정",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 서비스 민원 행정",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1529,7 +1529,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 2단계",
-      "project_name": "디지털 행정 서비스 고도화 지원 2단계",
+      "project_name": "공공서비스 사용자경험 혁신 서비스 연계",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 51535,
@@ -1540,7 +1540,7 @@
       "change_rate": 1.11,
       "account_type": "특별회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 자동화 서비스 민원",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 자동화 서비스 민원",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1563,7 +1563,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 2단계",
-      "project_name": "디지털 행정 서비스 고도화 지원 시범",
+      "project_name": "디지털 행정서비스 통합 고도화 실증 기반",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 56789,
@@ -1574,7 +1574,7 @@
       "change_rate": 27.73,
       "account_type": "특별회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 자동화 행정 통합",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 자동화 행정 통합",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1597,7 +1597,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 1단계",
-      "project_name": "디지털 행정 서비스 고도화 확산 시범",
+      "project_name": "지능형 민원서비스 개선 중앙부처 연계",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 72152,
@@ -1608,7 +1608,7 @@
       "change_rate": 19.47,
       "account_type": "특별회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 행정 자동화 민원",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 행정 자동화 민원",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1631,7 +1631,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 시범",
-      "project_name": "디지털 행정 서비스 고도화 확산 1단계",
+      "project_name": "공공서비스 사용자경험 혁신",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 23965,
@@ -1642,7 +1642,7 @@
       "change_rate": 21.09,
       "account_type": "기금",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 자동화 통합 민원",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 자동화 통합 민원",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1665,7 +1665,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 시범",
-      "project_name": "디지털 행정 서비스 고도화 운영 시범",
+      "project_name": "지능형 민원서비스 개선",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 47465,
@@ -1676,7 +1676,7 @@
       "change_rate": 23.37,
       "account_type": "일반회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 통합 민원 행정",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 통합 민원 행정",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1699,7 +1699,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 고도화",
-      "project_name": "디지털 행정 서비스 고도화 운영 1단계",
+      "project_name": "공공서비스 사용자경험 혁신",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 48076,
@@ -1710,7 +1710,7 @@
       "change_rate": 16.92,
       "account_type": "특별회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 통합 자동화 행정",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 통합 자동화 행정",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1733,7 +1733,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 전환",
-      "project_name": "디지털 행정 서비스 고도화 개선 통합",
+      "project_name": "공공서비스 사용자경험 혁신 전국 확산",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -1744,7 +1744,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 행정 자동화 통합",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 행정 자동화 통합",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1767,7 +1767,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 시범",
-      "project_name": "디지털 행정 서비스 고도화 연계 2단계",
+      "project_name": "디지털 행정서비스 통합 고도화",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 38834,
@@ -1778,7 +1778,7 @@
       "change_rate": 23.01,
       "account_type": "일반회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 행정 자동화 서비스",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 행정 자동화 서비스",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1801,7 +1801,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "디지털정부 통합",
-      "project_name": "디지털 행정 서비스 고도화 지원 1단계",
+      "project_name": "공공서비스 사용자경험 혁신 시범 운영",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 81745,
@@ -1812,7 +1812,7 @@
       "change_rate": 15.61,
       "account_type": "일반회계",
       "legal_basis": "전자정부법",
-      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 통합 서비스 자동화",
+      "description": "행정서비스 통합 제공과 민원 처리 효율화를 위해 공공시스템 연계, 업무자동화, 사용자 편의 개선을 추진하는 사업 통합 서비스 자동화",
       "sub_projects": [
         {
           "name": "민원서비스 고도화",
@@ -1835,7 +1835,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 2단계",
-      "project_name": "사이버보안 취약점 대응체계 개선 전환",
+      "project_name": "공공부문 정보보호 수준진단 및 개선 시범 운영",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -1846,7 +1846,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 대응 보안 패치",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 대응 보안 패치",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -1869,7 +1869,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 시범",
-      "project_name": "사이버보안 취약점 대응체계 지원 전환",
+      "project_name": "보안패치 및 침해대응 관리체계 강화",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 53216,
@@ -1880,7 +1880,7 @@
       "change_rate": -5.04,
       "account_type": "기금",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 보안 침해사고 취약점",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 보안 침해사고 취약점",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -1903,7 +1903,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 1단계",
-      "project_name": "사이버보안 취약점 대응체계 운영 통합",
+      "project_name": "공공정보시스템 보안취약점 점검체계 운영",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 67641,
@@ -1914,7 +1914,7 @@
       "change_rate": 26.93,
       "account_type": "특별회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 취약점 대응 보안",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 취약점 대응 보안",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -1937,7 +1937,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 2단계",
-      "project_name": "사이버보안 취약점 대응체계 고도화 통합",
+      "project_name": "공공정보시스템 보안취약점 점검체계 운영",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 6514,
@@ -1948,7 +1948,7 @@
       "change_rate": 16.25,
       "account_type": "일반회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 보안 패치 취약점",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 보안 패치 취약점",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -1971,7 +1971,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 1단계",
-      "project_name": "사이버보안 취약점 대응체계 개선 1단계",
+      "project_name": "공공정보시스템 보안취약점 점검체계 운영",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 42018,
@@ -1982,7 +1982,7 @@
       "change_rate": -3.37,
       "account_type": "일반회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 대응 침해사고 보안",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 대응 침해사고 보안",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -2005,7 +2005,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 1단계",
-      "project_name": "사이버보안 취약점 대응체계 지원 고도화",
+      "project_name": "공공부문 정보보호 수준진단 및 개선",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 61586,
@@ -2016,7 +2016,7 @@
       "change_rate": 6.62,
       "account_type": "특별회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 패치 취약점 보안",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 패치 취약점 보안",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -2039,7 +2039,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 통합",
-      "project_name": "사이버보안 취약점 대응체계 운영 전환",
+      "project_name": "공공정보시스템 보안취약점 점검체계 운영 지자체 협업",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 10830,
@@ -2050,7 +2050,7 @@
       "change_rate": 7.83,
       "account_type": "일반회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 침해사고 패치 보안",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 침해사고 패치 보안",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -2073,7 +2073,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 2단계",
-      "project_name": "사이버보안 취약점 대응체계 구축 통합",
+      "project_name": "보안패치 및 침해대응 관리체계 강화 중앙부처 연계",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -2084,7 +2084,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 패치 대응 취약점",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 패치 대응 취약점",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -2107,7 +2107,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 고도화",
-      "project_name": "사이버보안 취약점 대응체계 개선 통합",
+      "project_name": "공공부문 정보보호 수준진단 및 개선 지자체 협업",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 67751,
@@ -2118,7 +2118,7 @@
       "change_rate": 13.29,
       "account_type": "일반회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 패치 보안 취약점",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 패치 보안 취약점",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -2141,7 +2141,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "정보보호 2단계",
-      "project_name": "사이버보안 취약점 대응체계 고도화 고도화",
+      "project_name": "공공정보시스템 보안취약점 점검체계 운영",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 50667,
@@ -2152,7 +2152,7 @@
       "change_rate": -4.72,
       "account_type": "특별회계",
       "legal_basis": "정보보호산업법",
-      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 보안 취약점 패치",
+      "description": "정보시스템 보안취약점 진단, 보안패치 관리, 침해사고 예방 및 대응체계 운영을 위한 사업 보안 취약점 패치",
       "sub_projects": [
         {
           "name": "취약점 진단",
@@ -2175,7 +2175,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 1단계",
-      "project_name": "디지털 인재양성 훈련 연계 전환",
+      "project_name": "AI·데이터 실무인재 재교육 서비스 연계",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -2186,7 +2186,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 훈련 인재 디지털",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 훈련 인재 디지털",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2209,7 +2209,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 시범",
-      "project_name": "디지털 인재양성 훈련 연계 통합",
+      "project_name": "AI·데이터 실무인재 재교육",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 75188,
@@ -2220,7 +2220,7 @@
       "change_rate": 20.46,
       "account_type": "특별회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 양성 교육 훈련",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 양성 교육 훈련",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2243,7 +2243,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 2단계",
-      "project_name": "디지털 인재양성 훈련 개선 1단계",
+      "project_name": "AI·데이터 실무인재 재교육 지자체 협업",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 31907,
@@ -2254,7 +2254,7 @@
       "change_rate": 17.89,
       "account_type": "특별회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 디지털 양성 훈련",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 디지털 양성 훈련",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2277,7 +2277,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 고도화",
-      "project_name": "디지털 인재양성 훈련 운영 2단계",
+      "project_name": "디지털 핵심인재 양성 실증 기반",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 20548,
@@ -2288,7 +2288,7 @@
       "change_rate": 25.49,
       "account_type": "기금",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 인재 훈련 양성",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 인재 훈련 양성",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2311,7 +2311,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 전환",
-      "project_name": "디지털 인재양성 훈련 고도화 고도화",
+      "project_name": "산업전환 대응 디지털 직무훈련",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 16174,
@@ -2322,7 +2322,7 @@
       "change_rate": 20.0,
       "account_type": "특별회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 양성 교육 인재",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 양성 교육 인재",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2345,7 +2345,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 고도화",
-      "project_name": "디지털 인재양성 훈련 고도화 통합",
+      "project_name": "산업전환 대응 디지털 직무훈련 서비스 연계",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 28979,
@@ -2356,7 +2356,7 @@
       "change_rate": 13.82,
       "account_type": "일반회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 디지털 인재 훈련",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 디지털 인재 훈련",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2379,7 +2379,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 2단계",
-      "project_name": "디지털 인재양성 훈련 지원 2단계",
+      "project_name": "AI·데이터 실무인재 재교육",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 68120,
@@ -2390,7 +2390,7 @@
       "change_rate": 3.08,
       "account_type": "특별회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 인재 디지털 양성",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 인재 디지털 양성",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2413,7 +2413,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 통합",
-      "project_name": "디지털 인재양성 훈련 구축 전환",
+      "project_name": "산업전환 대응 디지털 직무훈련 시범 운영",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -2424,7 +2424,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 인재 교육 양성",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 인재 교육 양성",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2447,7 +2447,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 고도화",
-      "project_name": "디지털 인재양성 훈련 확산 통합",
+      "project_name": "디지털 핵심인재 양성",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 63614,
@@ -2458,7 +2458,7 @@
       "change_rate": 11.69,
       "account_type": "일반회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 양성 인재 교육",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 양성 인재 교육",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2481,7 +2481,7 @@
       "function_code": "040",
       "function": "교육",
       "program": "인력양성 2단계",
-      "project_name": "디지털 인재양성 훈련 지원 시범",
+      "project_name": "산업전환 대응 디지털 직무훈련",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 41881,
@@ -2492,7 +2492,7 @@
       "change_rate": -0.43,
       "account_type": "특별회계",
       "legal_basis": "근로자직업능력개발법",
-      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 디지털 양성 교육",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육과 재직자·청년 대상 직무전환 훈련을 지원하는 사업 디지털 양성 교육",
       "sub_projects": [
         {
           "name": "청년 디지털 교육",
@@ -2515,7 +2515,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 1단계",
-      "project_name": "스마트 물류·교통 인프라 운영 전환",
+      "project_name": "현장 연계형 스마트교통 서비스 실증 시범 운영",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -2526,7 +2526,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 실증 교통 데이터",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 실증 교통 데이터",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2549,7 +2549,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 고도화",
-      "project_name": "스마트 물류·교통 인프라 지원 2단계",
+      "project_name": "교통데이터 기반 물류효율화 지원 시범 운영",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 46316,
@@ -2560,7 +2560,7 @@
       "change_rate": 14.08,
       "account_type": "기금",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 물류 교통 운영",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 물류 교통 운영",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2583,7 +2583,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 시범",
-      "project_name": "스마트 물류·교통 인프라 연계 2단계",
+      "project_name": "스마트 물류·교통 운영체계 구축",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 47075,
@@ -2594,7 +2594,7 @@
       "change_rate": 21.82,
       "account_type": "기금",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 운영 데이터 교통",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 운영 데이터 교통",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2617,7 +2617,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 통합",
-      "project_name": "스마트 물류·교통 인프라 실증 통합",
+      "project_name": "현장 연계형 스마트교통 서비스 실증",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 23322,
@@ -2628,7 +2628,7 @@
       "change_rate": 10.18,
       "account_type": "특별회계",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 데이터 실증 운영",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 데이터 실증 운영",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2651,7 +2651,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 전환",
-      "project_name": "스마트 물류·교통 인프라 연계 통합",
+      "project_name": "현장 연계형 스마트교통 서비스 실증",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 34169,
@@ -2662,7 +2662,7 @@
       "change_rate": -7.4,
       "account_type": "기금",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 운영 데이터 물류",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 운영 데이터 물류",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2685,7 +2685,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 고도화",
-      "project_name": "스마트 물류·교통 인프라 운영 시범",
+      "project_name": "현장 연계형 스마트교통 서비스 실증",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 27157,
@@ -2696,7 +2696,7 @@
       "change_rate": -1.19,
       "account_type": "일반회계",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 운영 데이터 물류",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 운영 데이터 물류",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2719,7 +2719,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 1단계",
-      "project_name": "스마트 물류·교통 인프라 실증 시범",
+      "project_name": "현장 연계형 스마트교통 서비스 실증 중앙부처 연계",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 65066,
@@ -2730,7 +2730,7 @@
       "change_rate": 5.07,
       "account_type": "특별회계",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 교통 데이터 실증",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 교통 데이터 실증",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2753,7 +2753,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 전환",
-      "project_name": "스마트 물류·교통 인프라 실증 전환",
+      "project_name": "현장 연계형 스마트교통 서비스 실증",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -2764,7 +2764,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 교통 운영 실증",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 교통 운영 실증",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2787,7 +2787,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 1단계",
-      "project_name": "스마트 물류·교통 인프라 운영 전환",
+      "project_name": "현장 연계형 스마트교통 서비스 실증",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 24560,
@@ -2798,7 +2798,7 @@
       "change_rate": 27.37,
       "account_type": "특별회계",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 실증 물류 데이터",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 실증 물류 데이터",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2821,7 +2821,7 @@
       "function_code": "120",
       "function": "수송및교통",
       "program": "스마트인프라 통합",
-      "project_name": "스마트 물류·교통 인프라 구축 2단계",
+      "project_name": "스마트 물류·교통 운영체계 구축",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 15482,
@@ -2832,7 +2832,7 @@
       "change_rate": -5.88,
       "account_type": "기금",
       "legal_basis": "국가통합교통체계효율화법",
-      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 데이터 물류 교통",
+      "description": "물류·교통 데이터 기반 운영 효율화와 현장 실증을 통해 서비스 확산을 지원하는 사업 데이터 물류 교통",
       "sub_projects": [
         {
           "name": "교통 데이터 허브",
@@ -2855,7 +2855,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 시범",
-      "project_name": "공공 클라우드 전환 연계 2단계",
+      "project_name": "공공 클라우드 공통기반 운영",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -2866,7 +2866,7 @@
       "change_rate": 100.0,
       "account_type": "특별회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 표준화 효율화 클라우드",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 표준화 효율화 클라우드",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -2889,7 +2889,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 2단계",
-      "project_name": "공공 클라우드 전환 개선 2단계",
+      "project_name": "공공 클라우드 공통기반 운영 서비스 연계",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 47903,
@@ -2900,7 +2900,7 @@
       "change_rate": -3.62,
       "account_type": "일반회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 클라우드 전환",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 운영 클라우드 전환",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -2923,7 +2923,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 2단계",
-      "project_name": "공공 클라우드 전환 확산 2단계",
+      "project_name": "공공 클라우드 공통기반 운영",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 22330,
@@ -2934,7 +2934,7 @@
       "change_rate": 8.94,
       "account_type": "특별회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 표준화 전환 운영",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 표준화 전환 운영",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -2957,7 +2957,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 시범",
-      "project_name": "공공 클라우드 전환 개선 통합",
+      "project_name": "노후 행정시스템 클라우드 고도화 시범 운영",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 14522,
@@ -2968,7 +2968,7 @@
       "change_rate": 5.16,
       "account_type": "기금",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 클라우드 표준화",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 운영 클라우드 표준화",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -2991,7 +2991,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 통합",
-      "project_name": "공공 클라우드 전환 확산 1단계",
+      "project_name": "공공 클라우드 공통기반 운영",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 49058,
@@ -3002,7 +3002,7 @@
       "change_rate": 17.48,
       "account_type": "특별회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 전환 효율화",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 클라우드 전환 효율화",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -3025,7 +3025,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 전환",
-      "project_name": "공공 클라우드 전환 구축 고도화",
+      "project_name": "공공정보시스템 클라우드 전환 중앙부처 연계",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 76852,
@@ -3036,7 +3036,7 @@
       "change_rate": 2.02,
       "account_type": "기금",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 운영 전환",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 클라우드 운영 전환",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -3059,7 +3059,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 전환",
-      "project_name": "공공 클라우드 전환 구축 전환",
+      "project_name": "노후 행정시스템 클라우드 고도화",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 25088,
@@ -3070,7 +3070,7 @@
       "change_rate": 0.32,
       "account_type": "일반회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 운영 효율화",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 클라우드 운영 효율화",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -3093,7 +3093,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 1단계",
-      "project_name": "공공 클라우드 전환 연계 2단계",
+      "project_name": "공공 클라우드 공통기반 운영",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -3104,7 +3104,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 표준화 전환",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 운영 표준화 전환",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -3127,7 +3127,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 통합",
-      "project_name": "공공 클라우드 전환 연계 고도화",
+      "project_name": "공공정보시스템 클라우드 전환",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 10272,
@@ -3138,7 +3138,7 @@
       "change_rate": 7.5,
       "account_type": "특별회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 클라우드 전환",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 운영 클라우드 전환",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -3161,7 +3161,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "클라우드전환 통합",
-      "project_name": "공공 클라우드 전환 운영 시범",
+      "project_name": "공공정보시스템 클라우드 전환",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 23554,
@@ -3172,7 +3172,7 @@
       "change_rate": 13.21,
       "account_type": "특별회계",
       "legal_basis": "클라우드컴퓨팅법",
-      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 운영 효율화",
+      "description": "노후 정보시스템의 클라우드 전환과 공통 인프라 표준화로 운영 효율화 및 비용 절감을 도모하는 사업 클라우드 운영 효율화",
       "sub_projects": [
         {
           "name": "클라우드 마이그레이션",
@@ -3195,7 +3195,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 1단계",
-      "project_name": "복지 데이터 연계·활용 지원 전환",
+      "project_name": "복지 사각지대 발굴 데이터 분석 시범 운영",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -3206,7 +3206,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 분석 추천 데이터",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 분석 추천 데이터",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3229,7 +3229,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 전환",
-      "project_name": "복지 데이터 연계·활용 구축 1단계",
+      "project_name": "복지데이터 연계 및 맞춤형 서비스 지원",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 56740,
@@ -3240,7 +3240,7 @@
       "change_rate": 10.77,
       "account_type": "특별회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 추천 분석 데이터",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 추천 분석 데이터",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3263,7 +3263,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 전환",
-      "project_name": "복지 데이터 연계·활용 구축 전환",
+      "project_name": "사회보장 정보연계 기반 고도화",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 75120,
@@ -3274,7 +3274,7 @@
       "change_rate": -3.33,
       "account_type": "특별회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 연계 추천",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 복지 연계 추천",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3297,7 +3297,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 2단계",
-      "project_name": "복지 데이터 연계·활용 확산 통합",
+      "project_name": "사회보장 정보연계 기반 고도화 서비스 연계",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 7940,
@@ -3308,7 +3308,7 @@
       "change_rate": 23.33,
       "account_type": "특별회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 추천 데이터 복지",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 추천 데이터 복지",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3331,7 +3331,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 통합",
-      "project_name": "복지 데이터 연계·활용 개선 2단계",
+      "project_name": "복지 사각지대 발굴 데이터 분석 전국 확산",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 41823,
@@ -3342,7 +3342,7 @@
       "change_rate": -3.86,
       "account_type": "특별회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 분석 연계",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 복지 분석 연계",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3365,7 +3365,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 전환",
-      "project_name": "복지 데이터 연계·활용 고도화 1단계",
+      "project_name": "사회보장 정보연계 기반 고도화 전국 확산",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 56390,
@@ -3376,7 +3376,7 @@
       "change_rate": 3.82,
       "account_type": "일반회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 연계 추천 분석",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 연계 추천 분석",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3399,7 +3399,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 전환",
-      "project_name": "복지 데이터 연계·활용 개선 시범",
+      "project_name": "복지 사각지대 발굴 데이터 분석",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 16646,
@@ -3410,7 +3410,7 @@
       "change_rate": -4.57,
       "account_type": "일반회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 분석 데이터 복지",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 분석 데이터 복지",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3433,7 +3433,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 고도화",
-      "project_name": "복지 데이터 연계·활용 지원 1단계",
+      "project_name": "복지데이터 연계 및 맞춤형 서비스 지원 실증 기반",
       "project_type": "정보화",
       "is_new": true,
       "budget_2024": 0,
@@ -3444,7 +3444,7 @@
       "change_rate": 100.0,
       "account_type": "특별회계",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 추천 분석",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 복지 추천 분석",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3467,7 +3467,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 1단계",
-      "project_name": "복지 데이터 연계·활용 확산 1단계",
+      "project_name": "복지데이터 연계 및 맞춤형 서비스 지원",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 31220,
@@ -3478,7 +3478,7 @@
       "change_rate": 20.0,
       "account_type": "기금",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 데이터 분석 추천",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 데이터 분석 추천",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3501,7 +3501,7 @@
       "function_code": "080",
       "function": "사회복지",
       "program": "복지디지털 시범",
-      "project_name": "복지 데이터 연계·활용 연계 2단계",
+      "project_name": "복지데이터 연계 및 맞춤형 서비스 지원 시범 운영",
       "project_type": "정보화",
       "is_new": false,
       "budget_2024": 46705,
@@ -3512,7 +3512,7 @@
       "change_rate": -6.73,
       "account_type": "기금",
       "legal_basis": "사회보장기본법",
-      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 연계 데이터",
+      "description": "복지 수요자 데이터 연계와 분석을 통해 맞춤형 서비스 제공 및 복지 사각지대 발굴을 지원하는 사업 복지 연계 데이터",
       "sub_projects": [
         {
           "name": "데이터 연계",
@@ -3535,7 +3535,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 1단계",
-      "project_name": "첨단소재 핵심기술 개발 지원 1단계",
+      "project_name": "첨단부품·소재 연구개발",
       "project_type": "R&D",
       "is_new": true,
       "budget_2024": 0,
@@ -3546,7 +3546,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 시제품 연구개발",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 원천기술 시제품 연구개발",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3569,7 +3569,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 2단계",
-      "project_name": "첨단소재 핵심기술 개발 개선 전환",
+      "project_name": "첨단소재 원천기술 개발",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 86357,
@@ -3580,7 +3580,7 @@
       "change_rate": 7.98,
       "account_type": "특별회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 연구개발 원천기술 첨단소재",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 연구개발 원천기술 첨단소재",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3603,7 +3603,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 시범",
-      "project_name": "첨단소재 핵심기술 개발 개선 전환",
+      "project_name": "첨단부품·소재 연구개발",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 39637,
@@ -3614,7 +3614,7 @@
       "change_rate": 16.3,
       "account_type": "일반회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 연구개발 첨단소재",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 원천기술 연구개발 첨단소재",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3637,7 +3637,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 통합",
-      "project_name": "첨단소재 핵심기술 개발 구축 시범",
+      "project_name": "차세대 소재 핵심기술 실증 지자체 협업",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 37012,
@@ -3648,7 +3648,7 @@
       "change_rate": 8.54,
       "account_type": "기금",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 첨단소재 실증 원천기술",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 첨단소재 실증 원천기술",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3671,7 +3671,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 1단계",
-      "project_name": "첨단소재 핵심기술 개발 개선 전환",
+      "project_name": "첨단소재 원천기술 개발 시범 운영",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 20908,
@@ -3682,7 +3682,7 @@
       "change_rate": 17.25,
       "account_type": "일반회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 첨단소재 시제품 실증",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 첨단소재 시제품 실증",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3705,7 +3705,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 고도화",
-      "project_name": "첨단소재 핵심기술 개발 확산 통합",
+      "project_name": "첨단부품·소재 연구개발 중앙부처 연계",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 61420,
@@ -3716,7 +3716,7 @@
       "change_rate": -7.79,
       "account_type": "특별회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 첨단소재 시제품",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 원천기술 첨단소재 시제품",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3739,7 +3739,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 1단계",
-      "project_name": "첨단소재 핵심기술 개발 실증 전환",
+      "project_name": "첨단소재 원천기술 개발 지자체 협업",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 22409,
@@ -3750,7 +3750,7 @@
       "change_rate": 6.67,
       "account_type": "일반회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 첨단소재 연구개발 실증",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 첨단소재 연구개발 실증",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3773,7 +3773,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 통합",
-      "project_name": "첨단소재 핵심기술 개발 운영 전환",
+      "project_name": "첨단부품·소재 연구개발",
       "project_type": "R&D",
       "is_new": true,
       "budget_2024": 0,
@@ -3784,7 +3784,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 연구개발 원천기술 실증",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 연구개발 원천기술 실증",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3807,7 +3807,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 통합",
-      "project_name": "첨단소재 핵심기술 개발 연계 고도화",
+      "project_name": "첨단소재 원천기술 개발",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 35206,
@@ -3818,7 +3818,7 @@
       "change_rate": -4.05,
       "account_type": "일반회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 연구개발 첨단소재",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 원천기술 연구개발 첨단소재",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3841,7 +3841,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "첨단기술R&D 전환",
-      "project_name": "첨단소재 핵심기술 개발 실증 전환",
+      "project_name": "첨단부품·소재 연구개발 지자체 협업",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 70664,
@@ -3852,7 +3852,7 @@
       "change_rate": 5.81,
       "account_type": "특별회계",
       "legal_basis": "국가연구개발혁신법",
-      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 실증 연구개발 첨단소재",
+      "description": "차세대 첨단소재 원천기술 확보와 시제품 제작, 실증 연계를 목표로 하는 연구개발 사업 실증 연구개발 첨단소재",
       "sub_projects": [
         {
           "name": "원천기술 연구",
@@ -3875,7 +3875,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 1단계",
-      "project_name": "산업 AI 실증·사업화 확산 시범",
+      "project_name": "제조 AI 확산 및 상용화",
       "project_type": "R&D",
       "is_new": true,
       "budget_2024": 0,
@@ -3886,7 +3886,7 @@
       "change_rate": 100.0,
       "account_type": "특별회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 제조 AI 실증",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 제조 AI 실증",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -3909,7 +3909,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 전환",
-      "project_name": "산업 AI 실증·사업화 개선 2단계",
+      "project_name": "제조 AI 확산 및 상용화 시범 운영",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 66503,
@@ -3920,7 +3920,7 @@
       "change_rate": 7.35,
       "account_type": "일반회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 사업화 AI 실증",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 사업화 AI 실증",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -3943,7 +3943,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 전환",
-      "project_name": "산업 AI 실증·사업화 실증 통합",
+      "project_name": "산업현장 AI 실증 및 사업화 지원",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 36428,
@@ -3954,7 +3954,7 @@
       "change_rate": 8.57,
       "account_type": "일반회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 서비스 AI 사업화",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 서비스 AI 사업화",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -3977,7 +3977,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 1단계",
-      "project_name": "산업 AI 실증·사업화 개선 고도화",
+      "project_name": "제조 AI 확산 및 상용화",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 63171,
@@ -3988,7 +3988,7 @@
       "change_rate": 26.86,
       "account_type": "일반회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 AI 서비스 실증",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 AI 서비스 실증",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4011,7 +4011,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 전환",
-      "project_name": "산업 AI 실증·사업화 연계 시범",
+      "project_name": "산업 AI 융합서비스 실증",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 26945,
@@ -4022,7 +4022,7 @@
       "change_rate": -5.45,
       "account_type": "기금",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 사업화 AI 제조",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 사업화 AI 제조",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4045,7 +4045,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 통합",
-      "project_name": "산업 AI 실증·사업화 고도화 전환",
+      "project_name": "산업 AI 융합서비스 실증",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 31235,
@@ -4056,7 +4056,7 @@
       "change_rate": -0.85,
       "account_type": "특별회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 서비스 사업화 실증",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 서비스 사업화 실증",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4079,7 +4079,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 시범",
-      "project_name": "산업 AI 실증·사업화 지원 전환",
+      "project_name": "산업 AI 융합서비스 실증",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 6544,
@@ -4090,7 +4090,7 @@
       "change_rate": 11.25,
       "account_type": "일반회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 실증 서비스 AI",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 실증 서비스 AI",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4113,7 +4113,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 전환",
-      "project_name": "산업 AI 실증·사업화 지원 고도화",
+      "project_name": "산업 AI 융합서비스 실증 시범 운영",
       "project_type": "R&D",
       "is_new": true,
       "budget_2024": 0,
@@ -4124,7 +4124,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 실증 제조 사업화",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 실증 제조 사업화",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4147,7 +4147,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 통합",
-      "project_name": "산업 AI 실증·사업화 고도화 시범",
+      "project_name": "산업현장 AI 실증 및 사업화 지원 전국 확산",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 13680,
@@ -4158,7 +4158,7 @@
       "change_rate": 18.67,
       "account_type": "기금",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 제조 실증 AI",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 제조 실증 AI",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4181,7 +4181,7 @@
       "function_code": "140",
       "function": "과학기술",
       "program": "AI산업화 고도화",
-      "project_name": "산업 AI 실증·사업화 연계 1단계",
+      "project_name": "산업현장 AI 실증 및 사업화 지원 실증 기반",
       "project_type": "R&D",
       "is_new": false,
       "budget_2024": 28829,
@@ -4192,7 +4192,7 @@
       "change_rate": 7.94,
       "account_type": "일반회계",
       "legal_basis": "산업기술혁신촉진법",
-      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 실증 서비스 AI",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증과 사업화를 연계하는 산업현장 중심 사업 실증 서비스 AI",
       "sub_projects": [
         {
           "name": "현장 실증",
@@ -4215,7 +4215,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 전환",
-      "project_name": "개인정보 안전관리 체계 확산 고도화",
+      "project_name": "개인정보보호 수준평가 및 개선 실증 기반",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -4226,7 +4226,7 @@
       "change_rate": 100.0,
       "account_type": "기금",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 조치 보호 안전관리",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 조치 보호 안전관리",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4249,7 +4249,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 고도화",
-      "project_name": "개인정보 안전관리 체계 개선 고도화",
+      "project_name": "개인정보보호 수준평가 및 개선 시범 운영",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 6428,
@@ -4260,7 +4260,7 @@
       "change_rate": -1.25,
       "account_type": "일반회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 안전관리 조치",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 점검 안전관리 조치",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4283,7 +4283,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 1단계",
-      "project_name": "개인정보 안전관리 체계 운영 2단계",
+      "project_name": "개인정보보호 수준평가 및 개선 서비스 연계",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 64339,
@@ -4294,7 +4294,7 @@
       "change_rate": -4.0,
       "account_type": "특별회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 보호 개인정보 점검",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 보호 개인정보 점검",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4317,7 +4317,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 전환",
-      "project_name": "개인정보 안전관리 체계 실증 2단계",
+      "project_name": "개인정보 처리실태 점검 및 보호조치 중앙부처 연계",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 14820,
@@ -4328,7 +4328,7 @@
       "change_rate": -6.45,
       "account_type": "특별회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 안전관리 개인정보 조치",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 안전관리 개인정보 조치",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4351,7 +4351,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 2단계",
-      "project_name": "개인정보 안전관리 체계 고도화 통합",
+      "project_name": "개인정보보호 수준평가 및 개선 중앙부처 연계",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 61521,
@@ -4362,7 +4362,7 @@
       "change_rate": -3.92,
       "account_type": "기금",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 조치 개인정보",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 점검 조치 개인정보",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4385,7 +4385,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 통합",
-      "project_name": "개인정보 안전관리 체계 연계 고도화",
+      "project_name": "개인정보 처리실태 점검 및 보호조치 실증 기반",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 37459,
@@ -4396,7 +4396,7 @@
       "change_rate": 5.35,
       "account_type": "기금",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 보호 조치",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 점검 보호 조치",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4419,7 +4419,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 1단계",
-      "project_name": "개인정보 안전관리 체계 고도화 1단계",
+      "project_name": "개인정보보호 수준평가 및 개선",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 44353,
@@ -4430,7 +4430,7 @@
       "change_rate": -7.35,
       "account_type": "특별회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 조치 보호",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 점검 조치 보호",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4453,7 +4453,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 1단계",
-      "project_name": "개인정보 안전관리 체계 고도화 2단계",
+      "project_name": "개인정보보호 수준평가 및 개선",
       "project_type": "일반",
       "is_new": true,
       "budget_2024": 0,
@@ -4464,7 +4464,7 @@
       "change_rate": 100.0,
       "account_type": "일반회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 안전관리 개인정보 점검",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 안전관리 개인정보 점검",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4487,7 +4487,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 고도화",
-      "project_name": "개인정보 안전관리 체계 실증 1단계",
+      "project_name": "개인정보 처리실태 점검 및 보호조치",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 60414,
@@ -4498,7 +4498,7 @@
       "change_rate": 12.38,
       "account_type": "특별회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 조치 안전관리 보호",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 조치 안전관리 보호",
       "sub_projects": [
         {
           "name": "안전조치 점검",
@@ -4521,7 +4521,7 @@
       "function_code": "010",
       "function": "일반공공행정",
       "program": "개인정보보호 고도화",
-      "project_name": "개인정보 안전관리 체계 운영 1단계",
+      "project_name": "개인정보 안전관리체계 강화 서비스 연계",
       "project_type": "일반",
       "is_new": false,
       "budget_2024": 11204,
@@ -4532,7 +4532,7 @@
       "change_rate": 16.15,
       "account_type": "특별회계",
       "legal_basis": "개인정보보호법",
-      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 조치 개인정보 안전관리",
+      "description": "개인정보 처리 점검과 보호조치 강화를 통해 안전관리 체계를 고도화하는 사업 조치 개인정보 안전관리",
       "sub_projects": [
         {
           "name": "안전조치 점검",
