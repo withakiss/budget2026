@@ -573,7 +573,7 @@ Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
 
 const fmt = n => n >= 1e12 ? (n/1e12).toFixed(1)+'조' : n >= 1e8 ? (n/1e8).toFixed(1)+'억' : n >= 1e4 ? (n/1e4).toFixed(1)+'만' : n.toLocaleString();
 const fmtM = n => n ? n.toLocaleString() : '0';
-const sign = n => n > 0 ? `+${n.toLocaleString()}` : n.toLocaleString();
+const fmtSigned = n => n > 0 ? `+${n.toLocaleString()}` : n.toLocaleString();
 const pct = n => n.toFixed(1) + '%';
 const groupBy = (arr, k) => arr.reduce((a, x) => { const v = x[k]; (a[v] = a[v]||[]).push(x); return a; }, {});
 
@@ -605,7 +605,7 @@ function showProjectModal(p) {
     <div class="modal-row"><label>사업 유형</label><span><span class="tag ${p.project_type==='R&D'?'tag-rnd':p.project_type==='정보화'?'tag-it':'tag-gen'}">${p.project_type}</span></span></div>
     <div class="modal-row"><label>2025 예산</label><span class="num">${fmtM(p.budget_2025)} 백만원</span></div>
     <div class="modal-row"><label>2026 예산</label><span class="num"><b>${fmtM(p.budget_2026)} 백만원</b></span></div>
-    <div class="modal-row"><label>증감액</label><span class="num ${p.change_amount>=0?'up':'down'}">${sign(p.change_amount)} 백만원</span></div>
+    <div class="modal-row"><label>증감액</label><span class="num ${p.change_amount>=0?'up':'down'}">${fmtSigned(p.change_amount)} 백만원</span></div>
     <div class="modal-row"><label>증감률</label><span class="${p.change_rate>=0?'up':'down'}">${p.is_new?'신규':pct(p.change_rate)}</span></div>
     <div class="modal-row"><label>회계유형</label><span>${p.account_type}</span></div>
     <div class="modal-row"><label>법적근거</label><span>${p.legal_basis||'—'}</span></div>
@@ -662,6 +662,9 @@ async function boot() {
     renderRisk();
     renderConcentration();
     renderAlgoGuide();
+
+    // 기본 탭 외 무거운 자동실행 탭 상태 초기화
+    _tabInitDone = { overview: true, ministry: true, function: true, projects: true, 'budget-compare': true };
 
   } catch (e) {
     loadingEl.innerHTML = `
@@ -795,7 +798,7 @@ function renderOverview() {
     { label: '참여 부처', value: mins+'개', sub: '중앙행정기관', color: 'yellow' },
     { label: 'R&D 예산', value: fmt(rnd*1e6), sub: `전체의 ${((rnd/t26)*100).toFixed(1)}%`, color: 'green' },
     { label: '정보화 예산', value: fmt(it*1e6), sub: `전체의 ${((it/t26)*100).toFixed(1)}%`, color: 'purple' },
-    { label: '예산 증감액', value: fmt(Math.abs(diff)*1e6), sub: `전년 대비 ${diff>0?'증가':'감소'}`, badge: diff>0?'up':'down', badgeText: `${sign(diff)}백만원`, color: diff>0?'green':'red' },
+    { label: '예산 증감액', value: fmt(Math.abs(diff)*1e6), sub: `전년 대비 ${diff>0?'증가':'감소'}`, badge: diff>0?'up':'down', badgeText: `${fmtSigned(diff)}백만원`, color: diff>0?'green':'red' },
   ].map(k => `<div class="kpi-card ${k.color}">
     <div class="kpi-label">${k.label}</div>
     <div class="kpi-value">${k.value}</div>
@@ -898,7 +901,7 @@ function renderFunction() {
       <td>${e.it>0?`<span class="tag tag-it">${e.it}</span>`:'-'}</td>
       <td>${e.gen>0?`<span class="tag tag-gen">${e.gen}</span>`:'-'}</td>
       <td>${e.newC>0?`<span class="tag tag-new">${e.newC}</span>`:'-'}</td>
-      <td class="${diff>=0?'up':'down'} num">${sign(diff)}</td>
+      <td class="${diff>=0?'up':'down'} num">${fmtSigned(diff)}</td>
       <td class="${+cr>=0?'up':'down'}">${cr==='N/A'?cr:cr+'%'}</td>
     </tr>`;
   }).join('');
@@ -946,7 +949,7 @@ function renderProjectList() {
         <td style="font-size:11px">${p.function}</td>
         <td class="num">${fmtM(p.budget_2025)}</td>
         <td class="num"><b>${fmtM(p.budget_2026)}</b></td>
-        <td class="num ${p.change_amount>=0?'up':'down'}">${sign(p.change_amount)}</td>
+        <td class="num ${p.change_amount>=0?'up':'down'}">${fmtSigned(p.change_amount)}</td>
         <td class="${p.change_rate>=0?'up':'down'}">${p.is_new?'NEW':pct(p.change_rate)}</td>
         <td style="font-size:11px;color:var(--text2)">${p.account_type.slice(0,8)}</td>
         <td>${p.is_new?'<span class="tag tag-new">신규</span>':''}</td>
@@ -998,7 +1001,7 @@ function renderBudgetCompare() {
       <td style="white-space:nowrap">${p.ministry}</td><td>${p.project_name}</td>
       <td><span class="tag ${tt[p.project_type]||'tag-gen'}">${p.project_type}</span></td>
       <td class="num">${fmtM(p.budget_requested)}</td><td class="num"><b>${fmtM(p.budget_2026)}</b></td>
-      <td class="num ${diff>=0?'up':'down'}">${sign(diff)}</td>
+      <td class="num ${diff>=0?'up':'down'}">${fmtSigned(diff)}</td>
       <td class="${diff>=0?'up':'down'}">${cr}%</td>
     </tr>`;
   }).join('');
@@ -1171,7 +1174,7 @@ function renderStack100() {
   const byF = groupBy(ALL, 'function');
   const entries = Object.keys(byF).slice(0,8);
   const mkPct = (arr, type) => arr.map(f => { const ps=byF[f]; return ps.length>0?(ps.filter(p=>p.project_type===type).length/ps.length*100).toFixed(1):0; });
-  mkChart('c-stack100', { type: 'bar', data: { labels: entries, datasets: [{ label: 'R&D', data: mkPct(entries,'R&D'), backgroundColor: 'rgba(59,130,246,.8)' }, { label: '정보화', data: mkPct(entries,'정보화'), backgroundColor: 'rgba(6,182,212,.8)' }, { label: '일반', data: mkPct(entries,'일반'), backgroundColor: 'rgba(100,116,139,.5)' }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true, grid: { display: false }, ticks: { maxRotation: 30, font: { size: 10 } }, max: 100 }, y: { stacked: true, grid: { color: '#1a2d47' }, ticks: { callback: v=>v+'%' } } }, plugins: { legend: { labels: { font: { size: 11 } } } } } });
+  mkChart('c-stack100', { type: 'bar', data: { labels: entries, datasets: [{ label: 'R&D', data: mkPct(entries,'R&D'), backgroundColor: 'rgba(59,130,246,.8)' }, { label: '정보화', data: mkPct(entries,'정보화'), backgroundColor: 'rgba(6,182,212,.8)' }, { label: '일반', data: mkPct(entries,'일반'), backgroundColor: 'rgba(100,116,139,.5)' }] }, options: { responsive: true, maintainAspectRatio: false, scales: { x: { stacked: true, grid: { display: false }, ticks: { maxRotation: 30, font: { size: 10 } } }, y: { stacked: true, grid: { color: '#1a2d47' }, ticks: { callback: v=>v+'%' }, max: 100 } }, plugins: { legend: { labels: { font: { size: 11 } } } } } });
 }
 
 // 히트맵 D3 (부처×기능)
