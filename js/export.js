@@ -1,9 +1,8 @@
 /**
- * export.js — 내보내기 모듈 v3.0
- * Excel(SheetJS), Markdown, CSV(BOM), 차트 PNG
+ * export.js — 내보내기 모듈 v3.1
+ * Excel(SheetJS), Markdown, CSV(BOM), 차트 PNG, 국회 질의 문답서 MD
  */
 
-// ── SheetJS CDN 동적 로드 ─────────────────────────────
 let _xlsxLoaded = false;
 async function ensureXLSX() {
   if (window.XLSX) { _xlsxLoaded = true; return; }
@@ -17,19 +16,15 @@ async function ensureXLSX() {
   });
 }
 
-// ── 공통 유틸 ─────────────────────────────────────────
 const today = () => new Date().toISOString().slice(0,10).replace(/-/g,'');
 const fmtNum = n => n.toLocaleString();
 const sign = n => n > 0 ? `+${fmtNum(n)}` : fmtNum(n);
 
-// ── Excel 내보내기 (5시트) ────────────────────────────
 async function exportExcel(ALL, ENGINE, currentFilter) {
   try {
     await ensureXLSX();
     const XLSX = window.XLSX;
     const wb = XLSX.utils.book_new();
-
-    // 시트1: 전체 사업 목록
     const sheet1data = [
       ['부처','사업명','유형','기능분류','2024예산','2025예산','2026예산','요구액','증감액','증감률(%)','회계유형','신규여부','사업설명']
     ];
@@ -43,7 +38,6 @@ async function exportExcel(ALL, ENGINE, currentFilter) {
       ]);
     });
     const ws1 = XLSX.utils.aoa_to_sheet(sheet1data);
-    // 컬럼 너비 설정
     ws1['!cols'] = [
       {wch:16},{wch:32},{wch:8},{wch:14},
       {wch:12},{wch:12},{wch:12},{wch:12},{wch:12},{wch:10},
@@ -51,7 +45,6 @@ async function exportExcel(ALL, ENGINE, currentFilter) {
     ];
     XLSX.utils.book_append_sheet(wb, ws1, '전체_사업목록');
 
-    // 시트2: 부처별 요약
     const byMin = {};
     ALL.forEach(p => {
       if (!byMin[p.ministry]) byMin[p.ministry] = {b26:0,b25:0,cnt:0,rnd:0,it:0,gen:0,newC:0};
@@ -75,7 +68,6 @@ async function exportExcel(ALL, ENGINE, currentFilter) {
     ws2['!cols'] = [{wch:18},{wch:16},{wch:16},{wch:12},{wch:10},{wch:8},{wch:6},{wch:8},{wch:6},{wch:6}];
     XLSX.utils.book_append_sheet(wb, ws2, '부처별_요약');
 
-    // 시트3: 기능별 요약
     const byFunc = {};
     ALL.forEach(p => {
       if (!byFunc[p.function]) byFunc[p.function] = {b26:0,b25:0,cnt:0,rnd:0,it:0,gen:0};
@@ -95,7 +87,6 @@ async function exportExcel(ALL, ENGINE, currentFilter) {
     ws3['!cols'] = [{wch:18},{wch:14},{wch:14},{wch:12},{wch:10},{wch:8},{wch:6},{wch:8},{wch:6}];
     XLSX.utils.book_append_sheet(wb, ws3, '기능별_요약');
 
-    // 시트4: 리스크 스코어
     const SE = window.SimilarityEngine;
     const sheet4data = [['부처','사업명','리스크점수','위험등급','위험사유','2026예산','증감률(%)']];
     if (SE) {
@@ -112,7 +103,6 @@ async function exportExcel(ALL, ENGINE, currentFilter) {
     ws4['!cols'] = [{wch:16},{wch:32},{wch:10},{wch:8},{wch:50},{wch:12},{wch:10}];
     XLSX.utils.book_append_sheet(wb, ws4, '리스크_분석');
 
-    // 시트5: 유사중복 (스캔 결과 있을 때)
     if (ENGINE && ENGINE._pairs && ENGINE._pairs.length > 0) {
       const sheet5data = [['사업A','부처A','사업B','부처B','유사도(%)','등급','부처간교차','Value Chain패턴']];
       ENGINE._pairs.filter(p=>p.score>=0.5).slice(0,200).forEach(p => {
@@ -137,7 +127,6 @@ async function exportExcel(ALL, ENGINE, currentFilter) {
   }
 }
 
-// ── Markdown 보고서 ───────────────────────────────────
 function exportMarkdown(ALL, ENGINE) {
   const t26 = ALL.reduce((s,p)=>s+p.budget_2026,0);
   const t25 = ALL.reduce((s,p)=>s+p.budget_2025,0);
@@ -151,8 +140,6 @@ function exportMarkdown(ALL, ENGINE) {
   let md = `# 2026년도 재정사업 분석 보고서\n\n`;
   md += `> 생성일: ${new Date().toLocaleDateString('ko-KR')} | 데이터: 샘플 데이터 기반 비공식 분석\n\n`;
   md += `---\n\n`;
-
-  // 요약 KPI
   md += `## 📊 핵심 요약\n\n`;
   md += `| 항목 | 수치 |\n|---|---|\n`;
   md += `| 총 예산 (2026) | ${fmt(t26*1e6)} |\n`;
@@ -161,67 +148,50 @@ function exportMarkdown(ALL, ENGINE) {
   md += `| 참여 부처 | ${mins}개 |\n`;
   md += `| R&D 예산 비중 | ${((rnd/t26)*100).toFixed(1)}% |\n\n`;
 
-  // 부처별 Top 10
   const byMin = {};
   ALL.forEach(p => { byMin[p.ministry]=(byMin[p.ministry]||0)+p.budget_2026; });
   const topMin = Object.entries(byMin).sort((a,b)=>b[1]-a[1]).slice(0,10);
   md += `## 🏛️ 부처별 예산 Top 10\n\n`;
   md += `| 순위 | 부처 | 2026 예산 | 점유율 |\n|---|---|---|---|\n`;
-  topMin.forEach(([m,b],i) => {
-    md += `| ${i+1} | ${m} | ${fmtNum(b)} 백만원 | ${((b/t26)*100).toFixed(1)}% |\n`;
-  });
+  topMin.forEach(([m,b],i) => { md += `| ${i+1} | ${m} | ${fmtNum(b)} 백만원 | ${((b/t26)*100).toFixed(1)}% |\n`; });
   md += '\n';
 
-  // 기능별
   const byFunc = {};
   ALL.forEach(p => { byFunc[p.function]=(byFunc[p.function]||0)+p.budget_2026; });
   const topFunc = Object.entries(byFunc).sort((a,b)=>b[1]-a[1]);
   md += `## 📂 기능별 예산 현황\n\n`;
   md += `| 기능 | 2026 예산 | 점유율 |\n|---|---|---|\n`;
-  topFunc.forEach(([f,b]) => {
-    md += `| ${f} | ${fmtNum(b)} 백만원 | ${((b/t26)*100).toFixed(1)}% |\n`;
-  });
+  topFunc.forEach(([f,b]) => { md += `| ${f} | ${fmtNum(b)} 백만원 | ${((b/t26)*100).toFixed(1)}% |\n`; });
   md += '\n';
 
-  // 증가/감소 Top5
   const sorted = [...ALL].sort((a,b)=>b.change_amount-a.change_amount);
   md += `## 📈 예산 증가 Top 5\n\n`;
   md += `| 부처 | 사업명 | 증감액 | 증감률 |\n|---|---|---|---|\n`;
-  sorted.slice(0,5).forEach(p => {
-    md += `| ${p.ministry} | ${p.project_name} | +${fmtNum(p.change_amount)} 백만원 | +${p.change_rate.toFixed(1)}% |\n`;
-  });
+  sorted.slice(0,5).forEach(p => { md += `| ${p.ministry} | ${p.project_name} | +${fmtNum(p.change_amount)} 백만원 | +${p.change_rate.toFixed(1)}% |\n`; });
   md += '\n';
 
   md += `## 📉 예산 감소 Top 5\n\n`;
   md += `| 부처 | 사업명 | 증감액 | 증감률 |\n|---|---|---|---|\n`;
-  [...sorted].reverse().filter(p=>p.change_amount<0).slice(0,5).forEach(p => {
-    md += `| ${p.ministry} | ${p.project_name} | ${fmtNum(p.change_amount)} 백만원 | ${p.change_rate.toFixed(1)}% |\n`;
-  });
+  [...sorted].reverse().filter(p=>p.change_amount<0).slice(0,5).forEach(p => { md += `| ${p.ministry} | ${p.project_name} | ${fmtNum(p.change_amount)} 백만원 | ${p.change_rate.toFixed(1)}% |\n`; });
   md += '\n';
 
-  // 리스크
   const SE = window.SimilarityEngine;
   if (SE) {
     const risks = ALL.map(p=>({project:p,...SE.calcWasteRisk(p,ALL)})).filter(r=>r.score>=60).sort((a,b)=>b.score-a.score);
     if (risks.length > 0) {
       md += `## ⚠️ 고위험 사업 (리스크 60점 이상)\n\n`;
       md += `| 부처 | 사업명 | 점수 | 사유 |\n|---|---|---|---|\n`;
-      risks.slice(0,10).forEach(r => {
-        md += `| ${r.project.ministry} | ${r.project.project_name} | ${r.score} | ${r.reasons.join(', ')} |\n`;
-      });
+      risks.slice(0,10).forEach(r => { md += `| ${r.project.ministry} | ${r.project.project_name} | ${r.score} | ${r.reasons.join(', ')} |\n`; });
       md += '\n';
     }
   }
 
-  // 유사중복
   if (ENGINE && ENGINE._pairs && ENGINE._pairs.length > 0) {
     const dupPairs = ENGINE._pairs.filter(p=>p.score>=0.7 && p.crossMinistry).slice(0,10);
     if (dupPairs.length > 0) {
       md += `## 🔍 부처 간 고유사 사업 (70% 이상)\n\n`;
       md += `| 사업 A | 부처 A | 사업 B | 부처 B | 유사도 |\n|---|---|---|---|---|\n`;
-      dupPairs.forEach(p => {
-        md += `| ${p.a.project_name} | ${p.a.ministry} | ${p.b.project_name} | ${p.b.ministry} | ${(p.score*100).toFixed(0)}% |\n`;
-      });
+      dupPairs.forEach(p => { md += `| ${p.a.project_name} | ${p.a.ministry} | ${p.b.project_name} | ${p.b.ministry} | ${(p.score*100).toFixed(0)}% |\n`; });
       md += '\n';
     }
   }
@@ -236,7 +206,38 @@ function exportMarkdown(ALL, ENGINE) {
   return { ok: true, msg: 'Markdown 파일 다운로드 완료' };
 }
 
-// ── CSV 내보내기 (BOM + 필터 반영) ───────────────────
+function exportInquiryMarkdown(data) {
+  try {
+    const { drafts, principles } = data;
+    let md = `# 국회 질의 대응 문답서 초안\n\n`;
+    md += `> 생성일: ${new Date().toLocaleDateString('ko-KR')} | 예산 인사이트 기반 자동 생성 초안\n\n`;
+    md += `## 공통 답변 원칙\n\n`;
+    principles.forEach((p, i) => { md += `${i+1}. ${p}\n`; });
+    md += `\n---\n\n`;
+    drafts.forEach((d, i) => {
+      md += `## ${i+1}. ${d.title}\n\n`;
+      md += `**예상 질문**  \n${d.question}\n\n`;
+      md += `**짧은 답변**  \n${d.shortAnswer}\n\n`;
+      md += `**상세 답변**  \n${d.detailAnswer}\n\n`;
+      md += `**핵심 근거**  \n${d.evidence}\n\n`;
+      md += `**보완 필요사항**  \n${d.followup}\n\n`;
+      md += `**추가 제출자료**  \n- ${d.docs.join('\n- ')}\n\n`;
+    });
+    md += `---\n\n> 본 문답서는 자동 생성 초안으로, 실제 국회 제출 전 부처별 사실관계 및 최신 수치 확인이 필요합니다.\n`;
+    const blob = new Blob([md], {type:'text/markdown;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `국회질의_문답서초안_${today()}.md`;
+    a.click();
+    URL.revokeObjectURL(url);
+    return { ok: true, msg: '국회 질의 문답서 Markdown 다운로드 완료' };
+  } catch (e) {
+    console.error('Inquiry markdown export error:', e);
+    return { ok: false, msg: e.message };
+  }
+}
+
 function exportCSV(data, filename) {
   const header = '부처,사업명,유형,기능분류,2025예산(백만원),2026예산(백만원),증감액,증감률(%),회계유형,신규여부\n';
   const rows = data.map(p =>
@@ -253,15 +254,13 @@ function exportCSV(data, filename) {
   URL.revokeObjectURL(url);
 }
 
-// ── 차트 PNG 저장 ─────────────────────────────────────
 function saveChartPNG(canvasId, filename) {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const link = document.createElement('a');
-  link.download = filename || `chart_${canvasId}_${today()}.png`;
-  link.href = canvas.toDataURL('image/png', 1.0);
+  link.download = `${filename || canvasId}_${today()}.png`;
+  link.href = canvas.toDataURL('image/png');
   link.click();
 }
 
-// ── 전역 노출 ─────────────────────────────────────────
-window.ExportEngine = { exportExcel, exportMarkdown, exportCSV, saveChartPNG };
+window.EX = { ensureXLSX, exportExcel, exportMarkdown, exportInquiryMarkdown, exportCSV, saveChartPNG };
