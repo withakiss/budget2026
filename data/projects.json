@@ -2,11 +2,11 @@
   "metadata": {
     "title": "2026년도 대한민국 재정사업 현황",
     "source": "기획재정부 2026년도 예산안",
-    "note": "본 데이터는 분석 목적의 샘플 데이터입니다. 공식 데이터가 아닙니다.",
-    "total_budget_2026": 677000000,
-    "total_budget_2025": 656900000,
-    "total_projects": 120,
-    "total_ministries": 18,
+    "note": "본 데이터는 분석 목적의 샘플 데이터입니다. 공식 데이터가 아닙니다. / clustering and scan-friendly synthetic sample projects added.",
+    "total_budget_2026": 12723000,
+    "total_budget_2025": 10385500,
+    "total_projects": 135,
+    "total_ministries": 20,
     "generated_at": "2025-04-17"
   },
   "projects": [
@@ -30,9 +30,18 @@
       "legal_basis": "국가재정법",
       "description": "디지털예산회계시스템(dBrain) 유지보수 및 고도화",
       "sub_projects": [
-        { "name": "dBrain 유지보수", "budget": 15000 },
-        { "name": "차세대 재정정보시스템 구축", "budget": 12000 },
-        { "name": "재정데이터 분석시스템", "budget": 6500 }
+        {
+          "name": "dBrain 유지보수",
+          "budget": 15000
+        },
+        {
+          "name": "차세대 재정정보시스템 구축",
+          "budget": 12000
+        },
+        {
+          "name": "재정데이터 분석시스템",
+          "budget": 6500
+        }
       ]
     },
     {
@@ -55,8 +64,14 @@
       "legal_basis": "국세기본법",
       "description": "세정 행정 디지털 혁신 및 납세자 서비스 개선",
       "sub_projects": [
-        { "name": "납세자 서비스 개선", "budget": 7000 },
-        { "name": "세무조사 지원시스템", "budget": 7200 }
+        {
+          "name": "납세자 서비스 개선",
+          "budget": 7000
+        },
+        {
+          "name": "세무조사 지원시스템",
+          "budget": 7200
+        }
       ]
     },
     {
@@ -79,9 +94,18 @@
       "legal_basis": "교육기본법",
       "description": "AI 디지털교과서 도입 및 스마트 교실 구축",
       "sub_projects": [
-        { "name": "AI 디지털교과서 개발", "budget": 30000 },
-        { "name": "스마트교실 인프라 구축", "budget": 25000 },
-        { "name": "교원 디지털 역량 강화", "budget": 13000 }
+        {
+          "name": "AI 디지털교과서 개발",
+          "budget": 30000
+        },
+        {
+          "name": "스마트교실 인프라 구축",
+          "budget": 25000
+        },
+        {
+          "name": "교원 디지털 역량 강화",
+          "budget": 13000
+        }
       ]
     },
     {
@@ -104,8 +128,14 @@
       "legal_basis": "고등교육법",
       "description": "지방대학 경쟁력 강화 및 대학 구조개혁 지원",
       "sub_projects": [
-        { "name": "지방대 활성화", "budget": 50000 },
-        { "name": "대학특성화 지원", "budget": 41000 }
+        {
+          "name": "지방대 활성화",
+          "budget": 50000
+        },
+        {
+          "name": "대학특성화 지원",
+          "budget": 41000
+        }
       ]
     },
     {
@@ -128,8 +158,14 @@
       "legal_basis": "근로자직업능력개발법",
       "description": "재직자 및 실직자 대상 직업능력 향상 훈련 지원",
       "sub_projects": [
-        { "name": "재직자 훈련", "budget": 18000 },
-        { "name": "실직자 훈련", "budget": 15000 }
+        {
+          "name": "재직자 훈련",
+          "budget": 18000
+        },
+        {
+          "name": "실직자 훈련",
+          "budget": 15000
+        }
       ]
     },
     {
@@ -152,9 +188,18 @@
       "legal_basis": "과학기술기본법",
       "description": "개인·집단·선도연구 등 기초연구 지원",
       "sub_projects": [
-        { "name": "개인기초연구", "budget": 90000 },
-        { "name": "집단연구", "budget": 70000 },
-        { "name": "선도연구", "budget": 50000 }
+        {
+          "name": "개인기초연구",
+          "budget": 90000
+        },
+        {
+          "name": "집단연구",
+          "budget": 70000
+        },
+        {
+          "name": "선도연구",
+          "budget": 50000
+        }
       ]
     },
     {
@@ -177,9 +222,18 @@
       "legal_basis": "인공지능법",
       "description": "차세대 AI 알고리즘, 초거대AI, AGI 기초기술 연구개발",
       "sub_projects": [
-        { "name": "초거대AI 개발", "budget": 60000 },
-        { "name": "AI 알고리즘 원천기술", "budget": 45000 },
-        { "name": "AI 안전·신뢰성 연구", "budget": 40000 }
+        {
+          "name": "초거대AI 개발",
+          "budget": 60000
+        },
+        {
+          "name": "AI 알고리즘 원천기술",
+          "budget": 45000
+        },
+        {
+          "name": "AI 안전·신뢰성 연구",
+          "budget": 40000
+        }
       ]
     },
     {
@@ -202,9 +256,18 @@
       "legal_basis": "전파법",
       "description": "차세대 이동통신(6G) 핵심기술 선점 및 표준화",
       "sub_projects": [
-        { "name": "6G 핵심기술 연구", "budget": 50000 },
-        { "name": "6G 테스트베드 구축", "budget": 25000 },
-        { "name": "국제표준화 대응", "budget": 15000 }
+        {
+          "name": "6G 핵심기술 연구",
+          "budget": 50000
+        },
+        {
+          "name": "6G 테스트베드 구축",
+          "budget": 25000
+        },
+        {
+          "name": "국제표준화 대응",
+          "budget": 15000
+        }
       ]
     },
     {
@@ -227,10 +290,22 @@
       "legal_basis": "국민기초생활보장법",
       "description": "생계·의료·주거·교육급여 등 저소득층 기초생활 보장",
       "sub_projects": [
-        { "name": "생계급여", "budget": 620000 },
-        { "name": "의료급여", "budget": 480000 },
-        { "name": "주거급여", "budget": 220000 },
-        { "name": "교육급여", "budget": 110000 }
+        {
+          "name": "생계급여",
+          "budget": 620000
+        },
+        {
+          "name": "의료급여",
+          "budget": 480000
+        },
+        {
+          "name": "주거급여",
+          "budget": 220000
+        },
+        {
+          "name": "교육급여",
+          "budget": 110000
+        }
       ]
     },
     {
@@ -253,9 +328,18 @@
       "legal_basis": "노인장기요양보험법",
       "description": "고령자 요양서비스 제공 및 장기요양 인프라 확충",
       "sub_projects": [
-        { "name": "장기요양급여 지원", "budget": 850000 },
-        { "name": "요양기관 인프라 구축", "budget": 180000 },
-        { "name": "요양보호사 처우개선", "budget": 100000 }
+        {
+          "name": "장기요양급여 지원",
+          "budget": 850000
+        },
+        {
+          "name": "요양기관 인프라 구축",
+          "budget": 180000
+        },
+        {
+          "name": "요양보호사 처우개선",
+          "budget": 100000
+        }
       ]
     },
     {
@@ -278,8 +362,14 @@
       "legal_basis": "첨단재생의료법",
       "description": "세포치료제·유전자치료제 등 첨단재생의료 기술 개발",
       "sub_projects": [
-        { "name": "세포치료 기술개발", "budget": 12000 },
-        { "name": "유전자치료 연구", "budget": 13000 }
+        {
+          "name": "세포치료 기술개발",
+          "budget": 12000
+        },
+        {
+          "name": "유전자치료 연구",
+          "budget": 13000
+        }
       ]
     },
     {
@@ -302,8 +392,14 @@
       "legal_basis": "도로법",
       "description": "전국 고속도로 신설·확장 및 교통망 효율화",
       "sub_projects": [
-        { "name": "고속도로 신설", "budget": 200000 },
-        { "name": "고속도로 확장·개량", "budget": 160000 }
+        {
+          "name": "고속도로 신설",
+          "budget": 200000
+        },
+        {
+          "name": "고속도로 확장·개량",
+          "budget": 160000
+        }
       ]
     },
     {
@@ -326,9 +422,18 @@
       "legal_basis": "도시철도법",
       "description": "수도권·광역권 철도망 확충 및 GTX 건설",
       "sub_projects": [
-        { "name": "GTX 건설", "budget": 180000 },
-        { "name": "지방 광역철도", "budget": 120000 },
-        { "name": "도시철도 건설지원", "budget": 75000 }
+        {
+          "name": "GTX 건설",
+          "budget": 180000
+        },
+        {
+          "name": "지방 광역철도",
+          "budget": 120000
+        },
+        {
+          "name": "도시철도 건설지원",
+          "budget": 75000
+        }
       ]
     },
     {
@@ -351,9 +456,18 @@
       "legal_basis": "공공주택특별법",
       "description": "서민·청년 대상 공공임대·분양주택 공급 확대",
       "sub_projects": [
-        { "name": "공공임대주택 건설", "budget": 200000 },
-        { "name": "청년·신혼희망타운", "budget": 90000 },
-        { "name": "영구임대 개선", "budget": 50000 }
+        {
+          "name": "공공임대주택 건설",
+          "budget": 200000
+        },
+        {
+          "name": "청년·신혼희망타운",
+          "budget": 90000
+        },
+        {
+          "name": "영구임대 개선",
+          "budget": 50000
+        }
       ]
     },
     {
@@ -376,9 +490,18 @@
       "legal_basis": "탄소중립기본법",
       "description": "온실가스 감축 핵심기술(CCUS, 수소 등) 연구개발",
       "sub_projects": [
-        { "name": "CCUS 기술개발", "budget": 40000 },
-        { "name": "수소·연료전지 R&D", "budget": 35000 },
-        { "name": "탄소흡수원 관리", "budget": 27000 }
+        {
+          "name": "CCUS 기술개발",
+          "budget": 40000
+        },
+        {
+          "name": "수소·연료전지 R&D",
+          "budget": 35000
+        },
+        {
+          "name": "탄소흡수원 관리",
+          "budget": 27000
+        }
       ]
     },
     {
@@ -401,9 +524,18 @@
       "legal_basis": "물관리기본법",
       "description": "댐·수도시설 정비 및 노후 상하수도 교체",
       "sub_projects": [
-        { "name": "댐 시설 개선", "budget": 40000 },
-        { "name": "광역상수도 현대화", "budget": 30000 },
-        { "name": "하수도 정비", "budget": 18000 }
+        {
+          "name": "댐 시설 개선",
+          "budget": 40000
+        },
+        {
+          "name": "광역상수도 현대화",
+          "budget": 30000
+        },
+        {
+          "name": "하수도 정비",
+          "budget": 18000
+        }
       ]
     },
     {
@@ -426,9 +558,18 @@
       "legal_basis": "방위사업법",
       "description": "KF-21 보라매 양산 및 차세대 무기체계 연구개발",
       "sub_projects": [
-        { "name": "KF-21 양산", "budget": 280000 },
-        { "name": "무인기 체계 개발", "budget": 120000 },
-        { "name": "전자전 장비 개발", "budget": 80000 }
+        {
+          "name": "KF-21 양산",
+          "budget": 280000
+        },
+        {
+          "name": "무인기 체계 개발",
+          "budget": 120000
+        },
+        {
+          "name": "전자전 장비 개발",
+          "budget": 80000
+        }
       ]
     },
     {
@@ -451,9 +592,18 @@
       "legal_basis": "군인복지기본법",
       "description": "병사 봉급 인상 및 주거·의료 복지 개선",
       "sub_projects": [
-        { "name": "병사 봉급", "budget": 55000 },
-        { "name": "군 의료서비스", "budget": 25000 },
-        { "name": "병영문화 개선", "budget": 18000 }
+        {
+          "name": "병사 봉급",
+          "budget": 55000
+        },
+        {
+          "name": "군 의료서비스",
+          "budget": 25000
+        },
+        {
+          "name": "병영문화 개선",
+          "budget": 18000
+        }
       ]
     },
     {
@@ -476,9 +626,18 @@
       "legal_basis": "신에너지및재생에너지법",
       "description": "태양광·풍력 등 재생에너지 확대 및 그린수소 생산",
       "sub_projects": [
-        { "name": "태양광 보급", "budget": 80000 },
-        { "name": "해상풍력 개발", "budget": 75000 },
-        { "name": "그린수소 생산", "budget": 45000 }
+        {
+          "name": "태양광 보급",
+          "budget": 80000
+        },
+        {
+          "name": "해상풍력 개발",
+          "budget": 75000
+        },
+        {
+          "name": "그린수소 생산",
+          "budget": 45000
+        }
       ]
     },
     {
@@ -501,8 +660,14 @@
       "legal_basis": "국가첨단전략산업법",
       "description": "용인 반도체 메가클러스터 인프라 지원 및 소부장 생태계 구축",
       "sub_projects": [
-        { "name": "클러스터 인프라", "budget": 25000 },
-        { "name": "소부장 기업 지원", "budget": 20000 }
+        {
+          "name": "클러스터 인프라",
+          "budget": 25000
+        },
+        {
+          "name": "소부장 기업 지원",
+          "budget": 20000
+        }
       ]
     },
     {
@@ -525,9 +690,18 @@
       "legal_basis": "고용보험법",
       "description": "구직급여·조기재취업수당 등 실업자 생활안정 지원",
       "sub_projects": [
-        { "name": "구직급여", "budget": 680000 },
-        { "name": "조기재취업수당", "budget": 80000 },
-        { "name": "직업훈련생계비 지원", "budget": 50000 }
+        {
+          "name": "구직급여",
+          "budget": 680000
+        },
+        {
+          "name": "조기재취업수당",
+          "budget": 80000
+        },
+        {
+          "name": "직업훈련생계비 지원",
+          "budget": 50000
+        }
       ]
     },
     {
@@ -550,9 +724,18 @@
       "legal_basis": "청년고용촉진특별법",
       "description": "청년 취업 지원·인턴십·창업 연계 통합 프로그램",
       "sub_projects": [
-        { "name": "청년 취업지원", "budget": 70000 },
-        { "name": "청년 인턴십", "budget": 42000 },
-        { "name": "청년창업 지원", "budget": 30000 }
+        {
+          "name": "청년 취업지원",
+          "budget": 70000
+        },
+        {
+          "name": "청년 인턴십",
+          "budget": 42000
+        },
+        {
+          "name": "청년창업 지원",
+          "budget": 30000
+        }
       ]
     },
     {
@@ -575,9 +758,18 @@
       "legal_basis": "전자정부법",
       "description": "정부24·민원24 통합 및 AI 기반 민원서비스 혁신",
       "sub_projects": [
-        { "name": "정부24 고도화", "budget": 30000 },
-        { "name": "AI 민원서비스", "budget": 28000 },
-        { "name": "클라우드 전환", "budget": 20000 }
+        {
+          "name": "정부24 고도화",
+          "budget": 30000
+        },
+        {
+          "name": "AI 민원서비스",
+          "budget": 28000
+        },
+        {
+          "name": "클라우드 전환",
+          "budget": 20000
+        }
       ]
     },
     {
@@ -600,8 +792,14 @@
       "legal_basis": "재난안전통신망법",
       "description": "재난안전 전용 LTE망 운영 및 5G 고도화",
       "sub_projects": [
-        { "name": "PS-LTE 운영", "budget": 22000 },
-        { "name": "재난정보 시스템", "budget": 18000 }
+        {
+          "name": "PS-LTE 운영",
+          "budget": 22000
+        },
+        {
+          "name": "재난정보 시스템",
+          "budget": 18000
+        }
       ]
     },
     {
@@ -624,8 +822,14 @@
       "legal_basis": "농업식품기본법",
       "description": "스마트팜 혁신밸리 조성 및 ICT 융복합 농업 확산",
       "sub_projects": [
-        { "name": "스마트팜 혁신밸리", "budget": 28000 },
-        { "name": "ICT 농업 지원", "budget": 27000 }
+        {
+          "name": "스마트팜 혁신밸리",
+          "budget": 28000
+        },
+        {
+          "name": "ICT 농업 지원",
+          "budget": 27000
+        }
       ]
     },
     {
@@ -648,8 +852,14 @@
       "legal_basis": "농수산물 유통 및 가격안정에 관한 법률",
       "description": "한국 식품의 해외시장 개척 및 수출 인프라 지원",
       "sub_projects": [
-        { "name": "수출 마케팅 지원", "budget": 15000 },
-        { "name": "수출 인프라 구축", "budget": 13000 }
+        {
+          "name": "수출 마케팅 지원",
+          "budget": 15000
+        },
+        {
+          "name": "수출 인프라 구축",
+          "budget": 13000
+        }
       ]
     },
     {
@@ -672,9 +882,18 @@
       "legal_basis": "콘텐츠산업진흥법",
       "description": "드라마·영화·게임·웹툰 등 한류 콘텐츠 해외진출 지원",
       "sub_projects": [
-        { "name": "콘텐츠 제작 지원", "budget": 32000 },
-        { "name": "해외 마케팅", "budget": 25000 },
-        { "name": "OTT 플랫폼 지원", "budget": 15000 }
+        {
+          "name": "콘텐츠 제작 지원",
+          "budget": 32000
+        },
+        {
+          "name": "해외 마케팅",
+          "budget": 25000
+        },
+        {
+          "name": "OTT 플랫폼 지원",
+          "budget": 15000
+        }
       ]
     },
     {
@@ -697,8 +916,14 @@
       "legal_basis": "관광기본법",
       "description": "2,500만 외래관광객 유치 목표 마케팅 및 인프라 지원",
       "sub_projects": [
-        { "name": "해외 관광 마케팅", "budget": 22000 },
-        { "name": "관광인프라 개선", "budget": 18000 }
+        {
+          "name": "해외 관광 마케팅",
+          "budget": 22000
+        },
+        {
+          "name": "관광인프라 개선",
+          "budget": 18000
+        }
       ]
     },
     {
@@ -721,9 +946,18 @@
       "legal_basis": "벤처기업육성특별법",
       "description": "딥테크 창업 지원 및 유니콘 기업 육성",
       "sub_projects": [
-        { "name": "딥테크 창업 지원", "budget": 45000 },
-        { "name": "팁스(TIPS) 프로그램", "budget": 35000 },
-        { "name": "글로벌 진출 지원", "budget": 25000 }
+        {
+          "name": "딥테크 창업 지원",
+          "budget": 45000
+        },
+        {
+          "name": "팁스(TIPS) 프로그램",
+          "budget": 35000
+        },
+        {
+          "name": "글로벌 진출 지원",
+          "budget": 25000
+        }
       ]
     },
     {
@@ -746,8 +980,14 @@
       "legal_basis": "소상공인보호법",
       "description": "소상공인 온라인 전환 지원 및 스마트스토어 육성",
       "sub_projects": [
-        { "name": "스마트스토어 지원", "budget": 20000 },
-        { "name": "배달플랫폼 지원", "budget": 18000 }
+        {
+          "name": "스마트스토어 지원",
+          "budget": 20000
+        },
+        {
+          "name": "배달플랫폼 지원",
+          "budget": 18000
+        }
       ]
     },
     {
@@ -765,14 +1005,23 @@
       "budget_2026": 150000,
       "budget_requested": 155000,
       "change_amount": 12000,
-      "change_rate": 8.70,
+      "change_rate": 8.7,
       "account_type": "일반회계",
       "legal_basis": "국제개발협력기본법",
       "description": "개발도상국 무상원조 및 인도적 지원 확대",
       "sub_projects": [
-        { "name": "프로젝트 지원", "budget": 80000 },
-        { "name": "인도적 지원", "budget": 40000 },
-        { "name": "기술협력", "budget": 30000 }
+        {
+          "name": "프로젝트 지원",
+          "budget": 80000
+        },
+        {
+          "name": "인도적 지원",
+          "budget": 40000
+        },
+        {
+          "name": "기술협력",
+          "budget": 30000
+        }
       ]
     },
     {
@@ -795,9 +1044,18 @@
       "legal_basis": "저출산·고령사회기본법",
       "description": "아이돌봄 서비스 확대 및 육아휴직 급여 인상",
       "sub_projects": [
-        { "name": "아이돌봄 서비스", "budget": 110000 },
-        { "name": "육아휴직 지원", "budget": 90000 },
-        { "name": "직장 어린이집", "budget": 60000 }
+        {
+          "name": "아이돌봄 서비스",
+          "budget": 110000
+        },
+        {
+          "name": "육아휴직 지원",
+          "budget": 90000
+        },
+        {
+          "name": "직장 어린이집",
+          "budget": 60000
+        }
       ]
     },
     {
@@ -820,8 +1078,14 @@
       "legal_basis": "항만법",
       "description": "자율운항선박·스마트 항만 구축 및 해운 디지털 전환",
       "sub_projects": [
-        { "name": "스마트 항만 구축", "budget": 30000 },
-        { "name": "자율운항선박 R&D", "budget": 26000 }
+        {
+          "name": "스마트 항만 구축",
+          "budget": 30000
+        },
+        {
+          "name": "자율운항선박 R&D",
+          "budget": 26000
+        }
       ]
     },
     {
@@ -844,8 +1108,14 @@
       "legal_basis": "형의 집행 및 수용자의 처우에 관한 법률",
       "description": "AI·IoT 기반 교정시설 스마트화 및 수용자 처우 개선",
       "sub_projects": [
-        { "name": "AI 보안시스템", "budget": 10000 },
-        { "name": "스마트 의료서비스", "budget": 8000 }
+        {
+          "name": "AI 보안시스템",
+          "budget": 10000
+        },
+        {
+          "name": "스마트 의료서비스",
+          "budget": 8000
+        }
       ]
     },
     {
@@ -868,8 +1138,3414 @@
       "legal_basis": "금융혁신지원특별법",
       "description": "핀테크 혁신 서비스 테스트베드 운영 및 금융데이터 개방",
       "sub_projects": [
-        { "name": "규제 샌드박스 운영", "budget": 12000 },
-        { "name": "금융데이터 플랫폼", "budget": 10000 }
+        {
+          "name": "규제 샌드박스 운영",
+          "budget": 12000
+        },
+        {
+          "name": "금융데이터 플랫폼",
+          "budget": 10000
+        }
+      ]
+    },
+    {
+      "id": "PX1001",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 1단계",
+      "project_name": "AI 데이터 플랫폼 실증 1단계",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 92000,
+      "budget_requested": 114500,
+      "change_amount": 92000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 AI 분석",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 20900
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 29800
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 41300
+        }
+      ]
+    },
+    {
+      "id": "PX1002",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 2단계",
+      "project_name": "AI 데이터 플랫폼 확산 시범",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 65148,
+      "budget_2025": 72500,
+      "budget_2026": 74600,
+      "budget_requested": 83700,
+      "change_amount": 2100,
+      "change_rate": 2.9,
+      "account_type": "일반회계",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 공공데이터 분석 정제",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 27720
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 27690
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 19190
+        }
+      ]
+    },
+    {
+      "id": "PX1003",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 고도화",
+      "project_name": "AI 데이터 플랫폼 확산 전환",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 43299,
+      "budget_2025": 45500,
+      "budget_2026": 56700,
+      "budget_requested": 64200,
+      "change_amount": 11200,
+      "change_rate": 24.62,
+      "account_type": "특별회계",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 정제 분석 플랫폼",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 23690
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 21005
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 12005
+        }
+      ]
+    },
+    {
+      "id": "PX1004",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 1단계",
+      "project_name": "AI 데이터 플랫폼 연계 통합",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 26397,
+      "budget_2025": 31000,
+      "budget_2026": 30400,
+      "budget_requested": 35000,
+      "change_amount": -600,
+      "change_rate": -1.94,
+      "account_type": "특별회계",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 공공데이터 분석 정제",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 15780
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 5060
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 9560
+        }
+      ]
+    },
+    {
+      "id": "PX1005",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 시범",
+      "project_name": "AI 데이터 플랫폼 구축 전환",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 76599,
+      "budget_2025": 85000,
+      "budget_2026": 88600,
+      "budget_requested": 96500,
+      "change_amount": 3600,
+      "change_rate": 4.24,
+      "account_type": "기금",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 정제 공공데이터",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 48020
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 14290
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 26290
+        }
+      ]
+    },
+    {
+      "id": "PX1006",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 1단계",
+      "project_name": "AI 데이터 플랫폼 운영 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 67276,
+      "budget_2025": 76500,
+      "budget_2026": 83300,
+      "budget_requested": 97800,
+      "change_amount": 6800,
+      "change_rate": 8.89,
+      "account_type": "일반회계",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 AI 분석 정제",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 9810
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 36495
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 36995
+        }
+      ]
+    },
+    {
+      "id": "PX1007",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 통합",
+      "project_name": "AI 데이터 플랫폼 운영 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 31564,
+      "budget_2025": 33000,
+      "budget_2026": 41400,
+      "budget_requested": 47300,
+      "change_amount": 8400,
+      "change_rate": 25.45,
+      "account_type": "일반회계",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 공공데이터 분석",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 8480
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 17710
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 15210
+        }
+      ]
+    },
+    {
+      "id": "PX1008",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 전환",
+      "project_name": "AI 데이터 플랫폼 운영 2단계",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 97000,
+      "budget_requested": 110500,
+      "change_amount": 97000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 정제 AI 분석",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 52400
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 20050
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 24550
+        }
+      ]
+    },
+    {
+      "id": "PX1009",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 전환",
+      "project_name": "AI 데이터 플랫폼 구축 통합",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 18160,
+      "budget_2025": 19500,
+      "budget_2026": 20000,
+      "budget_requested": 21500,
+      "change_amount": 500,
+      "change_rate": 2.56,
+      "account_type": "일반회계",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 분석 정제",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 7500
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 6000
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 6500
+        }
+      ]
+    },
+    {
+      "id": "PX1010",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI·데이터 통합",
+      "project_name": "AI 데이터 플랫폼 지원 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 56142,
+      "budget_2025": 58500,
+      "budget_2026": 73400,
+      "budget_requested": 83800,
+      "change_amount": 14900,
+      "change_rate": 25.47,
+      "account_type": "기금",
+      "legal_basis": "인공지능기본법",
+      "description": "공공 데이터 수집·정제·개방 및 AI 분석 활용을 위한 데이터 플랫폼 구축과 운영 플랫폼 분석 공공데이터",
+      "sub_projects": [
+        {
+          "name": "데이터 수집 정제",
+          "budget": 25380
+        },
+        {
+          "name": "AI 분석 플랫폼",
+          "budget": 17510
+        },
+        {
+          "name": "데이터 품질관리",
+          "budget": 30510
+        }
+      ]
+    },
+    {
+      "id": "PX1011",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 2단계",
+      "project_name": "디지털 행정 서비스 고도화 개선 시범",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 29000,
+      "budget_requested": 35600,
+      "change_amount": 29000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 서비스 민원 행정",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 5800
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 10850
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 12350
+        }
+      ]
+    },
+    {
+      "id": "PX1012",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 2단계",
+      "project_name": "디지털 행정 서비스 고도화 지원 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 51535,
+      "budget_2025": 54000,
+      "budget_2026": 54600,
+      "budget_requested": 62700,
+      "change_amount": 600,
+      "change_rate": 1.11,
+      "account_type": "특별회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 자동화 서비스 민원",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 13220
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 22190
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 19190
+        }
+      ]
+    },
+    {
+      "id": "PX1013",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 2단계",
+      "project_name": "디지털 행정 서비스 고도화 지원 시범",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 56789,
+      "budget_2025": 59500,
+      "budget_2026": 76000,
+      "budget_requested": 79000,
+      "change_amount": 16500,
+      "change_rate": 27.73,
+      "account_type": "특별회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 자동화 행정 통합",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 17200
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 26400
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 32400
+        }
+      ]
+    },
+    {
+      "id": "PX1014",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 1단계",
+      "project_name": "디지털 행정 서비스 고도화 확산 시범",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 72152,
+      "budget_2025": 75500,
+      "budget_2026": 90200,
+      "budget_requested": 99800,
+      "change_amount": 14700,
+      "change_rate": 19.47,
+      "account_type": "특별회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 행정 자동화 민원",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 39640
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 22530
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 28030
+        }
+      ]
+    },
+    {
+      "id": "PX1015",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 시범",
+      "project_name": "디지털 행정 서비스 고도화 확산 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 23965,
+      "budget_2025": 27500,
+      "budget_2026": 33300,
+      "budget_requested": 36700,
+      "change_amount": 5800,
+      "change_rate": 21.09,
+      "account_type": "기금",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 자동화 통합 민원",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 21310
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 4995
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 6995
+        }
+      ]
+    },
+    {
+      "id": "PX1016",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 시범",
+      "project_name": "디지털 행정 서비스 고도화 운영 시범",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 47465,
+      "budget_2025": 50500,
+      "budget_2026": 62300,
+      "budget_requested": 70800,
+      "change_amount": 11800,
+      "change_rate": 23.37,
+      "account_type": "일반회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 통합 민원 행정",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 28110
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 17345
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 16845
+        }
+      ]
+    },
+    {
+      "id": "PX1017",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 고도화",
+      "project_name": "디지털 행정 서비스 고도화 운영 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 48076,
+      "budget_2025": 52000,
+      "budget_2026": 60800,
+      "budget_requested": 70800,
+      "change_amount": 8800,
+      "change_rate": 16.92,
+      "account_type": "특별회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 통합 자동화 행정",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 23060
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 20120
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 17620
+        }
+      ]
+    },
+    {
+      "id": "PX1018",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 전환",
+      "project_name": "디지털 행정 서비스 고도화 개선 통합",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 95000,
+      "budget_requested": 116900,
+      "change_amount": 95000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 행정 자동화 통합",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 37500
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 36750
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 20750
+        }
+      ]
+    },
+    {
+      "id": "PX1019",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 시범",
+      "project_name": "디지털 행정 서비스 고도화 연계 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 38834,
+      "budget_2025": 46500,
+      "budget_2026": 57200,
+      "budget_requested": 66600,
+      "change_amount": 10700,
+      "change_rate": 23.01,
+      "account_type": "일반회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 행정 자동화 서비스",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 31540
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 11580
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 14080
+        }
+      ]
+    },
+    {
+      "id": "PX1020",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "디지털정부 통합",
+      "project_name": "디지털 행정 서비스 고도화 지원 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 81745,
+      "budget_2025": 86500,
+      "budget_2026": 100000,
+      "budget_requested": 112700,
+      "change_amount": 13500,
+      "change_rate": 15.61,
+      "account_type": "일반회계",
+      "legal_basis": "전자정부법",
+      "description": "행정 서비스 통합 제공, 민원 처리 자동화, 공공 시스템 연계 및 사용자 편의성 개선 통합 서비스 자동화",
+      "sub_projects": [
+        {
+          "name": "민원서비스 고도화",
+          "budget": 48500
+        },
+        {
+          "name": "시스템 연계",
+          "budget": 23500
+        },
+        {
+          "name": "사용자 UX 개선",
+          "budget": 28000
+        }
+      ]
+    },
+    {
+      "id": "PX1021",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 2단계",
+      "project_name": "사이버보안 취약점 대응체계 개선 전환",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 86000,
+      "budget_requested": 93500,
+      "change_amount": 86000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 대응 보안 패치",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 34700
+        },
+        {
+          "name": "패치 관리",
+          "budget": 21900
+        },
+        {
+          "name": "침해대응",
+          "budget": 29400
+        }
+      ]
+    },
+    {
+      "id": "PX1022",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 시범",
+      "project_name": "사이버보안 취약점 대응체계 지원 전환",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 53216,
+      "budget_2025": 57500,
+      "budget_2026": 54600,
+      "budget_requested": 59000,
+      "change_amount": -2900,
+      "change_rate": -5.04,
+      "account_type": "기금",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 보안 침해사고 취약점",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 30220
+        },
+        {
+          "name": "패치 관리",
+          "budget": 12690
+        },
+        {
+          "name": "침해대응",
+          "budget": 11690
+        }
+      ]
+    },
+    {
+      "id": "PX1023",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 1단계",
+      "project_name": "사이버보안 취약점 대응체계 운영 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 67641,
+      "budget_2025": 76500,
+      "budget_2026": 97100,
+      "budget_requested": 103800,
+      "change_amount": 20600,
+      "change_rate": 26.93,
+      "account_type": "특별회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 취약점 대응 보안",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 33470
+        },
+        {
+          "name": "패치 관리",
+          "budget": 41065
+        },
+        {
+          "name": "침해대응",
+          "budget": 22565
+        }
+      ]
+    },
+    {
+      "id": "PX1024",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 2단계",
+      "project_name": "사이버보안 취약점 대응체계 고도화 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 6514,
+      "budget_2025": 8000,
+      "budget_2026": 9300,
+      "budget_requested": 10600,
+      "change_amount": 1300,
+      "change_rate": 16.25,
+      "account_type": "일반회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 보안 패치 취약점",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 3510
+        },
+        {
+          "name": "패치 관리",
+          "budget": 3895
+        },
+        {
+          "name": "침해대응",
+          "budget": 1895
+        }
+      ]
+    },
+    {
+      "id": "PX1025",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 1단계",
+      "project_name": "사이버보안 취약점 대응체계 개선 1단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 42018,
+      "budget_2025": 47500,
+      "budget_2026": 45900,
+      "budget_requested": 50200,
+      "change_amount": -1600,
+      "change_rate": -3.37,
+      "account_type": "일반회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 대응 침해사고 보안",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 16130
+        },
+        {
+          "name": "패치 관리",
+          "budget": 12885
+        },
+        {
+          "name": "침해대응",
+          "budget": 16885
+        }
+      ]
+    },
+    {
+      "id": "PX1026",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 1단계",
+      "project_name": "사이버보안 취약점 대응체계 지원 고도화",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 61586,
+      "budget_2025": 74000,
+      "budget_2026": 78900,
+      "budget_requested": 81300,
+      "change_amount": 4900,
+      "change_rate": 6.62,
+      "account_type": "특별회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 패치 취약점 보안",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 35230
+        },
+        {
+          "name": "패치 관리",
+          "budget": 19835
+        },
+        {
+          "name": "침해대응",
+          "budget": 23835
+        }
+      ]
+    },
+    {
+      "id": "PX1027",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 통합",
+      "project_name": "사이버보안 취약점 대응체계 운영 전환",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 10830,
+      "budget_2025": 11500,
+      "budget_2026": 12400,
+      "budget_requested": 12700,
+      "change_amount": 900,
+      "change_rate": 7.83,
+      "account_type": "일반회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 침해사고 패치 보안",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 5180
+        },
+        {
+          "name": "패치 관리",
+          "budget": 2360
+        },
+        {
+          "name": "침해대응",
+          "budget": 4860
+        }
+      ]
+    },
+    {
+      "id": "PX1028",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 2단계",
+      "project_name": "사이버보안 취약점 대응체계 구축 통합",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 75000,
+      "budget_requested": 82600,
+      "change_amount": 75000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 패치 대응 취약점",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 22500
+        },
+        {
+          "name": "패치 관리",
+          "budget": 22750
+        },
+        {
+          "name": "침해대응",
+          "budget": 29750
+        }
+      ]
+    },
+    {
+      "id": "PX1029",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 고도화",
+      "project_name": "사이버보안 취약점 대응체계 개선 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 67751,
+      "budget_2025": 83500,
+      "budget_2026": 94600,
+      "budget_requested": 98000,
+      "change_amount": 11100,
+      "change_rate": 13.29,
+      "account_type": "일반회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 패치 보안 취약점",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 51720
+        },
+        {
+          "name": "패치 관리",
+          "budget": 18190
+        },
+        {
+          "name": "침해대응",
+          "budget": 24690
+        }
+      ]
+    },
+    {
+      "id": "PX1030",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "정보보호 2단계",
+      "project_name": "사이버보안 취약점 대응체계 고도화 고도화",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 50667,
+      "budget_2025": 53000,
+      "budget_2026": 50500,
+      "budget_requested": 57200,
+      "change_amount": -2500,
+      "change_rate": -4.72,
+      "account_type": "특별회계",
+      "legal_basis": "정보보호산업법",
+      "description": "보안 취약점 점검, 패치 관리, 침해사고 예방 및 대응 프로세스 운영 보안 취약점 패치",
+      "sub_projects": [
+        {
+          "name": "취약점 진단",
+          "budget": 20850
+        },
+        {
+          "name": "패치 관리",
+          "budget": 8575
+        },
+        {
+          "name": "침해대응",
+          "budget": 21075
+        }
+      ]
+    },
+    {
+      "id": "PX1031",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 1단계",
+      "project_name": "디지털 인재양성 훈련 연계 전환",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 25000,
+      "budget_requested": 28800,
+      "change_amount": 25000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 훈련 인재 디지털",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 8000
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 10750
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 6250
+        }
+      ]
+    },
+    {
+      "id": "PX1032",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 시범",
+      "project_name": "디지털 인재양성 훈련 연계 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 75188,
+      "budget_2025": 86500,
+      "budget_2026": 104200,
+      "budget_requested": 107300,
+      "change_amount": 17700,
+      "change_rate": 20.46,
+      "account_type": "특별회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 양성 교육 훈련",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 17940
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 39630
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 46630
+        }
+      ]
+    },
+    {
+      "id": "PX1033",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 2단계",
+      "project_name": "디지털 인재양성 훈련 개선 1단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 31907,
+      "budget_2025": 38000,
+      "budget_2026": 44800,
+      "budget_requested": 52700,
+      "change_amount": 6800,
+      "change_rate": 17.89,
+      "account_type": "특별회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 디지털 양성 훈련",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 8360
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 16720
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 19720
+        }
+      ]
+    },
+    {
+      "id": "PX1034",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 고도화",
+      "project_name": "디지털 인재양성 훈련 운영 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 20548,
+      "budget_2025": 25500,
+      "budget_2026": 32000,
+      "budget_requested": 36100,
+      "change_amount": 6500,
+      "change_rate": 25.49,
+      "account_type": "기금",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 인재 훈련 양성",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 17900
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 8800
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 5300
+        }
+      ]
+    },
+    {
+      "id": "PX1035",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 전환",
+      "project_name": "디지털 인재양성 훈련 고도화 고도화",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 16174,
+      "budget_2025": 19000,
+      "budget_2026": 22800,
+      "budget_requested": 24600,
+      "change_amount": 3800,
+      "change_rate": 20.0,
+      "account_type": "특별회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 양성 교육 인재",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 5460
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 7420
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 9920
+        }
+      ]
+    },
+    {
+      "id": "PX1036",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 고도화",
+      "project_name": "디지털 인재양성 훈련 고도화 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 28979,
+      "budget_2025": 34000,
+      "budget_2026": 38700,
+      "budget_requested": 41200,
+      "change_amount": 4700,
+      "change_rate": 13.82,
+      "account_type": "일반회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 디지털 인재 훈련",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 24090
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 5805
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 8805
+        }
+      ]
+    },
+    {
+      "id": "PX1037",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 2단계",
+      "project_name": "디지털 인재양성 훈련 지원 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 68120,
+      "budget_2025": 71500,
+      "budget_2026": 73700,
+      "budget_requested": 79400,
+      "change_amount": 2200,
+      "change_rate": 3.08,
+      "account_type": "특별회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 인재 디지털 양성",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 37090
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 11055
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 25555
+        }
+      ]
+    },
+    {
+      "id": "PX1038",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 통합",
+      "project_name": "디지털 인재양성 훈련 구축 전환",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 92000,
+      "budget_requested": 107700,
+      "change_amount": 92000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 인재 교육 양성",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 40900
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 24800
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 26300
+        }
+      ]
+    },
+    {
+      "id": "PX1039",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 고도화",
+      "project_name": "디지털 인재양성 훈련 확산 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 63614,
+      "budget_2025": 65000,
+      "budget_2026": 72600,
+      "budget_requested": 77000,
+      "change_amount": 7600,
+      "change_rate": 11.69,
+      "account_type": "일반회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 양성 인재 교육",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 37320
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 19390
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 15890
+        }
+      ]
+    },
+    {
+      "id": "PX1040",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "040",
+      "function": "교육",
+      "program": "인력양성 2단계",
+      "project_name": "디지털 인재양성 훈련 지원 시범",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 41881,
+      "budget_2025": 46500,
+      "budget_2026": 46300,
+      "budget_requested": 49200,
+      "change_amount": -200,
+      "change_rate": -0.43,
+      "account_type": "특별회계",
+      "legal_basis": "근로자직업능력개발법",
+      "description": "AI·데이터·소프트웨어 분야 실무형 교육, 재직자 및 청년 대상 훈련 프로그램 운영 디지털 양성 교육",
+      "sub_projects": [
+        {
+          "name": "청년 디지털 교육",
+          "budget": 24410
+        },
+        {
+          "name": "재직자 전환훈련",
+          "budget": 11945
+        },
+        {
+          "name": "산학연계 과정",
+          "budget": 9945
+        }
+      ]
+    },
+    {
+      "id": "PX1041",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 1단계",
+      "project_name": "스마트 물류·교통 인프라 운영 전환",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 81000,
+      "budget_requested": 101200,
+      "change_amount": 81000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 실증 교통 데이터",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 40200
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 14650
+        },
+        {
+          "name": "현장 실증",
+          "budget": 26150
+        }
+      ]
+    },
+    {
+      "id": "PX1042",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 고도화",
+      "project_name": "스마트 물류·교통 인프라 지원 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 46316,
+      "budget_2025": 49000,
+      "budget_2026": 55900,
+      "budget_requested": 61300,
+      "change_amount": 6900,
+      "change_rate": 14.08,
+      "account_type": "기금",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 물류 교통 운영",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 22130
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 22885
+        },
+        {
+          "name": "현장 실증",
+          "budget": 10885
+        }
+      ]
+    },
+    {
+      "id": "PX1043",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 시범",
+      "project_name": "스마트 물류·교통 인프라 연계 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 47075,
+      "budget_2025": 55000,
+      "budget_2026": 67000,
+      "budget_requested": 73400,
+      "change_amount": 12000,
+      "change_rate": 21.82,
+      "account_type": "기금",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 운영 데이터 교통",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 44900
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 12050
+        },
+        {
+          "name": "현장 실증",
+          "budget": 10050
+        }
+      ]
+    },
+    {
+      "id": "PX1044",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 통합",
+      "project_name": "스마트 물류·교통 인프라 실증 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 23322,
+      "budget_2025": 28500,
+      "budget_2026": 31400,
+      "budget_requested": 32500,
+      "change_amount": 2900,
+      "change_rate": 10.18,
+      "account_type": "특별회계",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 데이터 실증 운영",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 14480
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 10710
+        },
+        {
+          "name": "현장 실증",
+          "budget": 6210
+        }
+      ]
+    },
+    {
+      "id": "PX1045",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 전환",
+      "project_name": "스마트 물류·교통 인프라 연계 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 34169,
+      "budget_2025": 36500,
+      "budget_2026": 33800,
+      "budget_requested": 37000,
+      "change_amount": -2700,
+      "change_rate": -7.4,
+      "account_type": "기금",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 운영 데이터 물류",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 6160
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 14570
+        },
+        {
+          "name": "현장 실증",
+          "budget": 13070
+        }
+      ]
+    },
+    {
+      "id": "PX1046",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 고도화",
+      "project_name": "스마트 물류·교통 인프라 운영 시범",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 27157,
+      "budget_2025": 33500,
+      "budget_2026": 33100,
+      "budget_requested": 37900,
+      "change_amount": -400,
+      "change_rate": -1.19,
+      "account_type": "일반회계",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 운영 데이터 물류",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 12170
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 13465
+        },
+        {
+          "name": "현장 실증",
+          "budget": 7465
+        }
+      ]
+    },
+    {
+      "id": "PX1047",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 1단계",
+      "project_name": "스마트 물류·교통 인프라 실증 시범",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 65066,
+      "budget_2025": 71000,
+      "budget_2026": 74600,
+      "budget_requested": 79800,
+      "change_amount": 3600,
+      "change_rate": 5.07,
+      "account_type": "특별회계",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 교통 데이터 실증",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 17220
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 28190
+        },
+        {
+          "name": "현장 실증",
+          "budget": 29190
+        }
+      ]
+    },
+    {
+      "id": "PX1048",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 전환",
+      "project_name": "스마트 물류·교통 인프라 실증 전환",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 60000,
+      "budget_requested": 74900,
+      "change_amount": 60000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 교통 운영 실증",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 21500
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 14000
+        },
+        {
+          "name": "현장 실증",
+          "budget": 24500
+        }
+      ]
+    },
+    {
+      "id": "PX1049",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 1단계",
+      "project_name": "스마트 물류·교통 인프라 운영 전환",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 24560,
+      "budget_2025": 28500,
+      "budget_2026": 36300,
+      "budget_requested": 41800,
+      "change_amount": 7800,
+      "change_rate": 27.37,
+      "account_type": "특별회계",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 실증 물류 데이터",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 11910
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 8945
+        },
+        {
+          "name": "현장 실증",
+          "budget": 15445
+        }
+      ]
+    },
+    {
+      "id": "PX1050",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "120",
+      "function": "수송및교통",
+      "program": "스마트인프라 통합",
+      "project_name": "스마트 물류·교통 인프라 구축 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 15482,
+      "budget_2025": 17000,
+      "budget_2026": 16000,
+      "budget_requested": 17500,
+      "change_amount": -1000,
+      "change_rate": -5.88,
+      "account_type": "기금",
+      "legal_basis": "국가통합교통체계효율화법",
+      "description": "스마트 물류, 교통 데이터 기반 운영 최적화, 현장 실증 및 서비스 확산 데이터 물류 교통",
+      "sub_projects": [
+        {
+          "name": "교통 데이터 허브",
+          "budget": 10200
+        },
+        {
+          "name": "물류 최적화",
+          "budget": 2900
+        },
+        {
+          "name": "현장 실증",
+          "budget": 2900
+        }
+      ]
+    },
+    {
+      "id": "PX1051",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 시범",
+      "project_name": "공공 클라우드 전환 연계 2단계",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 81000,
+      "budget_requested": 97900,
+      "change_amount": 81000,
+      "change_rate": 100.0,
+      "account_type": "특별회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 표준화 효율화 클라우드",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 42700
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 14150
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 24150
+        }
+      ]
+    },
+    {
+      "id": "PX1052",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 2단계",
+      "project_name": "공공 클라우드 전환 개선 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 47903,
+      "budget_2025": 52500,
+      "budget_2026": 50600,
+      "budget_requested": 54200,
+      "change_amount": -1900,
+      "change_rate": -3.62,
+      "account_type": "일반회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 클라우드 전환",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 26920
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 15090
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 8590
+        }
+      ]
+    },
+    {
+      "id": "PX1053",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 2단계",
+      "project_name": "공공 클라우드 전환 확산 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 22330,
+      "budget_2025": 23500,
+      "budget_2026": 25600,
+      "budget_requested": 27200,
+      "change_amount": 2100,
+      "change_rate": 8.94,
+      "account_type": "특별회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 표준화 전환 운영",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 7920
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 6340
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 11340
+        }
+      ]
+    },
+    {
+      "id": "PX1054",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 시범",
+      "project_name": "공공 클라우드 전환 개선 통합",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 14522,
+      "budget_2025": 15500,
+      "budget_2026": 16300,
+      "budget_requested": 16600,
+      "change_amount": 800,
+      "change_rate": 5.16,
+      "account_type": "기금",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 클라우드 표준화",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 9410
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 3445
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 3445
+        }
+      ]
+    },
+    {
+      "id": "PX1055",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 통합",
+      "project_name": "공공 클라우드 전환 확산 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 49058,
+      "budget_2025": 51500,
+      "budget_2026": 60500,
+      "budget_requested": 69500,
+      "change_amount": 9000,
+      "change_rate": 17.48,
+      "account_type": "특별회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 전환 효율화",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 25850
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 14575
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 20075
+        }
+      ]
+    },
+    {
+      "id": "PX1056",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 전환",
+      "project_name": "공공 클라우드 전환 구축 고도화",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 76852,
+      "budget_2025": 84000,
+      "budget_2026": 85700,
+      "budget_requested": 98700,
+      "change_amount": 1700,
+      "change_rate": 2.02,
+      "account_type": "기금",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 운영 전환",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 32990
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 27855
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 24855
+        }
+      ]
+    },
+    {
+      "id": "PX1057",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 전환",
+      "project_name": "공공 클라우드 전환 구축 전환",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 25088,
+      "budget_2025": 31000,
+      "budget_2026": 31100,
+      "budget_requested": 35600,
+      "change_amount": 100,
+      "change_rate": 0.32,
+      "account_type": "일반회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 운영 효율화",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 15770
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 9165
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 6165
+        }
+      ]
+    },
+    {
+      "id": "PX1058",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 1단계",
+      "project_name": "공공 클라우드 전환 연계 2단계",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 75000,
+      "budget_requested": 80400,
+      "change_amount": 75000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 표준화 전환",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 34000
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 25750
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 15250
+        }
+      ]
+    },
+    {
+      "id": "PX1059",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 통합",
+      "project_name": "공공 클라우드 전환 연계 고도화",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 10272,
+      "budget_2025": 12000,
+      "budget_2026": 12900,
+      "budget_requested": 14100,
+      "change_amount": 900,
+      "change_rate": 7.5,
+      "account_type": "특별회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 운영 클라우드 전환",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 7530
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 2435
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 2935
+        }
+      ]
+    },
+    {
+      "id": "PX1060",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "클라우드전환 통합",
+      "project_name": "공공 클라우드 전환 운영 시범",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 23554,
+      "budget_2025": 28000,
+      "budget_2026": 31700,
+      "budget_requested": 34600,
+      "change_amount": 3700,
+      "change_rate": 13.21,
+      "account_type": "특별회계",
+      "legal_basis": "클라우드컴퓨팅법",
+      "description": "노후 시스템의 클라우드 전환, 공통 인프라 표준화, 운영 효율화 및 비용 절감 클라우드 운영 효율화",
+      "sub_projects": [
+        {
+          "name": "클라우드 마이그레이션",
+          "budget": 11690
+        },
+        {
+          "name": "공통 인프라",
+          "budget": 11755
+        },
+        {
+          "name": "운영 표준화",
+          "budget": 8255
+        }
+      ]
+    },
+    {
+      "id": "PX1061",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 1단계",
+      "project_name": "복지 데이터 연계·활용 지원 전환",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 98000,
+      "budget_requested": 118200,
+      "change_amount": 98000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 분석 추천 데이터",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 28600
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 33200
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 36200
+        }
+      ]
+    },
+    {
+      "id": "PX1062",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 전환",
+      "project_name": "복지 데이터 연계·활용 구축 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 56740,
+      "budget_2025": 58500,
+      "budget_2026": 64800,
+      "budget_requested": 67000,
+      "change_amount": 6300,
+      "change_rate": 10.77,
+      "account_type": "특별회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 추천 분석 데이터",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 21860
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 18220
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 24720
+        }
+      ]
+    },
+    {
+      "id": "PX1063",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 전환",
+      "project_name": "복지 데이터 연계·활용 구축 전환",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 75120,
+      "budget_2025": 81000,
+      "budget_2026": 78300,
+      "budget_requested": 84200,
+      "change_amount": -2700,
+      "change_rate": -3.33,
+      "account_type": "특별회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 연계 추천",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 20810
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 26245
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 31245
+        }
+      ]
+    },
+    {
+      "id": "PX1064",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 2단계",
+      "project_name": "복지 데이터 연계·활용 확산 통합",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 7940,
+      "budget_2025": 9000,
+      "budget_2026": 11100,
+      "budget_requested": 11900,
+      "change_amount": 2100,
+      "change_rate": 23.33,
+      "account_type": "특별회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 추천 데이터 복지",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 4270
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 4665
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 2165
+        }
+      ]
+    },
+    {
+      "id": "PX1065",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 통합",
+      "project_name": "복지 데이터 연계·활용 개선 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 41823,
+      "budget_2025": 44000,
+      "budget_2026": 42300,
+      "budget_requested": 45300,
+      "change_amount": -1700,
+      "change_rate": -3.86,
+      "account_type": "특별회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 분석 연계",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 17610
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 7845
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 16845
+        }
+      ]
+    },
+    {
+      "id": "PX1066",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 전환",
+      "project_name": "복지 데이터 연계·활용 고도화 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 56390,
+      "budget_2025": 65500,
+      "budget_2026": 68000,
+      "budget_requested": 79800,
+      "change_amount": 2500,
+      "change_rate": 3.82,
+      "account_type": "일반회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 연계 추천 분석",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 11100
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 26700
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 30200
+        }
+      ]
+    },
+    {
+      "id": "PX1067",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 전환",
+      "project_name": "복지 데이터 연계·활용 개선 시범",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 16646,
+      "budget_2025": 17500,
+      "budget_2026": 16700,
+      "budget_requested": 17800,
+      "change_amount": -800,
+      "change_rate": -4.57,
+      "account_type": "일반회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 분석 데이터 복지",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 4190
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 5005
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 7505
+        }
+      ]
+    },
+    {
+      "id": "PX1068",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 고도화",
+      "project_name": "복지 데이터 연계·활용 지원 1단계",
+      "project_type": "정보화",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 97000,
+      "budget_requested": 102400,
+      "change_amount": 97000,
+      "change_rate": 100.0,
+      "account_type": "특별회계",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 추천 분석",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 40900
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 39050
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 17050
+        }
+      ]
+    },
+    {
+      "id": "PX1069",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 1단계",
+      "project_name": "복지 데이터 연계·활용 확산 1단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 31220,
+      "budget_2025": 35000,
+      "budget_2026": 42000,
+      "budget_requested": 45300,
+      "change_amount": 7000,
+      "change_rate": 20.0,
+      "account_type": "기금",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 데이터 분석 추천",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 14400
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 9800
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 17800
+        }
+      ]
+    },
+    {
+      "id": "PX1070",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "080",
+      "function": "사회복지",
+      "program": "복지디지털 시범",
+      "project_name": "복지 데이터 연계·활용 연계 2단계",
+      "project_type": "정보화",
+      "is_new": false,
+      "budget_2024": 46705,
+      "budget_2025": 49000,
+      "budget_2026": 45700,
+      "budget_requested": 48800,
+      "change_amount": -3300,
+      "change_rate": -6.73,
+      "account_type": "기금",
+      "legal_basis": "사회보장기본법",
+      "description": "복지 수요자 데이터 연계, 맞춤형 서비스 추천, 복지 사각지대 분석 지원 복지 연계 데이터",
+      "sub_projects": [
+        {
+          "name": "데이터 연계",
+          "budget": 15990
+        },
+        {
+          "name": "대상자 분석",
+          "budget": 13355
+        },
+        {
+          "name": "맞춤형 추천",
+          "budget": 16355
+        }
+      ]
+    },
+    {
+      "id": "PX1071",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 1단계",
+      "project_name": "첨단소재 핵심기술 개발 지원 1단계",
+      "project_type": "R&D",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 30000,
+      "budget_requested": 31800,
+      "change_amount": 30000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 시제품 연구개발",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 11500
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 7500
+        },
+        {
+          "name": "실증 연계",
+          "budget": 11000
+        }
+      ]
+    },
+    {
+      "id": "PX1072",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 2단계",
+      "project_name": "첨단소재 핵심기술 개발 개선 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 86357,
+      "budget_2025": 89000,
+      "budget_2026": 96100,
+      "budget_requested": 107100,
+      "change_amount": 7100,
+      "change_rate": 7.98,
+      "account_type": "특별회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 연구개발 원천기술 첨단소재",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 42270
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 22415
+        },
+        {
+          "name": "실증 연계",
+          "budget": 31415
+        }
+      ]
+    },
+    {
+      "id": "PX1073",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 시범",
+      "project_name": "첨단소재 핵심기술 개발 개선 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 39637,
+      "budget_2025": 46000,
+      "budget_2026": 53500,
+      "budget_requested": 59400,
+      "change_amount": 7500,
+      "change_rate": 16.3,
+      "account_type": "일반회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 연구개발 첨단소재",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 20950
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 16025
+        },
+        {
+          "name": "실증 연계",
+          "budget": 16525
+        }
+      ]
+    },
+    {
+      "id": "PX1074",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 통합",
+      "project_name": "첨단소재 핵심기술 개발 구축 시범",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 37012,
+      "budget_2025": 44500,
+      "budget_2026": 48300,
+      "budget_requested": 55600,
+      "change_amount": 3800,
+      "change_rate": 8.54,
+      "account_type": "기금",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 첨단소재 실증 원천기술",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 18310
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 10745
+        },
+        {
+          "name": "실증 연계",
+          "budget": 19245
+        }
+      ]
+    },
+    {
+      "id": "PX1075",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 1단계",
+      "project_name": "첨단소재 핵심기술 개발 개선 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 20908,
+      "budget_2025": 25500,
+      "budget_2026": 29900,
+      "budget_requested": 32500,
+      "change_amount": 4400,
+      "change_rate": 17.25,
+      "account_type": "일반회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 첨단소재 시제품 실증",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 14430
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 5485
+        },
+        {
+          "name": "실증 연계",
+          "budget": 9985
+        }
+      ]
+    },
+    {
+      "id": "PX1076",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 고도화",
+      "project_name": "첨단소재 핵심기술 개발 확산 통합",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 61420,
+      "budget_2025": 65500,
+      "budget_2026": 60400,
+      "budget_requested": 64200,
+      "change_amount": -5100,
+      "change_rate": -7.79,
+      "account_type": "특별회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 첨단소재 시제품",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 22280
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 16060
+        },
+        {
+          "name": "실증 연계",
+          "budget": 22060
+        }
+      ]
+    },
+    {
+      "id": "PX1077",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 1단계",
+      "project_name": "첨단소재 핵심기술 개발 실증 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 22409,
+      "budget_2025": 27000,
+      "budget_2026": 28800,
+      "budget_requested": 31200,
+      "change_amount": 1800,
+      "change_rate": 6.67,
+      "account_type": "일반회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 첨단소재 연구개발 실증",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 5160
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 11820
+        },
+        {
+          "name": "실증 연계",
+          "budget": 11820
+        }
+      ]
+    },
+    {
+      "id": "PX1078",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 통합",
+      "project_name": "첨단소재 핵심기술 개발 운영 전환",
+      "project_type": "R&D",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 35000,
+      "budget_requested": 38800,
+      "change_amount": 35000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 연구개발 원천기술 실증",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 14500
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 10750
+        },
+        {
+          "name": "실증 연계",
+          "budget": 9750
+        }
+      ]
+    },
+    {
+      "id": "PX1079",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 통합",
+      "project_name": "첨단소재 핵심기술 개발 연계 고도화",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 35206,
+      "budget_2025": 39500,
+      "budget_2026": 37900,
+      "budget_requested": 39900,
+      "change_amount": -1600,
+      "change_rate": -4.05,
+      "account_type": "일반회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 원천기술 연구개발 첨단소재",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 7030
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 15185
+        },
+        {
+          "name": "실증 연계",
+          "budget": 15685
+        }
+      ]
+    },
+    {
+      "id": "PX1080",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "첨단기술R&D 전환",
+      "project_name": "첨단소재 핵심기술 개발 실증 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 70664,
+      "budget_2025": 86000,
+      "budget_2026": 91000,
+      "budget_requested": 97000,
+      "change_amount": 5000,
+      "change_rate": 5.81,
+      "account_type": "특별회계",
+      "legal_basis": "국가연구개발혁신법",
+      "description": "차세대 첨단소재 원천기술 확보와 실증 연계를 위한 연구개발 사업 실증 연구개발 첨단소재",
+      "sub_projects": [
+        {
+          "name": "원천기술 연구",
+          "budget": 37200
+        },
+        {
+          "name": "시제품 제작",
+          "budget": 39150
+        },
+        {
+          "name": "실증 연계",
+          "budget": 14650
+        }
+      ]
+    },
+    {
+      "id": "PX1081",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 1단계",
+      "project_name": "산업 AI 실증·사업화 확산 시범",
+      "project_type": "R&D",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 48000,
+      "budget_requested": 58600,
+      "change_amount": 48000,
+      "change_rate": 100.0,
+      "account_type": "특별회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 제조 AI 실증",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 20600
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 20200
+        },
+        {
+          "name": "성과 확산",
+          "budget": 7200
+        }
+      ]
+    },
+    {
+      "id": "PX1082",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 전환",
+      "project_name": "산업 AI 실증·사업화 개선 2단계",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 66503,
+      "budget_2025": 77500,
+      "budget_2026": 83200,
+      "budget_requested": 94700,
+      "change_amount": 5700,
+      "change_rate": 7.35,
+      "account_type": "일반회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 사업화 AI 실증",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 30740
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 36480
+        },
+        {
+          "name": "성과 확산",
+          "budget": 15980
+        }
+      ]
+    },
+    {
+      "id": "PX1083",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 전환",
+      "project_name": "산업 AI 실증·사업화 실증 통합",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 36428,
+      "budget_2025": 42000,
+      "budget_2026": 45600,
+      "budget_requested": 53700,
+      "change_amount": 3600,
+      "change_rate": 8.57,
+      "account_type": "일반회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 서비스 AI 사업화",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 26920
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 10840
+        },
+        {
+          "name": "성과 확산",
+          "budget": 7840
+        }
+      ]
+    },
+    {
+      "id": "PX1084",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 1단계",
+      "project_name": "산업 AI 실증·사업화 개선 고도화",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 63171,
+      "budget_2025": 70000,
+      "budget_2026": 88800,
+      "budget_requested": 101200,
+      "change_amount": 18800,
+      "change_rate": 26.86,
+      "account_type": "일반회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 AI 서비스 실증",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 27160
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 32820
+        },
+        {
+          "name": "성과 확산",
+          "budget": 28820
+        }
+      ]
+    },
+    {
+      "id": "PX1085",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 전환",
+      "project_name": "산업 AI 실증·사업화 연계 시범",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 26945,
+      "budget_2025": 27500,
+      "budget_2026": 26000,
+      "budget_requested": 30400,
+      "change_amount": -1500,
+      "change_rate": -5.45,
+      "account_type": "기금",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 사업화 AI 제조",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 13200
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 5900
+        },
+        {
+          "name": "성과 확산",
+          "budget": 6900
+        }
+      ]
+    },
+    {
+      "id": "PX1086",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 통합",
+      "project_name": "산업 AI 실증·사업화 고도화 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 31235,
+      "budget_2025": 35500,
+      "budget_2026": 35200,
+      "budget_requested": 37400,
+      "change_amount": -300,
+      "change_rate": -0.85,
+      "account_type": "특별회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 서비스 사업화 실증",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 11640
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 8280
+        },
+        {
+          "name": "성과 확산",
+          "budget": 15280
+        }
+      ]
+    },
+    {
+      "id": "PX1087",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 시범",
+      "project_name": "산업 AI 실증·사업화 지원 전환",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 6544,
+      "budget_2025": 8000,
+      "budget_2026": 8900,
+      "budget_requested": 9300,
+      "change_amount": 900,
+      "change_rate": 11.25,
+      "account_type": "일반회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 실증 서비스 AI",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 3730
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 3835
+        },
+        {
+          "name": "성과 확산",
+          "budget": 1335
+        }
+      ]
+    },
+    {
+      "id": "PX1088",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 전환",
+      "project_name": "산업 AI 실증·사업화 지원 고도화",
+      "project_type": "R&D",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 79000,
+      "budget_requested": 87100,
+      "change_amount": 79000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 실증 제조 사업화",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 45300
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 14850
+        },
+        {
+          "name": "성과 확산",
+          "budget": 18850
+        }
+      ]
+    },
+    {
+      "id": "PX1089",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 통합",
+      "project_name": "산업 AI 실증·사업화 고도화 시범",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 13680,
+      "budget_2025": 15000,
+      "budget_2026": 17800,
+      "budget_requested": 18200,
+      "change_amount": 2800,
+      "change_rate": 18.67,
+      "account_type": "기금",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 제조 실증 AI",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 5960
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 5670
+        },
+        {
+          "name": "성과 확산",
+          "budget": 6170
+        }
+      ]
+    },
+    {
+      "id": "PX1090",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "140",
+      "function": "과학기술",
+      "program": "AI산업화 고도화",
+      "project_name": "산업 AI 실증·사업화 연계 1단계",
+      "project_type": "R&D",
+      "is_new": false,
+      "budget_2024": 28829,
+      "budget_2025": 31500,
+      "budget_2026": 34000,
+      "budget_requested": 38900,
+      "change_amount": 2500,
+      "change_rate": 7.94,
+      "account_type": "일반회계",
+      "legal_basis": "산업기술혁신촉진법",
+      "description": "AI 기술을 제조·서비스 현장에 적용하고 실증을 거쳐 사업화까지 연결하는 사업 실증 서비스 AI",
+      "sub_projects": [
+        {
+          "name": "현장 실증",
+          "budget": 15300
+        },
+        {
+          "name": "사업화 지원",
+          "budget": 12600
+        },
+        {
+          "name": "성과 확산",
+          "budget": 6100
+        }
+      ]
+    },
+    {
+      "id": "PX1091",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 전환",
+      "project_name": "개인정보 안전관리 체계 확산 고도화",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 77000,
+      "budget_requested": 92800,
+      "change_amount": 77000,
+      "change_rate": 100.0,
+      "account_type": "기금",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 조치 보호 안전관리",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 31900
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 11550
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 33550
+        }
+      ]
+    },
+    {
+      "id": "PX1092",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 고도화",
+      "project_name": "개인정보 안전관리 체계 개선 고도화",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 6428,
+      "budget_2025": 8000,
+      "budget_2026": 7900,
+      "budget_requested": 8800,
+      "change_amount": -100,
+      "change_rate": -1.25,
+      "account_type": "일반회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 안전관리 조치",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 4030
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 2685
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 1185
+        }
+      ]
+    },
+    {
+      "id": "PX1093",
+      "ministry_code": "M23",
+      "ministry": "중소벤처기업부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 1단계",
+      "project_name": "개인정보 안전관리 체계 운영 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 64339,
+      "budget_2025": 72500,
+      "budget_2026": 69600,
+      "budget_requested": 77000,
+      "change_amount": -2900,
+      "change_rate": -4.0,
+      "account_type": "특별회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 보호 개인정보 점검",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 23720
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 15440
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 30440
+        }
+      ]
+    },
+    {
+      "id": "PX1094",
+      "ministry_code": "M24",
+      "ministry": "고용노동부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 전환",
+      "project_name": "개인정보 안전관리 체계 실증 2단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 14820,
+      "budget_2025": 15500,
+      "budget_2026": 14500,
+      "budget_requested": 15400,
+      "change_amount": -1000,
+      "change_rate": -6.45,
+      "account_type": "특별회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 안전관리 개인정보 조치",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 5150
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 5675
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 3675
+        }
+      ]
+    },
+    {
+      "id": "PX1095",
+      "ministry_code": "M25",
+      "ministry": "개인정보보호위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 2단계",
+      "project_name": "개인정보 안전관리 체계 고도화 통합",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 61521,
+      "budget_2025": 71500,
+      "budget_2026": 68700,
+      "budget_requested": 71200,
+      "change_amount": -2800,
+      "change_rate": -3.92,
+      "account_type": "기금",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 조치 개인정보",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 13090
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 28305
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 27305
+        }
+      ]
+    },
+    {
+      "id": "PX1096",
+      "ministry_code": "M26",
+      "ministry": "디지털플랫폼정부위원회",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 통합",
+      "project_name": "개인정보 안전관리 체계 연계 고도화",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 37459,
+      "budget_2025": 43000,
+      "budget_2026": 45300,
+      "budget_requested": 46900,
+      "change_amount": 2300,
+      "change_rate": 5.35,
+      "account_type": "기금",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 보호 조치",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 22210
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 14795
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 8295
+        }
+      ]
+    },
+    {
+      "id": "PX1097",
+      "ministry_code": "M19",
+      "ministry": "행정안전부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 1단계",
+      "project_name": "개인정보 안전관리 체계 고도화 1단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 44353,
+      "budget_2025": 49000,
+      "budget_2026": 45400,
+      "budget_requested": 46400,
+      "change_amount": -3600,
+      "change_rate": -7.35,
+      "account_type": "특별회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 점검 조치 보호",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 22280
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 7810
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 15310
+        }
+      ]
+    },
+    {
+      "id": "PX1098",
+      "ministry_code": "M20",
+      "ministry": "산업통상자원부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 1단계",
+      "project_name": "개인정보 안전관리 체계 고도화 2단계",
+      "project_type": "일반",
+      "is_new": true,
+      "budget_2024": 0,
+      "budget_2025": 0,
+      "budget_2026": 64000,
+      "budget_requested": 69800,
+      "change_amount": 64000,
+      "change_rate": 100.0,
+      "account_type": "일반회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 안전관리 개인정보 점검",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 24800
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 23100
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 16100
+        }
+      ]
+    },
+    {
+      "id": "PX1099",
+      "ministry_code": "M21",
+      "ministry": "보건복지부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 고도화",
+      "project_name": "개인정보 안전관리 체계 실증 1단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 60414,
+      "budget_2025": 63000,
+      "budget_2026": 70800,
+      "budget_requested": 75400,
+      "change_amount": 7800,
+      "change_rate": 12.38,
+      "account_type": "특별회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 조치 안전관리 보호",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 17560
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 24120
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 29120
+        }
+      ]
+    },
+    {
+      "id": "PX1100",
+      "ministry_code": "M22",
+      "ministry": "국토교통부",
+      "function_code": "010",
+      "function": "일반공공행정",
+      "program": "개인정보보호 고도화",
+      "project_name": "개인정보 안전관리 체계 운영 1단계",
+      "project_type": "일반",
+      "is_new": false,
+      "budget_2024": 11204,
+      "budget_2025": 13000,
+      "budget_2026": 15100,
+      "budget_requested": 16500,
+      "change_amount": 2100,
+      "change_rate": 16.15,
+      "account_type": "특별회계",
+      "legal_basis": "개인정보보호법",
+      "description": "개인정보 처리 점검, 보호조치 강화, 안전관리 체계 고도화 조치 개인정보 안전관리",
+      "sub_projects": [
+        {
+          "name": "안전조치 점검",
+          "budget": 9070
+        },
+        {
+          "name": "처리현황 관리",
+          "budget": 2265
+        },
+        {
+          "name": "보호체계 고도화",
+          "budget": 3765
+        }
       ]
     }
   ]
