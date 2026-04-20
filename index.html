@@ -238,6 +238,14 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
 .ins-panel{display:none;}
 .ins-panel.active{display:block;}
 .ins-note{font-size:12px;color:var(--text2);line-height:1.7;background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px;}
+.inq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:16px;}
+.inq-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.inq-kicker{font-size:11px;font-weight:700;color:var(--accent);margin-bottom:8px;letter-spacing:.02em;}
+.inq-q{font-size:14px;font-weight:700;line-height:1.5;margin-bottom:10px;}
+.inq-answer{font-size:12px;line-height:1.75;color:var(--text);background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px;margin-bottom:10px;white-space:pre-wrap;}
+.inq-meta{display:flex;flex-direction:column;gap:8px;}
+.inq-meta-item{font-size:12px;line-height:1.65;color:var(--text2);}
+.inq-meta-item b{color:var(--text);}
 /* ── Responsive ── */
 @media(max-width:1024px){
   .header-inner{gap:12px;}
@@ -682,9 +690,10 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   </div>
 
   <div class="ins-panel" id="ins-panel-inquiry">
-    <div class="ins-note" style="margin-bottom:14px;">국회 질의 탭은 실제 답변서 초안이 아니라, 질의 가능성이 높은 쟁점을 사전에 정리하기 위한 브리핑 화면입니다. 즉 <b>유사·중복성, 급격한 증감, 신규 대규모 편성, 예산 집중도</b>를 중심으로 예상 질의와 설명 논리를 미리 준비하는 데 목적이 있습니다.</div>
-    <div class="brief-card"><h3 style="margin-bottom:10px;">📝 예상 국회 질의 메모</h3><div class="brief-box" id="ins-inquiry-brief"></div></div>
-    <div class="table-card"><div class="table-toolbar"><span style="font-weight:600;font-size:13px;">질의 포인트별 근거 사업</span></div><div class="table-wrap"><table><thead><tr><th>질의 포인트</th><th>근거 사업</th><th>설명</th></tr></thead><tbody id="ins-inquiry-tbody"></tbody></table></div></div>
+    <div class="ins-note" style="margin-bottom:14px;">국회 질의 탭은 질의 가능성이 높은 쟁점을 바탕으로 <b>답변 초안·설명 논리·추가 보완 포인트</b>를 함께 제시하는 브리핑 화면입니다. 즉 <b>유사·중복성, 급격한 증감, 신규 대규모 편성, 예산 집중도</b>를 중심으로 실제 답변 준비에 바로 활용할 수 있도록 구성했습니다.</div>
+    <div class="inq-grid" id="ins-inquiry-drafts"></div>
+    <div class="brief-card"><h3 style="margin-bottom:10px;">📝 공통 답변 원칙</h3><div class="brief-box" id="ins-inquiry-brief"></div></div>
+    <div class="table-card"><div class="table-toolbar"><span style="font-weight:600;font-size:13px;">질의별 근거·보완 필요사항</span></div><div class="table-wrap"><table><thead><tr><th>질의 포인트</th><th>답변 초안 핵심</th><th>핵심 근거</th><th>보완 필요사항</th></tr></thead><tbody id="ins-inquiry-tbody"></tbody></table></div></div>
   </div>
 </div>
 
@@ -1995,31 +2004,78 @@ function renderInsightWaste() {
 }
 
 function renderInsightInquiry() {
-  const dups = ENGINE._pairs.filter(p=>p.score>=0.7).slice(0,6);
-  const anomalies = ALL.filter(p=>p.is_new || Math.abs(p.change_rate)>=50).slice(0,6);
-  const lines = [
-    '[예상 질의 1] 기능이 유사한 사업이 여러 부처에 분산 편성되어 중복 가능성이 있는 것은 아닌지?',
-    `- 검토 근거: 70% 이상 고유사 사업 ${ENGINE._pairs.filter(p=>p.score>=0.7).length}쌍이 탐지되어, 유사·중복 또는 부처 간 역할 재조정 필요성이 제기될 수 있음`,
-    '- 답변 방향: 사업 목적, 수행 주체, 대상 집단, 집행 방식의 차이를 기준으로 중복 여부를 구분 설명할 필요',
-    '',
-    '[예상 질의 2] 급격히 증가하거나 신규 편성된 사업의 편성 타당성과 집행 준비는 충분한지?',
-    `- 검토 근거: 이상치 사업 ${ALL.filter(p=>p.is_new || Math.abs(p.change_rate)>=50).length}개가 식별되어 증액 사유와 집행계획에 대한 설명 수요가 큼`,
-    '- 답변 방향: 증액 배경, 정책 환경 변화, 단계별 집행 일정, 기대 성과지표를 함께 제시할 필요',
-    '',
-    '[예상 질의 3] 특정 부처 또는 기능에 예산이 과도하게 집중된 것은 아닌지?',
-    `- 검토 근거: 부처별 HHI ${ENGINE.getHHI('ministry').hhi}, 기능별 HHI ${ENGINE.getHHI('function').hhi}로 나타나 예산 집중도 점검 필요`,
-    '- 답변 방향: 전략적 집중 투자 필요성과 함께 포트폴리오 분산 여부를 균형 있게 설명할 필요',
-    '',
-    '[예상 질의 4] 요구액 대비 큰 폭으로 삭감된 사업은 실질적인 집행 가능성에 문제가 없는지?',
-    '- 검토 근거: 요구액 대비 큰 폭 삭감 사업은 사업 범위 축소, 우선순위 조정, 집행계획 변경 가능성을 수반할 수 있음',
-    '- 답변 방향: 조정 이후 사업 범위, 핵심 성과목표 유지 여부, 대체 재원 또는 단계별 추진계획을 설명할 필요',
+  const pairs70 = ENGINE._pairs.filter(p=>p.score>=0.7);
+  const dups = pairs70.slice(0,6);
+  const anomalies = ALL.filter(p=>p.is_new || Math.abs(p.change_rate)>=50).sort((a,b)=>Math.abs(b.change_rate)-Math.abs(a.change_rate));
+  const topAnomaly = anomalies[0];
+  const hhiMin = ENGINE.getHHI('ministry');
+  const hhiFunc = ENGINE.getHHI('function');
+  const top3share = (() => {
+    const topMin = Object.entries(hhiMin.groups).sort((a,b)=>b[1]-a[1]).slice(0,3);
+    return topMin.reduce((s,[,v])=>s+v,0) / hhiMin.total * 100;
+  })();
+  const cuts = ALL.filter(p=>p.budget_requested>0).map(p=>({ p, cut: (p.budget_requested-p.budget_2026)/p.budget_requested*100 })).sort((a,b)=>b.cut-a.cut);
+  const topCut = cuts[0];
+
+  const drafts = [
+    {
+      title: '유사·중복 사업 정비 필요성',
+      question: '기능이 유사한 사업이 여러 부처에 분산 편성되어 중복 투자 우려가 있는 것 아닌가?',
+      answer: `정부는 유사사업 여부를 단순 명칭이 아니라 사업 목적, 수행 주체, 정책 대상, 집행 방식까지 종합해 판단하고 있습니다. 현재 ${pairs70.length}쌍의 고유사 후보가 탐지되었으나, 이는 우선 점검 대상의 의미이며 곧바로 중복으로 확정되는 것은 아닙니다. 향후 부처 간 역할 분담과 연계 가능성을 추가 점검하여 조정 필요 사업은 보완하겠습니다.`,
+      evidence: `${pairs70.length}쌍의 70% 이상 고유사 후보, 대표 사례: ${dups[0] ? dups[0].a.project_name + ' ↔ ' + dups[0].b.project_name : '해당 없음'}`,
+      followup: '대표 유사사업에 대한 목적·대상·성과지표 비교표를 별도로 준비할 필요'
+    },
+    {
+      title: '급격한 증감 및 신규 편성 타당성',
+      question: '급격히 증가하거나 신규 편성된 사업은 편성 타당성과 집행 준비가 충분한가?',
+      answer: `급격한 증감 또는 신규 편성 사업은 정책 환경 변화, 제도 개편, 현안 대응 필요성 등을 반영한 결과입니다. 다만 ${anomalies.length}개 사업이 이상치 후보로 식별된 만큼, 증액 배경과 단계별 집행계획, 성과목표를 함께 설명하는 것이 필요합니다${topAnomaly ? ` 특히 ${topAnomaly.project_name} 사업은 우선 설명 대상에 해당합니다.` : '.'}`,
+      evidence: `${anomalies.length}개 이상치 후보 식별${topAnomaly ? ', 최대 변동 사업: ' + topAnomaly.project_name : ''}`,
+      followup: '증액 사유, 집행 일정, 연차별 성과지표를 1페이지 브리핑 형태로 정리할 필요'
+    },
+    {
+      title: '예산 집중도 점검',
+      question: '특정 부처 또는 기능에 예산이 과도하게 집중된 것은 아닌가?',
+      answer: `분석 결과 부처 기준 HHI는 ${hhiMin.hhi}, 기능 기준 HHI는 ${hhiFunc.hhi} 수준으로 나타났습니다. 상위 3개 부처가 전체 예산의 ${top3share.toFixed(1)}%를 차지하고 있어 전략적 집중 투자로 설명 가능한지, 또는 포트폴리오 분산이 추가로 필요한지 함께 검토할 필요가 있습니다. 답변 시에는 집중 투자 필요성과 함께 균형 배분 노력도 병행 설명하는 것이 적절합니다.`,
+      evidence: `부처 HHI ${hhiMin.hhi}, 기능 HHI ${hhiFunc.hhi}, 상위 3개 부처 점유율 ${top3share.toFixed(1)}%`,
+      followup: '주요 부처별 투자 필요성과 타 부처 분산 투자 현황을 함께 제시할 필요'
+    },
+    {
+      title: '삭감 이후 집행 가능성',
+      question: '요구액 대비 큰 폭으로 삭감된 사업은 실제 집행에 문제가 없는가?',
+      answer: `요구액 대비 큰 폭 삭감 사업은 우선순위 조정과 사업 범위 재설계를 거친 결과로 볼 수 있습니다. 다만 삭감 이후에도 핵심 성과목표를 유지할 수 있는지, 단계별 집행계획이 조정되었는지는 별도 설명이 필요합니다${topCut ? ` 현재 가장 큰 삭감률 후보는 ${topCut.p.project_name} 사업입니다.` : '.'}`,
+      evidence: topCut ? `${topCut.p.project_name} 사업 삭감률 ${topCut.cut.toFixed(1)}%` : '요구액 대비 삭감 사업 존재',
+      followup: '삭감 이후 사업 범위, 핵심 성과 유지 여부, 대체 재원 계획을 확인할 필요'
+    }
   ];
-  document.getElementById('ins-inquiry-brief').textContent = lines.join('\n');
-  const rows = [];
-  dups.forEach(p=>rows.push({ q:'유사·중복 사업 정비 필요성', project:`${p.a.project_name} ↔ ${p.b.project_name}`, note:`유사도 ${(p.score*100).toFixed(1)}%로 분석되며 ${p.crossMinistry?'부처 간 ':' '}기능 중복 또는 협업 조정 필요성이 제기될 수 있음` }));
-  anomalies.forEach(p=>rows.push({ q:'급격한 증감·신규 편성 타당성', project:p.project_name, note:p.is_new?'신규 편성 사업으로 편성 배경과 집행계획 설명 필요':'증감률 ' + pct(p.change_rate) + '로 증감 사유 설명 필요' }));
-  rows.push({ q:'예산 집중도 점검', project:'부처·기능별 예산 구성', note:`부처 HHI ${ENGINE.getHHI('ministry').hhi}, 기능 HHI ${ENGINE.getHHI('function').hhi}로 집중도 설명 필요` });
-  document.getElementById('ins-inquiry-tbody').innerHTML = rows.map(r=>`<tr><td>${r.q}</td><td>${r.project}</td><td>${r.note}</td></tr>`).join('');
+
+  document.getElementById('ins-inquiry-drafts').innerHTML = drafts.map(d => `
+    <div class="inq-card">
+      <div class="inq-kicker">답변 초안</div>
+      <div class="inq-q">${d.question}</div>
+      <div class="inq-answer">${d.answer}</div>
+      <div class="inq-meta">
+        <div class="inq-meta-item"><b>핵심 근거</b> ${d.evidence}</div>
+        <div class="inq-meta-item"><b>보완 필요사항</b> ${d.followup}</div>
+      </div>
+    </div>
+  `).join('');
+
+  const lines = [
+    '[공통 원칙 1] 질의 대응 시 단순 수치 설명에 그치지 않고, 편성 배경·정책 필요성·집행 가능성을 함께 설명할 것',
+    '[공통 원칙 2] 유사·중복 지적에는 사업 목적, 대상, 수행 주체, 집행 방식의 차이를 기준으로 구분 설명할 것',
+    '[공통 원칙 3] 급격한 증감 사업에는 정책 환경 변화, 단계별 집행 일정, 성과지표를 함께 제시할 것',
+    '[공통 원칙 4] 삭감 사업에는 조정 이후 사업 범위와 핵심 성과 유지 여부를 명확히 설명할 것',
+  ];
+  document.getElementById('ins-inquiry-brief').textContent = lines.join('\\n');
+
+  document.getElementById('ins-inquiry-tbody').innerHTML = drafts.map(d => `
+    <tr>
+      <td>${d.title}</td>
+      <td>${d.answer}</td>
+      <td>${d.evidence}</td>
+      <td>${d.followup}</td>
+    </tr>
+  `).join('');
 }
 
 function categorizeAiProject(p) {
