@@ -56,6 +56,8 @@ nav::-webkit-scrollbar{display:none;}
 .tab-btn.active{color:var(--accent);border-color:rgba(59,130,246,.35);background:rgba(59,130,246,.12);}
 .tab-btn .tab-dot{display:none;position:absolute;top:5px;right:6px;width:6px;height:6px;border-radius:50%;background:var(--green);}
 .tab-btn.auto-run .tab-dot{display:block;}
+.nav-group-label{display:inline-flex;align-items:center;padding:0 8px;font-size:11px;font-weight:700;color:var(--text3);letter-spacing:.04em;text-transform:uppercase;}
+.nav-divider{width:1px;height:20px;background:var(--border);margin:0 4px;}
 
 /* ── Layout ── */
 main{max-width:1800px;margin:0 auto;padding:24px 28px;}
@@ -243,6 +245,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   .kpi-grid{grid-template-columns:repeat(2,1fr);}
   .nav-inner{gap:4px;padding:6px 0;}
   .tab-btn{font-size:11px;padding:8px 10px;}
+  .nav-group-label,.nav-divider{display:none;}
 }
 
 </style>
@@ -278,23 +281,30 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
 
 <nav>
   <div class="nav-inner">
+    <span class="nav-group-label">기본</span>
     <button class="tab-btn active" data-tab="overview">📊 개요</button>
     <button class="tab-btn" data-tab="ministry">🏛️ 부처별</button>
     <button class="tab-btn" data-tab="function">📂 기능별</button>
     <button class="tab-btn" data-tab="projects">📋 사업목록</button>
-    <button class="tab-btn" data-tab="viz-extra">🗺️ 심화시각화</button>
     <button class="tab-btn" data-tab="budget-compare">💰 예산비교</button>
+    <button class="tab-btn" data-tab="compare">⚖️ 비교분석</button>
+    <span class="nav-divider"></span>
+    <span class="nav-group-label">유사성</span>
     <button class="tab-btn" data-tab="search">🔎 키워드검색</button>
     <button class="tab-btn" data-tab="scan">🔬 전수스캔<span class="tab-dot"></span></button>
     <button class="tab-btn" data-tab="valuechain">⛓ Value Chain<span class="tab-dot"></span></button>
     <button class="tab-btn" data-tab="network">🕸️ 네트워크<span class="tab-dot"></span></button>
     <button class="tab-btn" data-tab="cluster">🗂️ 클러스터<span class="tab-dot"></span></button>
+    <span class="nav-divider"></span>
+    <span class="nav-group-label">인사이트</span>
     <button class="tab-btn" data-tab="risk">⚠️ 리스크</button>
     <button class="tab-btn" data-tab="concentration">📐 집중도</button>
-    <button class="tab-btn" data-tab="compare">⚖️ 비교분석</button>
-    <button class="tab-btn" data-tab="future">🔮 미래시뮬</button>
     <button class="tab-btn" data-tab="insight">💡 인사이트</button>
+    <button class="tab-btn" data-tab="future">🔮 미래시뮬</button>
     <button class="tab-btn" data-tab="ai-tech">🤖 AI기술</button>
+    <span class="nav-divider"></span>
+    <span class="nav-group-label">고급</span>
+    <button class="tab-btn" data-tab="viz-extra">🗺️ 심화시각화</button>
     <button class="tab-btn" data-tab="algoguide">🧮 알고리즘</button>
   </div>
 </nav>
@@ -604,6 +614,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   </div>
 
   <div class="ins-panel active" id="ins-panel-flow">
+    <div class="ins-note" style="margin-bottom:14px;">예산 흐름 분석은 단순 증감이 아니라 <b>부처 간 예산 이동, 사업유형별 무게중심 변화, 협업·연계 가능성</b>을 함께 보는 용도입니다. 특히 전년도 대비 예산이 커졌지만 유사사업이 함께 늘어난 경우는 <b>분산 투자</b> 또는 <b>중복 편성</b> 가능성을 동시에 점검할 필요가 있습니다.</div>
     <div class="chart-grid">
       <div class="chart-card"><h3>2025 vs 2026 부처별 예산 흐름 Top 12</h3><div class="chart-wrap tall"><canvas id="c-ins-flow-ministry"></canvas></div></div>
       <div class="chart-card"><h3>사업 유형별 예산 흐름</h3><div class="chart-wrap"><canvas id="c-ins-flow-type"></canvas></div></div>
@@ -615,6 +626,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   </div>
 
   <div class="ins-panel" id="ins-panel-anomaly">
+    <div class="ins-note" style="margin-bottom:14px;">이상치 탐지는 <b>신규 편성, 급증, 급감</b> 사업을 선별해 정책적 설명 필요성이 높은 사업을 먼저 보는 화면입니다. 여기서 잡히는 사업은 곧바로 문제라는 뜻은 아니지만, <b>타당성 설명·집행계획·성과근거</b>가 필요한 후보로 해석하는 것이 좋습니다.</div>
     <div class="kpi-grid" id="ins-anomaly-kpis"></div>
     <div class="chart-grid">
       <div class="chart-card"><h3>이상치 사업 증감률 Top 20</h3><div class="chart-wrap tall"><canvas id="c-ins-anomaly-rate"></canvas></div></div>
@@ -624,6 +636,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   </div>
 
   <div class="ins-panel" id="ins-panel-concentration">
+    <div class="ins-note" style="margin-bottom:14px;">집중도 분석은 특정 부처나 기능으로 예산이 과도하게 몰리는지 살펴보는 용도입니다. HHI는 독과점 분석에 쓰는 개념을 응용한 것으로, 값이 높을수록 <b>예산 포트폴리오가 소수 영역에 편중</b>돼 있다는 신호로 볼 수 있습니다.</div>
     <div class="kpi-grid" id="ins-conc-kpis"></div>
     <div class="chart-grid">
       <div class="chart-card"><h3>부처별 점유율 Top 10</h3><div class="chart-wrap"><canvas id="c-ins-conc-min"></canvas></div></div>
@@ -633,6 +646,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   </div>
 
   <div class="ins-panel" id="ins-panel-waste">
+    <div class="ins-note" style="margin-bottom:14px;">낭비 리스크는 단일 지표가 아니라 <b>급격한 예산 변동, 요구액 대비 삭감, 내역사업 편중, 유사사업 다수 존재</b> 같은 신호를 합산한 참고용 점수입니다. 따라서 이 탭은 감사 판단이 아니라 <b>우선 점검 순서</b>를 잡는 데 적합합니다.</div>
     <div class="kpi-grid" id="ins-waste-kpis"></div>
     <div class="chart-grid">
       <div class="chart-card"><h3>낭비 리스크 상위 사업</h3><div class="chart-wrap tall"><canvas id="c-ins-waste-score"></canvas></div></div>
@@ -642,6 +656,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   </div>
 
   <div class="ins-panel" id="ins-panel-inquiry">
+    <div class="ins-note" style="margin-bottom:14px;">국회 질의 탭은 실제 답변문이 아니라, 질의 가능성이 높은 포인트를 미리 정리하는 화면입니다. 즉 <b>유사·중복성, 급격한 증감, 신규 대규모 편성, 집중도</b>를 바탕으로 설명 논리를 사전에 준비하는 데 초점을 둡니다.</div>
     <div class="brief-card"><h3 style="margin-bottom:10px;">📝 예상 국회 질의 메모</h3><div class="brief-box" id="ins-inquiry-brief"></div></div>
     <div class="table-card"><div class="table-toolbar"><span style="font-weight:600;font-size:13px;">질의 포인트별 근거 사업</span></div><div class="table-wrap"><table><thead><tr><th>질의 포인트</th><th>근거 사업</th><th>설명</th></tr></thead><tbody id="ins-inquiry-tbody"></tbody></table></div></div>
   </div>
@@ -1943,17 +1958,17 @@ function renderInsightInquiry() {
   const dups = ENGINE._pairs.filter(p=>p.score>=0.7).slice(0,6);
   const anomalies = ALL.filter(p=>p.is_new || Math.abs(p.change_rate)>=50).slice(0,6);
   const lines = [
-    '예상 질의 1) 유사·중복 사업이 여러 부처에 분산되어 있는 것 아닌가?',
+    '예상 질의 1) 기능이 유사한 사업이 여러 부처에 분산 편성된 것은 아닌가?',
     `- 근거: 70% 이상 고유사 사업 ${ENGINE._pairs.filter(p=>p.score>=0.7).length}쌍 탐지`,
     '',
-    '예상 질의 2) 급격히 증가하거나 새로 편성된 사업의 타당성은 충분한가?',
+    '예상 질의 2) 급격히 증가하거나 신규 편성된 사업의 타당성과 집행 준비는 충분한가?',
     `- 근거: 이상치 사업 ${ALL.filter(p=>p.is_new || Math.abs(p.change_rate)>=50).length}개`,
     '',
     '예상 질의 3) 특정 부처/기능으로 예산이 편중된 것은 아닌가?',
     `- 근거: 부처별 HHI ${ENGINE.getHHI('ministry').hhi}, 기능별 HHI ${ENGINE.getHHI('function').hhi}`,
     '',
     '예상 질의 4) 요구액 대비 큰 폭 삭감된 사업은 집행 가능성이 낮은 것 아닌가?',
-    '- 근거: 요구액 대비 삭감률 상위 사업 별도 확인 필요',
+    '- 근거: 요구액 대비 큰 폭 삭감 사업은 사업 범위 조정 또는 집행 가능성 점검 필요',
   ];
   __KEEP__
   const rows = [];
