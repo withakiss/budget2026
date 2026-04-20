@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>2026 재정사업 분석 플랫폼 v3.0</title>
+<title>2026 재정사업 분석 플랫폼 v3.1</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet"/>
@@ -17,6 +17,13 @@
   --green:#10b981;--red:#ef4444;--yellow:#f59e0b;--orange:#f97316;
   --text:#e2e8f0;--text2:#94a3b8;--text3:#475569;--text4:#2d3f55;
   --font:'Noto Sans KR',sans-serif;--mono:'JetBrains Mono',monospace;
+}
+[data-theme="light"]{
+  --bg:#f5f7fb;--surface:#ffffff;--surface2:#eef3fb;--surface3:#e6eef9;
+  --border:#d9e2ef;--border2:#c7d5e8;
+  --accent:#2563eb;--accent2:#0891b2;--accent3:#7c3aed;
+  --green:#059669;--red:#dc2626;--yellow:#d97706;--orange:#ea580c;
+  --text:#0f172a;--text2:#475569;--text3:#64748b;--text4:#94a3b8;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:14px;}
@@ -210,6 +217,18 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
 #toast.success{border-color:rgba(16,185,129,.5);background:rgba(16,185,129,.1);color:var(--green);}
 #toast.error{border-color:rgba(239,68,68,.5);background:rgba(239,68,68,.1);color:var(--red);}
 
+.compare-grid,.insight-grid,.future-grid,.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-bottom:16px;}
+.compare-card,.insight-card,.brief-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:16px;}
+.compare-title{font-size:12px;color:var(--text2);margin-bottom:6px;}
+.compare-val{font-family:var(--mono);font-size:22px;font-weight:800;}
+.insight-card h4{font-size:13px;margin-bottom:8px;}
+.insight-card p{font-size:12px;color:var(--text2);line-height:1.7;}
+.insight-list{display:flex;flex-direction:column;gap:10px;}
+.insight-item{background:var(--surface2);border:1px solid var(--border);border-radius:10px;padding:12px;}
+.insight-item b{display:block;margin-bottom:4px;}
+.brief-box{white-space:pre-wrap;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:14px;font-size:12px;line-height:1.7;color:var(--text2);}
+.badge-chip{display:inline-block;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(59,130,246,.12);color:var(--accent);border:1px solid rgba(59,130,246,.25);margin-right:4px;margin-bottom:4px;}
+
 /* ── Responsive ── */
 @media(max-width:768px){
   main{padding:12px 14px;}header{padding:12px 14px;}nav{top:66px;}
@@ -229,7 +248,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
     <div class="logo">
       <div class="logo-icon">₩</div>
       <div class="logo-text">
-        <h1>2026 재정사업 분석 플랫폼 <span style="color:var(--accent2);font-size:11px;font-weight:500;">v3.0</span></h1>
+        <h1>2026 재정사업 분석 플랫폼 <span style="color:var(--accent2);font-size:11px;font-weight:500;">v3.1</span></h1>
         <p>TF-IDF · BM25 · 다차원 유사도 · 클러스터링 · 트리맵 · 샌키</p>
       </div>
     </div>
@@ -239,6 +258,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
       <div class="h-badge">총 예산 <b id="hb-budget">—</b></div>
     </div>
     <div class="header-actions">
+      <button class="btn" id="theme-toggle-btn" onclick="toggleTheme()">🌙 다크</button>
       <button class="btn btn-green" onclick="handleExcelExport()">📊 Excel</button>
       <button class="btn btn-primary" onclick="handleMdExport()">📄 MD 보고서</button>
     </div>
@@ -261,6 +281,10 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
     <button class="tab-btn" data-tab="cluster">🗂️ 클러스터<span class="tab-dot"></span></button>
     <button class="tab-btn" data-tab="risk">⚠️ 리스크</button>
     <button class="tab-btn" data-tab="concentration">📐 집중도</button>
+    <button class="tab-btn" data-tab="compare">⚖️ 비교분석</button>
+    <button class="tab-btn" data-tab="future">🔮 미래시뮬</button>
+    <button class="tab-btn" data-tab="insight">💡 인사이트</button>
+    <button class="tab-btn" data-tab="ai-tech">🤖 AI기술</button>
     <button class="tab-btn" data-tab="algoguide">🧮 알고리즘</button>
   </div>
 </nav>
@@ -515,6 +539,84 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
   <div id="hhi-detail"></div>
 </div>
 
+
+<!-- ══ 비교분석 ══ -->
+<div class="tab-panel" id="tab-compare">
+  <div class="stitle">⚖️ 비교 분석 <small>부처 간 포트폴리오·중복후보·구성 비교</small></div>
+  <div class="ctrl-bar">
+    <label>비교 대상 A</label><select class="fsel" id="cmp-a"></select>
+    <label>비교 대상 B</label><select class="fsel" id="cmp-b"></select>
+    <button class="btn btn-primary" id="cmp-run-btn">비교 갱신</button>
+    <span id="cmp-status" style="font-size:12px;color:var(--text2);"></span>
+  </div>
+  <div class="compare-grid" id="cmp-kpis"></div>
+  <div class="chart-grid cols3">
+    <div class="chart-card"><h3>포트폴리오 레이더</h3><div class="chart-wrap"><canvas id="c-cmp-radar"></canvas></div></div>
+    <div class="chart-card"><h3>사업유형 구성 비교</h3><div class="chart-wrap"><canvas id="c-cmp-type"></canvas></div></div>
+    <div class="chart-card"><h3>예산 규모·신규비중 비교</h3><div class="chart-wrap"><canvas id="c-cmp-bars"></canvas></div></div>
+  </div>
+  <div class="table-card">
+    <div class="table-toolbar"><span style="font-weight:600;font-size:13px;">부처 간 유사·중복 후보</span></div>
+    <div class="table-wrap"><table><thead><tr><th>유사도</th><th>사업 A</th><th>사업 B</th><th>등급</th><th>Value Chain</th></tr></thead><tbody id="cmp-pairs"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ══ 미래 시뮬레이터 ══ -->
+<div class="tab-panel" id="tab-future">
+  <div class="stitle">🔮 미래 예산 시뮬레이터 <small>유형별 가중치를 조정해 가상 시나리오 비교</small></div>
+  <div class="ctrl-bar">
+    <label>전체 증감</label><input type="range" id="fs-overall" min="-20" max="40" value="8"><span class="ctrl-val" id="fs-overall-val">8%</span>
+    <label>R&D 가중</label><input type="range" id="fs-rnd" min="-20" max="40" value="12"><span class="ctrl-val" id="fs-rnd-val">12%</span>
+    <label>정보화 가중</label><input type="range" id="fs-it" min="-20" max="40" value="10"><span class="ctrl-val" id="fs-it-val">10%</span>
+    <label>일반 가중</label><input type="range" id="fs-gen" min="-20" max="40" value="4"><span class="ctrl-val" id="fs-gen-val">4%</span>
+    <button class="btn btn-primary" id="fs-run-btn">시뮬레이션</button>
+  </div>
+  <div class="kpi-grid" id="fs-kpis"></div>
+  <div class="chart-grid">
+    <div class="chart-card"><h3>현재 vs 시뮬레이션 유형별 예산</h3><div class="chart-wrap"><canvas id="c-fs-type"></canvas></div></div>
+    <div class="chart-card"><h3>부처별 증감 영향 Top 12</h3><div class="chart-wrap tall"><canvas id="c-fs-ministry"></canvas></div></div>
+  </div>
+  <div class="table-card">
+    <div class="table-toolbar"><span style="font-weight:600;font-size:13px;">시뮬레이션 영향이 큰 사업 Top 20</span></div>
+    <div class="table-wrap"><table><thead><tr><th>부처</th><th>사업명</th><th>유형</th><th>현재</th><th>시뮬레이션</th><th>증감</th></tr></thead><tbody id="fs-tbody"></tbody></table></div>
+  </div>
+</div>
+
+<!-- ══ 인사이트 ══ -->
+<div class="tab-panel" id="tab-insight">
+  <div class="stitle">💡 예산 인사이트 <small>중복·집중·리스크·기회요인을 자동 요약</small></div>
+  <div class="insight-grid" id="insight-cards"></div>
+  <div class="chart-grid cols3">
+    <div class="chart-card"><h3>중복/리스크/집중도 요약</h3><div class="chart-wrap"><canvas id="c-insight-summary"></canvas></div></div>
+    <div class="chart-card"><h3>기회 분야 Top 8</h3><div class="chart-wrap"><canvas id="c-insight-opportunity"></canvas></div></div>
+    <div class="chart-card"><h3>부처별 리스크 밀도</h3><div class="chart-wrap"><canvas id="c-insight-risk-min"></canvas></div></div>
+  </div>
+  <div class="brief-card">
+    <h3 style="margin-bottom:10px;">📝 자동 브리핑 초안</h3>
+    <div class="brief-box" id="insight-brief"></div>
+  </div>
+</div>
+
+<!-- ══ AI 기술 분석 ══ -->
+<div class="tab-panel" id="tab-ai-tech">
+  <div class="stitle">🤖 AI 기술 분석 <small>AI 관련 사업군 분류·예산 포트폴리오·부처 분포</small></div>
+  <div class="ctrl-bar">
+    <label>키워드 필터</label><input class="search-box" id="ai-filter" style="width:260px;" type="text" placeholder="예: AI 데이터 반도체 모델 개인정보" />
+    <button class="btn btn-primary" id="ai-run-btn">분석 갱신</button>
+    <span id="ai-stat" style="font-size:12px;color:var(--text2);"></span>
+  </div>
+  <div class="kpi-grid" id="ai-kpis"></div>
+  <div class="chart-grid">
+    <div class="chart-card"><h3>AI 세부분야별 예산</h3><div class="chart-wrap"><canvas id="c-ai-category"></canvas></div></div>
+    <div class="chart-card"><h3>AI 관련 부처 Top 12</h3><div class="chart-wrap tall"><canvas id="c-ai-ministry"></canvas></div></div>
+    <div class="chart-card"><h3>AI 사업 유형 구성</h3><div class="chart-wrap"><canvas id="c-ai-type"></canvas></div></div>
+  </div>
+  <div class="table-card">
+    <div class="table-toolbar"><span style="font-weight:600;font-size:13px;">AI 관련 사업 목록</span></div>
+    <div class="table-wrap"><table><thead><tr><th>부처</th><th>사업명</th><th>AI 분류</th><th>유형</th><th>2026 예산</th><th>설명</th></tr></thead><tbody id="ai-tbody"></tbody></table></div>
+  </div>
+</div>
+
 <!-- ══ 알고리즘 ══ -->
 <div class="tab-panel" id="tab-algoguide">
   <div class="stitle">🧮 알고리즘 가이드</div>
@@ -543,7 +645,7 @@ tbody td{padding:10px 13px;font-size:13px;vertical-align:middle;}
 </main>
 
 <footer style="border-top:1px solid var(--border);padding:18px 28px;text-align:center;font-size:11px;color:var(--text3);margin-top:32px;">
-  비공식 분석 플랫폼 v3.0 · <code style="color:var(--accent2)">data/projects.json</code> 교체 시 자동 업데이트 · Chart.js · D3.js · SheetJS · TF-IDF · BM25
+  비공식 분석 플랫폼 v3.1 · <code style="color:var(--accent2)">data/projects.json</code> 교체 시 자동 업데이트 · Chart.js · D3.js · SheetJS · TF-IDF · BM25
 </footer>
 
 <div id="toast"></div>
@@ -576,6 +678,20 @@ const fmtM = n => n ? n.toLocaleString() : '0';
 const fmtSigned = n => n > 0 ? `+${n.toLocaleString()}` : n.toLocaleString();
 const pct = n => n.toFixed(1) + '%';
 const groupBy = (arr, k) => arr.reduce((a, x) => { const v = x[k]; (a[v] = a[v]||[]).push(x); return a; }, {});
+
+function applySavedTheme(){
+  const theme = localStorage.getItem('budget2026-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', theme);
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) btn.textContent = theme === 'light' ? '☀️ 라이트' : '🌙 다크';
+}
+function toggleTheme(){
+  const current = document.documentElement.getAttribute('data-theme') || 'dark';
+  const next = current === 'light' ? 'dark' : 'light';
+  localStorage.setItem('budget2026-theme', next);
+  applySavedTheme();
+  toast(`테마 변경: ${next === 'light' ? '라이트' : '다크'} 모드`, 'success');
+}
 
 // 차트 생성 (기존 인스턴스 자동 파괴)
 function mkChart(id, cfg) {
@@ -622,6 +738,7 @@ function closeModal() { document.getElementById('project-modal').style.display =
 //  BOOT
 // ═══════════════════════════════════════════════════
 async function boot() {
+  applySavedTheme();
   const loadingEl = document.getElementById('loading');
   const loadingMsg = document.getElementById('loading-msg');
   try {
@@ -664,7 +781,7 @@ async function boot() {
     renderAlgoGuide();
 
     // 기본 탭 외 무거운 자동실행 탭 상태 초기화
-    _tabInitDone = { overview: true, ministry: true, function: true, projects: true, 'budget-compare': true };
+    _tabInitDone = { overview: true, ministry: true, function: true, projects: true, 'budget-compare': true, risk: true, concentration: true };
 
   } catch (e) {
     loadingEl.innerHTML = `
@@ -686,29 +803,42 @@ async function boot() {
 // ═══════════════════════════════════════════════════
 //  TABS — 탭 전환 시 자동 실행 포함
 // ═══════════════════════════════════════════════════
+function renderLazyTab(tabId) {
+  if (_tabInitDone[tabId]) return;
+  _tabInitDone[tabId] = true;
+  switch(tabId) {
+    case 'viz-extra': setTimeout(() => renderVizExtra(), 100); break;
+    case 'scan': setTimeout(() => autoRunScan(), 100); break;
+    case 'valuechain': setTimeout(() => autoRunValueChain(), 100); break;
+    case 'network': setTimeout(() => autoRunNetwork(), 200); break;
+    case 'cluster': setTimeout(() => autoRunCluster(), 100); break;
+    case 'compare': setTimeout(() => renderCompare(), 80); break;
+    case 'future': setTimeout(() => renderFuture(), 80); break;
+    case 'insight': setTimeout(() => renderInsight(), 120); break;
+    case 'ai-tech': setTimeout(() => renderAiTech(), 80); break;
+    case 'algoguide': setTimeout(() => renderAlgoGuide(), 80); break;
+  }
+}
+
+function switchToTab(tabId, pushHash = true) {
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tabId));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('tab-' + tabId);
+  if (panel) panel.classList.add('active');
+  renderLazyTab(tabId);
+  if (pushHash) history.replaceState(null, '', '#' + tabId);
+}
+
 function setupTabs() {
   document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      const tabId = btn.dataset.tab;
-      const panel = document.getElementById('tab-' + tabId);
-      if (panel) panel.classList.add('active');
-
-      // 자동 실행 탭들 — 최초 진입 시 1회 실행
-      if (!_tabInitDone[tabId]) {
-        _tabInitDone[tabId] = true;
-        switch(tabId) {
-          case 'viz-extra':      setTimeout(() => renderVizExtra(), 100); break;
-          case 'scan':           setTimeout(() => autoRunScan(), 100); break;
-          case 'valuechain':     setTimeout(() => autoRunValueChain(), 100); break;
-          case 'network':        setTimeout(() => autoRunNetwork(), 200); break;
-          case 'cluster':        setTimeout(() => autoRunCluster(), 100); break;
-          case 'algoguide':      setTimeout(() => renderAlgoGuide(), 100); break;
-        }
-      }
-    });
+    btn.addEventListener('click', () => switchToTab(btn.dataset.tab, true));
+  });
+  const initial = (location.hash || '#overview').replace('#','');
+  if (document.getElementById('tab-' + initial)) switchToTab(initial, false);
+  else switchToTab('overview', false);
+  window.addEventListener('hashchange', () => {
+    const next = (location.hash || '#overview').replace('#','');
+    if (document.getElementById('tab-' + next)) switchToTab(next, false);
   });
 }
 
@@ -757,6 +887,22 @@ function setupListeners() {
   // 예산비교 필터
   const bcFilter = document.getElementById('bc-filter');
   if (bcFilter) bcFilter.addEventListener('change', renderBudgetCompare);
+
+  // 비교분석
+  document.getElementById('cmp-run-btn')?.addEventListener('click', () => renderCompare());
+  document.getElementById('cmp-a')?.addEventListener('change', () => renderCompare());
+  document.getElementById('cmp-b')?.addEventListener('change', () => renderCompare());
+
+  // 미래시뮬레이터
+  [['fs-overall','fs-overall-val'],['fs-rnd','fs-rnd-val'],['fs-it','fs-it-val'],['fs-gen','fs-gen-val']].forEach(([id,valId]) => {
+    const el = document.getElementById(id);
+    el?.addEventListener('input', e => { const v = document.getElementById(valId); if (v) v.textContent = e.target.value + '%'; });
+  });
+  document.getElementById('fs-run-btn')?.addEventListener('click', () => renderFuture());
+
+  // AI 기술 분석
+  document.getElementById('ai-run-btn')?.addEventListener('click', () => renderAiTech());
+  document.getElementById('ai-filter')?.addEventListener('keydown', e => { if (e.key === 'Enter') renderAiTech(); });
 
   // CSV/Excel 버튼
   document.getElementById('p-csv-btn').addEventListener('click', () => {
@@ -1531,6 +1677,190 @@ function renderConcentration() {
       <div style="width:110px;text-align:right;font-size:11px;font-family:var(--mono);color:var(--text2);">${fmtM(v)} 백만원</div>
     </div>`;
   }).join('');
+}
+
+
+// ═══════════════════════════════════════════════════
+//  COMPARE / FUTURE / INSIGHT / AI TECH (V3.1)
+// ═══════════════════════════════════════════════════
+function ministryStats(name) {
+  const list = ALL.filter(p => p.ministry === name);
+  const total26 = list.reduce((s,p)=>s+p.budget_2026,0);
+  const total25 = list.reduce((s,p)=>s+p.budget_2025,0);
+  const diff = total26-total25;
+  return {
+    list, total26, total25, diff,
+    count: list.length,
+    newCount: list.filter(p=>p.is_new).length,
+    rndCount: list.filter(p=>p.project_type==='R&D').length,
+    itCount: list.filter(p=>p.project_type==='정보화').length,
+    genCount: list.filter(p=>p.project_type==='일반').length,
+    avgGrowth: list.filter(p=>!p.is_new).length ? list.filter(p=>!p.is_new).reduce((s,p)=>s+p.change_rate,0)/list.filter(p=>!p.is_new).length : 0,
+  };
+}
+
+async function renderCompare() {
+  if (!ALL.length) return;
+  const ministries = [...new Set(ALL.map(p=>p.ministry))].sort();
+  const selA = document.getElementById('cmp-a');
+  const selB = document.getElementById('cmp-b');
+  if (selA && !selA.options.length) {
+    const opts = ministries.map(m=>`<option value="${m}">${m}</option>`).join('');
+    selA.innerHTML = opts; selB.innerHTML = opts;
+    selA.value = ministries[0]; selB.value = ministries[1] || ministries[0];
+  }
+  const a = ministryStats(selA?.value || ministries[0]);
+  const b = ministryStats(selB?.value || ministries[1] || ministries[0]);
+  document.getElementById('cmp-status').textContent = `${a.list.length}개 vs ${b.list.length}개 사업 비교`;
+  document.getElementById('cmp-kpis').innerHTML = [
+    {t:`${selA.value} 2026 예산`,v:`${fmtM(a.total26)} 백만원`},
+    {t:`${selB.value} 2026 예산`,v:`${fmtM(b.total26)} 백만원`},
+    {t:'예산 차이',v:`${fmtSigned(a.total26-b.total26)} 백만원`},
+    {t:'신규사업 수 차이',v:`${fmtSigned(a.newCount-b.newCount)}개`},
+  ].map(x=>`<div class="compare-card"><div class="compare-title">${x.t}</div><div class="compare-val">${x.v}</div></div>`).join('');
+
+  const maxBudget = Math.max(...ministries.map(m=>ministryStats(m).total26),1);
+  const maxCount = Math.max(...ministries.map(m=>ministryStats(m).count),1);
+  const radar = (st) => [
+    st.total26/maxBudget*100,
+    (st.count/maxCount)*100,
+    (st.newCount/Math.max(st.count,1))*100,
+    (st.rndCount/Math.max(st.count,1))*100,
+    (st.itCount/Math.max(st.count,1))*100,
+    Math.max(0, Math.min(100, st.avgGrowth+50))
+  ];
+  mkChart('c-cmp-radar', { type:'radar', data:{ labels:['예산규모','사업수','신규비중','R&D비중','정보화비중','평균증감'], datasets:[
+    { label: selA.value, data: radar(a), borderColor:'#3b82f6', backgroundColor:'rgba(59,130,246,.18)' },
+    { label: selB.value, data: radar(b), borderColor:'#8b5cf6', backgroundColor:'rgba(139,92,246,.18)' },
+  ]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ r:{ grid:{ color:'#1a2d47' }, ticks:{ display:false }, pointLabels:{ color:'#94a3b8', font:{ size:10 } } } } } });
+  mkChart('c-cmp-type', { type:'bar', data:{ labels:['R&D','정보화','일반'], datasets:[
+    { label: selA.value, data:[a.rndCount,a.itCount,a.genCount], backgroundColor:'#3b82f6' },
+    { label: selB.value, data:[b.rndCount,b.itCount,b.genCount], backgroundColor:'#8b5cf6' },
+  ]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ y:{ grid:{ color:'#1a2d47' } }, x:{ grid:{ display:false } } } } });
+  mkChart('c-cmp-bars', { type:'bar', data:{ labels:['2026예산','증감액','신규사업수'], datasets:[
+    { label: selA.value, data:[a.total26,a.diff,a.newCount], backgroundColor:'rgba(59,130,246,.8)' },
+    { label: selB.value, data:[b.total26,b.diff,b.newCount], backgroundColor:'rgba(139,92,246,.8)' },
+  ]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ y:{ grid:{ color:'#1a2d47' } }, x:{ grid:{ display:false } } } } });
+
+  const tbody = document.getElementById('cmp-pairs');
+  if (!ENGINE._pairs) await ENGINE.computeAllPairs('default');
+  const pairs = ENGINE._pairs.filter(p =>
+    p.crossMinistry &&
+    ((p.a.ministry === selA.value && p.b.ministry === selB.value) || (p.a.ministry === selB.value && p.b.ministry === selA.value)) &&
+    p.score >= 0.5
+  ).slice(0,20);
+  tbody.innerHTML = pairs.length ? pairs.map(p=>`<tr>
+    <td class="num">${(p.score*100).toFixed(1)}%</td>
+    <td>${p.a.project_name}</td>
+    <td>${p.b.project_name}</td>
+    <td><span class="tag tag-g${p.grade}">${p.label}</span></td>
+    <td>${p.valueChain?.pattern || '—'}</td>
+  </tr>`).join('') : '<tr><td colspan="5" style="color:var(--text2);padding:18px;">현재 조건에서 유사·중복 후보가 없습니다.</td></tr>';
+}
+
+function getSimulatedProjects() {
+  const overall = parseInt(document.getElementById('fs-overall')?.value || '0') / 100;
+  const rnd = parseInt(document.getElementById('fs-rnd')?.value || '0') / 100;
+  const it = parseInt(document.getElementById('fs-it')?.value || '0') / 100;
+  const gen = parseInt(document.getElementById('fs-gen')?.value || '0') / 100;
+  return ALL.map(p => {
+    const extra = p.project_type === 'R&D' ? rnd : p.project_type === '정보화' ? it : gen;
+    const factor = 1 + overall + extra;
+    const sim = Math.max(0, Math.round(p.budget_2026 * factor));
+    return { ...p, simulated_2027: sim, sim_diff: sim - p.budget_2026 };
+  });
+}
+
+function renderFuture() {
+  const sim = getSimulatedProjects();
+  const current = ALL.reduce((s,p)=>s+p.budget_2026,0);
+  const simulated = sim.reduce((s,p)=>s+p.simulated_2027,0);
+  const byTypeCur = ['R&D','정보화','일반'].map(t=>ALL.filter(p=>p.project_type===t).reduce((s,p)=>s+p.budget_2026,0));
+  const byTypeSim = ['R&D','정보화','일반'].map(t=>sim.filter(p=>p.project_type===t).reduce((s,p)=>s+p.simulated_2027,0));
+  const byMin = [...new Set(ALL.map(p=>p.ministry))].map(m => ({ m, diff: sim.filter(p=>p.ministry===m).reduce((s,p)=>s+p.sim_diff,0) })).sort((a,b)=>Math.abs(b.diff)-Math.abs(a.diff)).slice(0,12);
+  document.getElementById('fs-kpis').innerHTML = [
+    { label:'현재 총예산', value: fmt(current*1e6), sub:'2026 기준' },
+    { label:'시뮬레이션 총예산', value: fmt(simulated*1e6), sub:'가상 2027' },
+    { label:'총 증감액', value: fmt(Math.abs(simulated-current)*1e6), sub: simulated>=current?'증가':'감소', badge: simulated>=current?'up':'down', badgeText: pct((simulated-current)/current*100) },
+    { label:'영향 큰 부처', value: byMin[0]?.m || '—', sub: byMin[0] ? `${fmtSigned(byMin[0].diff)} 백만원` : '—' },
+  ].map(k=>`<div class="kpi-card ${k.badge==='down'?'red':'blue'}"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-sub">${k.sub}</div>${k.badge?`<div class="kpi-badge badge-${k.badge}">${k.badgeText}</div>`:''}</div>`).join('');
+  mkChart('c-fs-type', { type:'bar', data:{ labels:['R&D','정보화','일반'], datasets:[
+    { label:'현재(2026)', data: byTypeCur, backgroundColor:'rgba(71,85,105,.6)' },
+    { label:'시뮬레이션', data: byTypeSim, backgroundColor:['#3b82f6','#06b6d4','#8b5cf6'] },
+  ]}, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ labels:{ font:{ size:11 } } } }, scales:{ y:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, x:{ grid:{ display:false } } } } });
+  mkChart('c-fs-ministry', { type:'bar', data:{ labels: byMin.map(x=>x.m), datasets:[{ data: byMin.map(x=>x.diff), backgroundColor: byMin.map(x=>x.diff>=0?'rgba(16,185,129,.75)':'rgba(239,68,68,.75)'), borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  document.getElementById('fs-tbody').innerHTML = sim.sort((a,b)=>Math.abs(b.sim_diff)-Math.abs(a.sim_diff)).slice(0,20).map(p=>`<tr>
+    <td>${p.ministry}</td><td>${p.project_name}</td><td><span class="tag ${p.project_type==='R&D'?'tag-rnd':p.project_type==='정보화'?'tag-it':'tag-gen'}">${p.project_type}</span></td>
+    <td class="num">${fmtM(p.budget_2026)}</td><td class="num"><b>${fmtM(p.simulated_2027)}</b></td><td class="num ${p.sim_diff>=0?'up':'down'}">${fmtSigned(p.sim_diff)}</td>
+  </tr>`).join('');
+}
+
+async function renderInsight() {
+  if (!ENGINE._pairs) await ENGINE.computeAllPairs('default');
+  const risks = ENGINE.getWasteRisks();
+  const clusters = ENGINE.getClusters(0.5);
+  const hhiMin = ENGINE.getHHI('ministry');
+  const hhiFunc = ENGINE.getHHI('function');
+  const topDup = ENGINE._pairs.filter(p=>p.score>=0.7).length;
+  const topCross = ENGINE._pairs.filter(p=>p.score>=0.7 && p.crossMinistry).slice(0,5);
+  const topFunc = Object.entries(groupBy(ALL,'function')).map(([f,ps])=>({f,b:ps.reduce((s,p)=>s+p.budget_2026,0)})).sort((a,b)=>b.b-a.b).slice(0,8);
+  const riskByMin = Object.entries(groupBy(risks.map(r=>r.project),'ministry')).map(([m,ps])=>({m,c:ps.length})).sort((a,b)=>b.c-a.c).slice(0,10);
+  document.getElementById('insight-cards').innerHTML = [
+    { title:'중복 후보', body:`전수 스캔 기준 70% 이상 고유사 사업이 ${topDup}쌍 탐지됐습니다. 부처 간 고유사 사업은 ${topCross.length}개를 우선 검토할 만합니다.` },
+    { title:'클러스터 구조', body:`현재 ${clusters.length}개 클러스터가 형성돼 있습니다. 가장 큰 클러스터는 ${clusters[0]?.members.length || 0}개 사업으로 구성됩니다.` },
+    { title:'집중도', body:`부처별 HHI는 ${hhiMin.hhi}, 기능별 HHI는 ${hhiFunc.hhi}입니다. 특정 부처나 기능으로 예산이 치우친 영역을 우선 점검할 수 있습니다.` },
+    { title:'리스크', body:`리스크 사업은 총 ${risks.length}건이며, 상위 위험군은 급격한 증감·요구액 대비 삭감·내역사업 편중 패턴을 보입니다.` },
+  ].map(x=>`<div class="insight-card"><h4>${x.title}</h4><p>${x.body}</p></div>`).join('');
+  mkChart('c-insight-summary', { type:'doughnut', data:{ labels:['고유사쌍(70%+)','클러스터','고위험(60+)'], datasets:[{ data:[topDup, clusters.length, risks.filter(r=>r.score>=60).length], backgroundColor:['#3b82f6','#8b5cf6','#ef4444'], borderWidth:2, borderColor:'#060b14' }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ font:{ size:11 } } } } } });
+  mkChart('c-insight-opportunity', { type:'bar', data:{ labels: topFunc.map(x=>x.f), datasets:[{ data: topFunc.map(x=>x.b), backgroundColor:'#06b6d4', borderRadius:3 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, x:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  mkChart('c-insight-risk-min', { type:'bar', data:{ labels: riskByMin.map(x=>x.m), datasets:[{ data: riskByMin.map(x=>x.c), backgroundColor:'#f59e0b', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  document.getElementById('insight-brief').textContent = [
+    '이번 주 브리핑 초안',
+    '',
+    `- 고유사 사업(70%+) : ${topDup}쌍`,
+    `- 클러스터 수 : ${clusters.length}개`,
+    `- 고위험 사업(60+) : ${risks.filter(r=>r.score>=60).length}건`,
+    `- 집중도(HHI) : 부처 ${hhiMin.hhi} / 기능 ${hhiFunc.hhi}`,
+    '',
+    '- 부처 간 유사사업 정비, 기능 중복 검토, 리스크 사업 사전점검 우선 권고',
+  ].join('\n');
+}
+
+function categorizeAiProject(p) {
+  const text = [p.project_name,p.program,p.description,p.legal_basis].join(' ').toLowerCase();
+  if (/개인정보|보호|윤리|안전/.test(text)) return 'AI 안전·신뢰';
+  if (/데이터|플랫폼|연계|분석/.test(text)) return '데이터·플랫폼';
+  if (/인재|교육|훈련|양성/.test(text)) return '인재양성';
+  if (/클라우드|인프라|시스템|전환/.test(text)) return '인프라';
+  if (/실증|사업화|산업|제조/.test(text)) return '산업적용';
+  return 'AI·디지털 일반';
+}
+
+function isAiProject(p) {
+  const text = [p.project_name,p.program,p.description,p.legal_basis].join(' ').toLowerCase();
+  return /ai|인공지능|데이터|클라우드|디지털|반도체|모델|플랫폼|알고리즘|지능형|개인정보/.test(text);
+}
+
+function renderAiTech() {
+  const kw = (document.getElementById('ai-filter')?.value || '').trim().toLowerCase();
+  let list = ALL.filter(isAiProject);
+  if (kw) list = list.filter(p => [p.project_name,p.program,p.description,p.legal_basis].join(' ').toLowerCase().includes(kw));
+  const cats = Object.entries(groupBy(list.map(p => ({...p, aiCategory: categorizeAiProject(p)})), 'aiCategory')).map(([k,ps]) => ({k,b:ps.reduce((s,p)=>s+p.budget_2026,0), c:ps.length})).sort((a,b)=>b.b-a.b);
+  const mins = Object.entries(groupBy(list,'ministry')).map(([k,ps]) => ({k,b:ps.reduce((s,p)=>s+p.budget_2026,0)})).sort((a,b)=>b.b-a.b).slice(0,12);
+  const typeMap = ['R&D','정보화','일반'].map(t => list.filter(p=>p.project_type===t).length);
+  document.getElementById('ai-stat').textContent = `${list.length}개 AI 관련 사업`;
+  document.getElementById('ai-kpis').innerHTML = [
+    { label:'AI 관련 사업 수', value:list.length+'개', sub:'키워드 기반 분류' },
+    { label:'AI 관련 예산', value:fmt(list.reduce((s,p)=>s+p.budget_2026,0)*1e6), sub:'2026 합계' },
+    { label:'참여 부처', value:[...new Set(list.map(p=>p.ministry))].length+'개', sub:'AI 관련 사업 보유' },
+    { label:'신규 사업', value:list.filter(p=>p.is_new).length+'개', sub:'신규 AI 관련' },
+  ].map(k=>`<div class="kpi-card blue"><div class="kpi-label">${k.label}</div><div class="kpi-value">${k.value}</div><div class="kpi-sub">${k.sub}</div></div>`).join('');
+  mkChart('c-ai-category', { type:'bar', data:{ labels: cats.map(x=>x.k), datasets:[{ data: cats.map(x=>x.b), backgroundColor:'#3b82f6', borderRadius:3 }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ y:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, x:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  mkChart('c-ai-ministry', { type:'bar', data:{ labels: mins.map(x=>x.k), datasets:[{ data: mins.map(x=>x.b), backgroundColor:'#8b5cf6', borderRadius:3 }] }, options:{ indexAxis:'y', responsive:true, maintainAspectRatio:false, plugins:{ legend:{ display:false } }, scales:{ x:{ grid:{ color:'#1a2d47' }, ticks:{ callback:v=>fmt(v*1e6) } }, y:{ grid:{ display:false }, ticks:{ font:{ size:10 } } } } } });
+  mkChart('c-ai-type', { type:'doughnut', data:{ labels:['R&D','정보화','일반'], datasets:[{ data:typeMap, backgroundColor:['#3b82f6','#06b6d4','#64748b'], borderWidth:2, borderColor:'#060b14' }] }, options:{ responsive:true, maintainAspectRatio:false, plugins:{ legend:{ position:'bottom', labels:{ font:{ size:11 } } } } } });
+  document.getElementById('ai-tbody').innerHTML = list.sort((a,b)=>b.budget_2026-a.budget_2026).slice(0,30).map(p=>`<tr>
+    <td>${p.ministry}</td><td>${p.project_name}</td><td><span class="badge-chip">${categorizeAiProject(p)}</span></td><td><span class="tag ${p.project_type==='R&D'?'tag-rnd':p.project_type==='정보화'?'tag-it':'tag-gen'}">${p.project_type}</span></td><td class="num">${fmtM(p.budget_2026)}</td><td style="font-size:11px;color:var(--text2);">${(p.description||'').slice(0,60)}</td>
+  </tr>`).join('');
 }
 
 // ═══════════════════════════════════════════════════
